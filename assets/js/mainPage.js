@@ -9,12 +9,12 @@ if(js == 0){
     i.val("OK");
 }
 
-$(`#pageList li`).on(`click`,function(event){
+$(`#pageList li`).on(`click`,async function(event){
     event.preventDefault();
     let me = $(this);
     let id = me.attr("id");
     reList(id);
-    reView(id);
+    await reView(id);
     //reJs(id);
 })
 
