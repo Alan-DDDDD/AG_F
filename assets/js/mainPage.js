@@ -27,12 +27,12 @@ function reList(page){
 }
 
 async function reView(page){
+    alert("XXXXX");
     let view = $(`#view`);
     var r = await fetch("http://127.0.0.1:5500/html/"+page+".html");
     var t = await r.text();
     view.html(t);
     reJs(page);
-    alert(t);
 }
 
 function reJs(page){
