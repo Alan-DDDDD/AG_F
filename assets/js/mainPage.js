@@ -32,6 +32,7 @@ async function reView(page){
     var t = await r.text();
     view.html(t);
     reJs(page);
+    alert(t);
 }
 
 function reJs(page){
