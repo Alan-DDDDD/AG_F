@@ -1,11 +1,27 @@
+getdata("Product","Get",null).then(x=>{
+    let table = $(`#pdclist`);
+    $.each(datalist,(i,d)=>{
+        console.log(d);
+    });
+}).catch(x=>{
+    alert(msg);
+})
+
+
+
+
+
+
 $(`#save`).on('click',function(){
     let parame = {
-        brand : $(`#bnd option:selected`).val(),
-        item : $(`#item option:selected`).val(),
-        pdcnm : $(`#pdcnm`).val(),
-        price : $(`#price`).val(),
-        unit : $(`#unit option:selected`).val(),
-        stock : $(`#stock`).val(),
-        agree : $(`#agree`).is(":checked")?"Y":"N"
+        Brand : $(`#bnd option:selected`).val(),
+        Pdcnm : $(`#pdcnm`).val(),
+        Item : $(`#item option:selected`).val(),
+        Price : $(`#price`).val(),
+        Unit : $(`#unit option:selected`).val(),
+        Stock : $(`#stock`).val(),
+        Caution : $(`#caution`).val(),
+        Agree : $(`#agree`).is(":checked")?"Y":"N",
+        files : $(`#pdcpic`).files()
     }
 });

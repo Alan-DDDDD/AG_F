@@ -28,8 +28,8 @@ function reList(page){
 
 async function reView(page){
     let view = $(`#view`);
-    var r = await fetch("https://alan-ddddd.github.io/AG_F/html/"+page+".html");
-    //var r = await fetch("../html/"+page+".html");
+    //var r = await fetch("https://alan-ddddd.github.io/AG_F/html/"+page+".html");
+    var r = await fetch("../html/"+page+".html");
     var t = await r.text();
     view.html(t);
     reJs(page);
