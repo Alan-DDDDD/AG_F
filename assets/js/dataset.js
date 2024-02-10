@@ -85,7 +85,6 @@ $(`#send`).on(`click`,async ()=>{
   let id = $(`#sysid`).html();
   let codetable = {//組物件
     datagroup : id,
-    parentgroup : $(`#parentgroup option:selected`).val(),
     datas : []
   };
   //組資料
@@ -97,26 +96,15 @@ $(`#send`).on(`click`,async ()=>{
     codetable.datas.push(item);
   });
 
-  var response = await fetch(url + "/api/Code/updateTable?user=" + curruntid,{
-    method : "POST",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-      "Content-Type":"application/json"
-    }),
-    body : JSON.stringify(codetable)
-  });
-  var body = await response.json();
-  console.log(body);
-  if(body.status){
-    if(body.error){//資料邏輯錯誤
-      alert("");
+  postD("Code","Insert",codetable,false).then(x=>{
+    if(x){
+      alert(msg);
     }else{
-      alert("設定成功!!");
-      getSelfData();
+      alert(msg);
     }
-  }else{//系統錯誤
-    alert(body.error.ErrorMsg);
-  }
+  }).catch(x=>{
+    alert(x);
+  })
   $(`.btn-close`).click();
 })
 //新增主檔

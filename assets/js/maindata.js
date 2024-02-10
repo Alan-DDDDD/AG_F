@@ -1,5 +1,5 @@
-var url = "https://68b6-114-36-222-172.ngrok-free.app";
-//var url = "https://localhost:7109";
+//var url = "https://68b6-114-36-222-172.ngrok-free.app";
+var url = "https://localhost:7109";
 var fronturl = "https://alan-ddddd.github.io/AG_F/html";
 var datalist;
 var ddllist;
@@ -79,7 +79,7 @@ async function getD(c,a,p,b){
   }
 }
 
-async function postD(c,a,p){
+async function postD(c,a,p,b){
   let u = url + "/api/" + c + "/" + a;
   var r = await fetch(u,{
     method : "Post",
@@ -89,7 +89,9 @@ async function postD(c,a,p){
   var d = await r.json();
   if(d.Status){
     data = d.Data;
-    cdl();
+    if(b){
+      cdl();
+    }
     return true;
   }else{
     msg = d.Msg;
