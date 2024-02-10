@@ -1,103 +1,82 @@
 var detailList;
-getSelfData();
-$(async function(){
-})
-async function getSelfData(){
-  $(`#systbody`).empty();
-  $(`#systbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
-    <span class="visually-hidden">Lodding....</span>
-  </div>`);
-    //取得CODE->SYS資料
-  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
-    method: "get",
-    headers: new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    }),
-  })
-  var sysdata = await sys.json();
-  if(sysdata.Status){
-    let tbody = $(`#systbody`);
-    let syspg = $(`#syspg`);
-    $(`#syspg`).html("<option>請選擇</option>")
-    datalist = sysdata.Data
-    $.each(datalist,(index,data)=>{
-      tbody.append(`<tr>
-        <td>金帝國際</td>
-        <td>SYS</td>
-        <td>${data.parentgroup || ""}</td>
-        <td>${data.dataid}</td>
-        <td>${data.data}</td>
-        <td>
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary btne"
-             data-bs-toggle="modal"
-             data-bs-target="#modalCenter" data-id="${data.id}" data-pg="${data.parentgroup}">編輯細節</button>
-          </div>
-        </td>
-        </tr>`);
-      //設定父層下拉選單
-      syspg.append(`<option value="${data.dataid}">${data.data}</option>`)
-    })
-  }else{
-    console.log("SYS資料取得失敗")
-  }
-  $(`#mainwait`).remove();
-}
-//搜尋
-function select(){
-  let key = $(`#search`).val();
-  $("#systbody tr").filter(function() {
-    $(this).toggle($(this).text().indexOf(key) > -1)
-  });
-}
-//新增
-//修改
-$(`#systbody`).on(`click`,`.btne`,async function(){
-  //設定畫面
-  $(`#ddatetable`).before(`<div class="spinner-border text-primary" role="status" id="mainwait">
-    <span class="visually-hidden">Lodding....</span>
-  </div>`);
-  $(`#ddatetable`).css("display","none");
-  $(`#parentgroup`).parent().parent().css("display","none");
-  $(`#dataid`).removeAttr("disabled");
-  $(`#parentgroup`).html("");
-  let id = $(this).data("id");
-  let pg = $(this).data("pg");
+ddlp = ["SYS"];
 
-  $.each(datalist,(index,data)=>{
-    if(data.id == id){
-      $(`#sysid`).html(data.dataid);
-      $(`#sysname`).html(data.data);
-    }
-  });
-  $(`#dataid`).val("");
-  $(`#data`).val("");
-  if(pg != null){
-    //設定子視窗父層下拉選單
-    let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
-      method : "get",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-      })
-    })
-    let datas = await pd.json();
-    if(datas.Status){
-      let pgele = $(`#parentgroup`);
-      pgele.removeAttr("disabled")
-      pgele.parent().parent().css("display","");
-      $.each(datas.Data,(index,item)=>{
-        pgele.append(`<option value="${item.dataid}">${item.data}</option>`);
-      });
-    }
-  }if(pg != null){
-    $(`#parentgroup`).change();
+getddl(ddlp).then(x=>{
+  if(x){
+    //bindDDL(ddlp);
+    bindT("systbody","SYS","m");
   }else{
-    //取得細節資料
-    getDetail($(`#sysid`).html());
+    alert(msg);
   }
-  $(`#mainwait`).remove();
-  $(`#ddatetable`).css("display","");
+}).catch(x=>{
+  alert(x)
 })
+
+function bindT(t,ddlnm,m){
+  let table = $(`#`+t);
+  table.empty();
+  $.each(ddllist[ddlnm],(i,d)=>{
+    let b = m=="m"?`<div class="dropdown">
+               <button type="button" class="btn btn-primary btne"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCenter" data-id="${d.Dataid}">編輯細節</button>
+             </div>`
+             :`<small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+             <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>`;
+    table.append(`<tr>
+                  <td>${d.Dataid}</td>
+                  <td>${d.Data}</td>
+                  <td>
+                    ${b}
+                  </td>
+                </tr>`);
+  });
+}
+
+$(`#systbody`).on(`click`,`.btne`,function(){
+  let me = $(this);
+  let id = me.data("id");
+  $(`#sysid`).html(me.parent().parent().prev().prev().html());
+  $(`#sysname`).html(me.parent().parent().prev().html());
+  getddl([id]).then(x=>{
+    if(x){
+      bindT('detailtbody',id,"S")
+    }else{
+      alert(msg);
+    }
+  }).catch(x=>{
+    alert(x)
+  });
+})
+
+//取得細節資料
+async function getDetail(dg,pg){
+  let tbody = $(`#ddatetable tbody`);
+  tbody.empty();
+  let parame = pg ? "&parentgroup=" + pg : "";
+  let response = await fetch(url+"/api/Code?datagroup=" + dg +parame,{
+    method : "get",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    })
+  })
+  let datas = await response.json();
+  if(datas.Status){
+    $.each(datas.Data,(index,data)=>{
+      tbody.append(`<tr>
+      <td style="width:30%">${data.dataid}</td>
+      <td style="width:40%">${data.data}</td>
+      <td style="width:30%">
+        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+        <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
+      </td>
+      </tr>`)
+    });
+  }
+}
+
+
+
 //確認送出
 $(`#send`).on(`click`,async ()=>{
   let id = $(`#sysid`).html();
@@ -206,28 +185,3 @@ $(`#parentgroup`).on(`change`,async function(){
   let dg = $(`#sysid`).html();
   getDetail(dg,pg);
 });
-//取得細節資料
-async function getDetail(dg,pg){
-  let tbody = $(`#ddatetable tbody`);
-  tbody.empty();
-  let parame = pg ? "&parentgroup=" + pg : "";
-  let response = await fetch(url+"/api/Code?datagroup=" + dg +parame,{
-    method : "get",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    })
-  })
-  let datas = await response.json();
-  if(datas.Status){
-    $.each(datas.Data,(index,data)=>{
-      tbody.append(`<tr>
-      <td style="width:30%">${data.dataid}</td>
-      <td style="width:40%">${data.data}</td>
-      <td style="width:30%">
-        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
-        <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
-      </td>
-      </tr>`)
-    });
-  }
-}
