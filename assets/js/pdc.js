@@ -112,9 +112,9 @@ function bindT(){
         let at = b ? "下架":"上架";
         t.append(`<tr>
                       <td class="ud" data-id="${d.Pdid}" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalCenter">${d.Pdcnm}</td>
-                      <td>${d.Price}</td>
+                      <td>${d.Price.numberFormat(0,".",",")}</td>
                       <td>${ddllist["unit"].filter(x=>x.Dataid == d.Unit)[0].Data}</td>
-                      <td>${d.Stock}</td>
+                      <td>${d.Stock.numberFormat(0,".",",")}</td>
                       <td>
                         <button 
                             type="button" class="btn btn-${ac} agree" data-id="${d.Pdid}">
