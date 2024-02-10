@@ -38,6 +38,9 @@ $(`#systbody`).on(`click`,`.btne`,function(){
   let id = me.data("id");
   $(`#sysid`).html(me.parent().parent().prev().prev().html());
   $(`#sysname`).html(me.parent().parent().prev().html());
+  $(`#dataid`).removeAttr("disabled");
+  $(`#dataid`).val("");
+  $(`#data`).val("");
   getddl([id]).then(x=>{
     if(x){
       bindT('detailtbody',id,"S")
@@ -176,7 +179,7 @@ $(`#ddatetable tbody`).on('click','.datadel',function(){
 $(`#ddatetable tbody`).on('click','.dataedit',function(){
   let thistd = $(this).parent();
   $(`#dataid`).val(thistd.prev().prev().html());
-  $(`#dataid`).attr("disabled","disables");
+  $(`#dataid`).attr("disabled","disable");
   $(`#data`).val(thistd.prev().html());
   thistd.parent().remove();
 });
