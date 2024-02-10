@@ -163,7 +163,7 @@ function cM(){
     $(`#stock`).val('');
     $(`#caution`).val('');
     $(`#save`).removeAttr("data-id");
-    $(`.img`).attr("src","../assets/img/backgrounds/nopic.jpg");
+    $(`.pic`).attr("src","../assets/img/backgrounds/nopic.jpg");
 }
 
 //圖檔瀏覽
