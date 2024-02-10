@@ -1,9 +1,53 @@
               <!-- 標頭 -->
-              <h4 class="fw-bold py-2 mb-2">
+              <h4 class="fw-bold py-2">
                 <span class="text-muted fw-light">產品設定 /</span> 
                 產品列表
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter">新增</button>
               </h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" id="select">搜尋</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter" id="nM">新增</button>
+              </div>
+              <div class="card mt-2">
+                <div class="divider text-start px-3 my-1" id="qBar" style="cursor:pointer">
+                  <div class="divider-text">
+                    <h6>條件區</h6>
+                  </div>
+                </div>
+                <div class=" p-3 card-body" id="qArea">
+                  <!-- d-grid d-sm-flex -->
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="q_pdcnm" class="form-label">關鍵字</label>
+                      <input
+                      type="text"
+                      id="q_pdcnm"
+                      class="form-control"
+                      placeholder=""
+                      />
+                    </div>
+                    <div class="col mb-3">
+                      <label for="q_agree" class="form-label">上/下架</label>
+                      <select class="form-select" id="q_agree" aria-label="Default select example">
+                        <option value="">全部</option>
+                        <option value="Y">上架</option>
+                        <option value="N">下架</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="q_bnd" class="form-label">品牌</label>
+                      <select class="form-select ddlbnd" id="q_bnd" aria-label="Default select example">
+                      </select>
+                    </div>
+                    <div class="col mb-3">
+                      <label for="q_item" class="form-label">分類</label>
+                      <select class="form-select ddlitem" id="q_item" aria-label="Default select example">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
               <!-- 表單 -->
               <div class="col-lg-4 col-md-6">
@@ -18,14 +62,14 @@
                             type="button"
                             class="btn-close"
                             data-bs-dismiss="modal"
-                            aria-label="Close"
+                            aria-label="Close" id="MClose"
                           ></button>
                         </div>
                         <div class="modal-body">
                           
                           <div class="mb-3">
                             <label for="bnd" class="form-label">品牌</label>
-                            <select class="form-select" id="bnd" aria-label="Default select example">
+                            <select class="form-select ddlbnd" id="bnd" aria-label="Default select example">
                               <option value="1">愛之味</option>
                               <option value="2">味丹</option>
                               <option value="3">味全</option>
@@ -33,7 +77,7 @@
                           </div>
                           <div class="mb-3">
                             <label for="item" class="form-label">分類</label>
-                            <select class="form-select" id="item" aria-label="Default select example">
+                            <select class="form-select ddlitem" id="item" aria-label="Default select example">
                               <option value="1">飲料</option>
                               <option value="2">罐頭</option>
                               <option value="3">味全</option>
@@ -58,7 +102,7 @@
                             </div>
                             <div class="col">
                               <label for="unit" class="form-label">單位</label>
-                              <select class="form-select" id="unit" aria-label="Default select example">
+                              <select class="form-select ddlunit" id="unit" aria-label="Default select example">
                                 <option value="0">個</option>
                                 <option value="1">包</option>
                                 <option value="2">斤</option>
@@ -83,23 +127,28 @@
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-8">
+                            <div class="col-7">
                               <label for="pdcpic" class="form-label">產品圖片</label>
                               <div class="input-group">
-                                <input type="file" class="form-control" id="pdcpic"
-                                aria-describedby="carpaper3btn"
-                                aria-label="Upload"
-                                multiple
-                                />
-                                <!-- <button class="btn btn-primary filebtn" data-id="carpaper3input" type="button" id="carpaper3btn" data-bs-toggle="modal" data-bs-target="#ViewCenter">瀏覽</button> -->
+                                <label class="input-group-text btn btn-primary" for="pic1" style="padding: 0.2rem 1rem;">圖1</label>
+                                <input hidden type="file" class="form-control uimg" id="pic1"/>
+                                <label class="input-group-text btn btn-primary" for="pic2" style="padding: 0.2rem 1rem;">圖2</label>
+                                <input hidden type="file" class="form-control uimg" id="pic2"/>
+                                <input hidden type="file" class="form-control uimg" id="pic3"/>
+                                <label class="input-group-text btn btn-primary" for="pic3" style="padding: 0.2rem 1rem;">圖3</label>
                               </div>
                             </div>
-                            <div class="col-4" style="align-self: center;">
+                            <div class="col-5" style="align-self: center;">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="agree" />
                                 <label class="form-check-label" for="agree"> 上架 </label>
                               </div>
                             </div>
+                          </div>
+                          <div class="row mt-2">
+                            <img src="../assets/img/backgrounds/nopic.jpg" name="pic1" style="width:30% ;">
+                            <img src="../assets/img/backgrounds/nopic.jpg" name="pic2" style="width:30% ;">
+                            <img src="../assets/img/backgrounds/nopic.jpg" name="pic3" style="width:30% ;">
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -120,33 +169,15 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>名稱</th>
+                        <th>名稱(點擊修改)</th>
                         <th>金額</th>
                         <th>單位</th>
                         <th>庫存</th>
                         <th>狀態</th>
-                        <th></th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0" id="pdclist">
-                      <tr>
-                        <td>牛奶</td>
-                        <td>159</td>
-                        <td>瓶</td>
-                        <td>200</td>
-                        <td>上架</td>
-                        <td style="width: 10%;">
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary mb-2 addcase" id="addcase">
-                              修改
-                            </button>
-                            <button type="button" class="btn btn-primary mb-2 toolbar" id="agrY">
-                              上架
-                            </button>
-                            <button type="button" class="btn btn-danger mb-2 toolbar giveup" id="agrN">下架</button>
-                          </div>
-                        </td>
-                      </tr>
+                      
                     </tbody>
                   </table>
                 </div>

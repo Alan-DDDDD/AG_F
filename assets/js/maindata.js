@@ -1,13 +1,21 @@
 //var url = "https://88be-61-222-180-215.ngrok-free.app";
 var url = "https://localhost:7109";
-var fronturl = "https://alan-ddddd.github.io/JD/html";
+var fronturl = "https://alan-ddddd.github.io/AG_F/html";
 var datalist;
 var ddllist;
 var curruntuser;
 var curruntid;
 var curruntlevel;
+var ddlp;
+var data;
 var msg;
-
+var h = new Headers({
+  "ngrok-skip-browser-warning": "69420",
+});
+var hcj = new Headers({
+  "ngrok-skip-browser-warning": "69420",
+  "Content-Type":"application/json"
+});
 
 
 Number.prototype.numberFormat = function(c, d, t){
@@ -21,13 +29,24 @@ Number.prototype.numberFormat = function(c, d, t){
      return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
 
-
-async function getdata(c,a,p){
+function d(d){
+  if(d.Status){
+    data = d.Data;
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+async function getA(c,a,p){
   let u = url + "/api/" + c + "/" + a;
   if(p){
     u = u + "?" + p;
   }
-  var r = await fetch(u);
+  var r = await fetch(u,{
+    method :"GET",
+    headers : h
+  });
   var d = await r.json();
   if(d.Status){
     datalist = d.Data;
@@ -37,3 +56,106 @@ async function getdata(c,a,p){
     return false;
   }
 }
+
+async function getD(c,a,p,b){
+  let u = url + "/api/" + c + "/" + a;
+  if(p){
+    u = u + "?" + p;
+  }
+  var r = await fetch(u,{
+    method :"GET",
+    headers : h
+  });
+  var d = await r.json();
+  if(d.Status){
+    data = d.Data;
+    if(b){
+      cdl();
+    }
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+
+async function postD(c,a,p){
+  let u = url + "/api/" + c + "/" + a;
+  var r = await fetch(u,{
+    method : "Post",
+    headers : hcj,
+    body : JSON.stringify(p)
+  });
+  var d = await r.json();
+  if(d.Status){
+    data = d.Data;
+    cdl();
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+
+async function postFD(c,a,f){
+  let u = url + "/api/" + c + "/" + a;
+  var r = await fetch(u,{
+    method : "Post",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+    body : f
+  });
+  var d = await r.json();
+  if(d.Status){
+    data = d.Data;
+    cdl();
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+//修改datalist
+function cdl(){
+  let c = true;
+  $.each(datalist,(i,d)=>{
+    if(d.Pdid == data.Pdid){
+      datalist[i] = data;
+      c = false;
+    }
+  });
+  if(c){
+    datalist.push(data);
+  }
+}
+
+async function getddl(p){
+  let u = url + "/api/Code/GetDDL";
+    h.set("Content-Type","application/json");
+  var r = await fetch(u,{
+    method:"POST",
+    headers:hcj,
+    body : JSON.stringify(p)
+  });
+  var d = await r.json();
+  if(d.Status){
+    ddllist = d.Data;
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+
+function bindDDL(p){
+  $.each(p,(i,d)=>{
+    let ddl = ddllist[d];
+    let o = $(`.ddl`+d);
+    o.empty();
+    o.append(`<option value="">請選擇</option>`);
+    $.each(ddl,(j,k)=>{
+      o.append(`<option value="${k.Dataid}">${k.Data}</option>`)
+    });
+  });
+};

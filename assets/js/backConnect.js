@@ -5,5 +5,5 @@ connect.start().then(()=>{
 });
 
 connect.on("Notify",function(msg){
-    alert(msg);
+    //alert(msg);
 });

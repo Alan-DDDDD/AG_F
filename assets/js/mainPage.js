@@ -45,3 +45,7 @@ function reJs(page){
     script.classList.add("myjs");
     document.body.appendChild(script);
 }
+
+$(`#view`).on(`click`,`#qBar`,function(){
+    $(`#qArea`).toggle(130);
+});
