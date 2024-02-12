@@ -4,9 +4,9 @@ console.log(js);
 var liffId = "2003018925-03bR6Jo3";
 liff.init({
     liffId:liffId
-}).then(async function(){
-    alert("XX");
-    liff.getProfile(async function(profile){
+}).then(function(){
+    alert(liff.isLoggedIn());
+    liff.getProfile().then((profile) => {
         alert(profile.userId);
         const name = profile.displayName;
         console.log(profile.displayName);
@@ -19,7 +19,9 @@ liff.init({
             //reJs(page);
             i.val("OK");
         }
-    })
+    }).catch((err)=>{
+        console.log(err);
+    });
 }).catch((x)=>{
  alert(x);
 });
