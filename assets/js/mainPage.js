@@ -19,7 +19,9 @@ liff.init({
             i.val("OK");
         }
     })
-})
+}).catch((x)=>{
+ alert(x);
+});
 // if(js == 0){
 //     let page = "pdc";
 //     reList(page);
