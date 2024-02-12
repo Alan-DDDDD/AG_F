@@ -5,6 +5,7 @@ liff.init({
     liffId:"2003018925-03bR6Jo3"
 }).then(async function(){
     liff.getProfile(async function(profile){
+        alert(profile.userId);
         const name = profile.displayName;
         console.log(profile.displayName);
         console.log(profile.userId);
