@@ -5,23 +5,25 @@ var liffId = "2003018925-03bR6Jo3";
 liff.init({
     liffId:liffId
 }).then(function(){
-    alert(liff.isLoggedIn());
-    liff.getProfile().then((profile) => {
-        alert(profile.userId);
-        const name = profile.displayName;
-        console.log(profile.displayName);
-        console.log(profile.userId);
-        console.log(profile);
-        if(js == 0){
-            let page = "pdc";
-            reList(page);
-            reView(page);
-            //reJs(page);
-            i.val("OK");
-        }
-    }).catch((err)=>{
-        console.log(err);
-    });
+    if(liff.isLoggedIn()){
+        liff.getProfile().then((profile) => {
+            const name = profile.displayName;
+            console.log(profile.displayName);
+            console.log(profile.userId);
+            console.log(profile);
+            if(js == 0){
+                let page = "pdc";
+                reList(page);
+                reView(page);
+                //reJs(page);
+                i.val("OK");
+            }
+        }).catch((err)=>{
+            console.log(err);
+        });
+    }else{
+        liff.login();
+    }
 }).catch((x)=>{
  alert(x);
 });
