@@ -1,8 +1,9 @@
 let i = $(`#ch`);
 let js = i.val();
 console.log(js);
+var liffId = "2003018925-03bR6Jo3";
 liff.init({
-    liffId:"2003018925-03bR6Jo3"
+    liffId:liffId
 }).then(async function(){
     liff.getProfile(async function(profile){
         alert(profile.userId);
