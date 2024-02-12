@@ -1,13 +1,30 @@
 let i = $(`#ch`);
 let js = i.val();
 console.log(js);
-if(js == 0){
-    let page = "pdc";
-    reList(page);
-    reView(page);
-    //reJs(page);
-    i.val("OK");
-}
+liff.init({
+    liffId:"2003018925-03bR6Jo3"
+}).then(async function(){
+    liff.getProfile(async function(profile){
+        const name = profile.displayName;
+        console.log(profile.displayName);
+        console.log(profile.userId);
+        console.log(profile);
+        if(js == 0){
+            let page = "pdc";
+            reList(page);
+            reView(page);
+            //reJs(page);
+            i.val("OK");
+        }
+    })
+})
+// if(js == 0){
+//     let page = "pdc";
+//     reList(page);
+//     reView(page);
+//     //reJs(page);
+//     i.val("OK");
+// }
 
 $(`#pageList li`).on(`click`,async function(event){
     event.preventDefault();

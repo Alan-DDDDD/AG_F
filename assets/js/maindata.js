@@ -1,4 +1,4 @@
-var url = "https://68b6-114-36-222-172.ngrok-free.app";
+var url = "https://8408-114-36-199-105.ngrok-free.app";
 //var url = "https://localhost:7109";
 var fronturl = "https://alan-ddddd.github.io/AG_F/html";
 var datalist;
@@ -11,10 +11,12 @@ var data;
 var msg;
 var h = new Headers({
   "ngrok-skip-browser-warning": "69420",
+  //"authorization":""
 });
 var hcj = new Headers({
   "ngrok-skip-browser-warning": "69420",
-  "Content-Type":"application/json"
+  "Content-Type":"application/json",
+  //"authorization":""
 });
 
 
