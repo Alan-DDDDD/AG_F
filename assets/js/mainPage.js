@@ -5,6 +5,7 @@ var liffId = "2003018925-03bR6Jo3";
 liff.init({
     liffId:liffId
 }).then(async function(){
+    alert("XX");
     liff.getProfile(async function(profile){
         alert(profile.userId);
         const name = profile.displayName;
