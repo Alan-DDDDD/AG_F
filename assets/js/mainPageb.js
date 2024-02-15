@@ -1,39 +1,39 @@
 let i = $(`#ch`);
 let js = i.val();
 console.log(js);
-var liffId = "2003018925-03bR6Jo3";
-liff.init({
-    liffId:liffId
-}).then(function(){
-    if(liff.isLoggedIn()){
-        liff.getProfile().then((profile) => {
-            const name = profile.displayName;
-            console.log(profile.displayName);
-            console.log(profile.userId);
-            console.log(profile);
-            if(js == 0){
-                let page = "pdc";
-                reList(page);
-                reView(page);
-                //reJs(page);
-                i.val("OK");
-            }
-        }).catch((err)=>{
-            console.log(err);
-        });
-    }else{
-        liff.login();
-    }
-}).catch((x)=>{
- alert(x);
-});
-// if(js == 0){
-//     let page = "pdc";
-//     reList(page);
-//     reView(page);
-//     //reJs(page);
-//     i.val("OK");
-// }
+// var liffId = "2003018925-03bR6Jo3";
+// liff.init({
+//     liffId:liffId
+// }).then(function(){
+//     if(liff.isLoggedIn()){
+//         liff.getProfile().then((profile) => {
+//             const name = profile.displayName;
+//             console.log(profile.displayName);
+//             console.log(profile.userId);
+//             console.log(profile);
+//             if(js == 0){
+//                 let page = "pdc";
+//                 reList(page);
+//                 reView(page);
+//                 //reJs(page);
+//                 i.val("OK");
+//             }
+//         }).catch((err)=>{
+//             console.log(err);
+//         });
+//     }else{
+//         liff.login();
+//     }
+// }).catch((x)=>{
+//  alert(x);
+// });
+if(js == 0){
+    let page = "pdc";
+    reList(page);
+    reView(page);
+    //reJs(page);
+    i.val("OK");
+}
 
 $(`#pageList li`).on(`click`,function(event){
     event.preventDefault();
