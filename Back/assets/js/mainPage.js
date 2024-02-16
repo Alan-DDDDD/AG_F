@@ -29,19 +29,26 @@ liff.init({
                 "type":"E"
               });
             postD("Login","Login",{LineId : id},false).then(x=>{
-                if(js == 0){
-                    let page = "pdc";
-                    reList(page);
-                    reView(page);
-                    //reJs(page);
-                    i.val("OK");
-                }
-            }).catch(x=>{
-                if(msg == "沒有權限"){
-                    if(confirm(msg+",是否申請員工權限?")){
-                        reView("signup");   
+                if(x){
+
+                    if(js == 0){
+                        let page = "pdc";
+                        reList(page);
+                        reView(page);
+                        //reJs(page);
+                        i.val("OK");
+                    }
+                }else{
+                    if(msg == "沒有權限"){
+                        if(confirm(msg+",是否申請員工權限?")){
+                            reView("signup");   
+                        }
+                    }else{
+                        alert(msg);
                     }
                 }
+            }).catch(x=>{
+                alert(x);
             });
         }).catch((err)=>{
             console.log(err);
