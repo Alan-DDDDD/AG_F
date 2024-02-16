@@ -28,7 +28,7 @@ liff.init({
                 "authorization":id,
                 "type":"E"
               });
-            getD("Login","Login",`LineId=${id}`,false).then(x=>{
+            getD("Login","Login",`LineId=${id}&type=E`,false).then(x=>{
                 if(x){
                     if(js == 0){
                         let page = "pdc";
