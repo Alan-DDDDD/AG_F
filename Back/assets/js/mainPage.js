@@ -40,6 +40,13 @@ liff.init({
                 }else{
                     if(msg == "沒有權限"){
                         if(confirm(msg+",是否申請員工權限?")){
+                            data = {
+                                emplnm:nm,
+                                phone:"",
+                                addr:"",
+                                lineid:id,
+                                linemail:mail
+                            }
                             reView("signup");   
                         }
                     }else{
