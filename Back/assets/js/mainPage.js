@@ -19,12 +19,14 @@ liff.init({
             console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
             h = new Headers({
                 "ngrok-skip-browser-warning": "69420",
-                "authorization": id
+                "authorization": id,
+                "type":"E"
               });
             hcj = new Headers({
                 "ngrok-skip-browser-warning": "69420",
                 "Content-Type":"application/json",
-                "authorization":id
+                "authorization":id,
+                "type":"E"
               });
             if(js == 0){
                 let page = "pdc";
