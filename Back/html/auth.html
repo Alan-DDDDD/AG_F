@@ -1,0 +1,67 @@
+              <!-- 標頭 -->
+              <h4 class="fw-bold py-2">
+                <span class="text-muted fw-light">權限管理 /</span> 
+                授權
+              </h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" id="signup">申請</button>
+              </div>
+              <div class="card mt-2">
+                <div class="divider text-start px-3 my-1" id="qBar" style="cursor:pointer">
+                  <div class="divider-text">
+                    <h6>條件區</h6>
+                  </div>
+                </div>
+                <div class=" p-3 card-body" id="qArea">
+                  <!-- d-grid d-sm-flex -->
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="q_nm" class="form-label">關鍵字</label>
+                      <input
+                      type="text"
+                      id="q_nm"
+                      class="form-control"
+                      placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="q_agree" class="form-label">上/下架</label>
+                      <select class="form-select" id="q_agree" aria-label="Default select example">
+                        <option value="">全部</option>
+                        <option value="Y">已授權</option>
+                        <option value="N">未授權</option>
+                      </select>
+                    </div>
+                    <div class="col mb-3">
+                      <label for="q_el" class="form-label">分組</label>
+                      <select class="form-select ddlbnd" id="q_el" aria-label="Default select example">
+                        <option value="">全部</option>
+                        <option value="E">員工</option>
+                        <option value="L">外送員</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 主畫面 -->
+              <div class="card mt-2">
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>名稱(點擊修改)</th>
+                        <th>金額</th>
+                        <th>單位</th>
+                        <th>庫存</th>
+                        <th>狀態</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0" id="pdclist">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
