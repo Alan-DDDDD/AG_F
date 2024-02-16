@@ -5,7 +5,7 @@ $(`#signup`).on(`click`,async function(){
         let p = data;
         p.phone = ph;
         p.addr = addr;
-        postD("Login","Insert",p,false).then(x=>{
+        pgD("Login","Insert",p,"type=E",false).then(x=>{
             alert(msg)
         }).catch(x=>{alert(x);});
     }else{

@@ -121,6 +121,29 @@ async function postFD(c,a,f){
     return false;
   }
 }
+async function pgD(c,a,p,g,b){
+  let u = url + "/api/" + c + "/" + a ;
+  if(g){
+    u = u + "?" + g;
+  }
+  var r = await fetch(u,{
+    method : "Post",
+    headers : hcj,
+    body : JSON.stringify(p)
+  });
+  var d = await r.json();
+  if(d.Status){
+    data = d.Data;
+    if(b){
+      cdl();
+    }
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+
 //修改datalist
 function cdl(){
   let c = true;
