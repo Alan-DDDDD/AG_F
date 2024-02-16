@@ -6,11 +6,15 @@ liff.init({
     liffId:liffId
 }).then(function(){
     if(liff.isLoggedIn()){
+        let nm = "";
+        let id = "";
+        let mail = "";
         liff.getProfile().then((profile) => {
-            const name = profile.displayName;
-            console.log(profile.displayName);
-            console.log(profile.userId);
             console.log(profile);
+            nm = profile.displayName;
+            id = profile.userId;
+            let user = liff.getDecodedIDToken();
+            console.log(user);
             if(js == 0){
                 let page = "pdc";
                 reList(page);
