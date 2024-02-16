@@ -12,7 +12,7 @@ var msg;
 var liffId = "2003018925-03bR6Jo3";
 var h = new Headers({
   "ngrok-skip-browser-warning": "69420",
-  "authorization":""
+  //"authorization":""
 });
 var hcj = new Headers({
   "ngrok-skip-browser-warning": "69420",
