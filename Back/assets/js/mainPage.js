@@ -28,9 +28,8 @@ liff.init({
                 "authorization":id,
                 "type":"E"
               });
-            postD("Login","Login",{LineId : id},false).then(x=>{
+            getD("Login","Login",`LineId=${id}`,false).then(x=>{
                 if(x){
-
                     if(js == 0){
                         let page = "pdc";
                         reList(page);
