@@ -58,6 +58,9 @@ liff.init({
             });
         }).catch((err)=>{
             console.log(err);
+            window.localStorage.clear();
+            window.sessionStorage.clear();
+            
             liff.login();
         });
     }else{
