@@ -42,7 +42,7 @@ liff.init({
                         reView("signup");   
                     }
                 }
-            })
+            });
         }).catch((err)=>{
             console.log(err);
         });
