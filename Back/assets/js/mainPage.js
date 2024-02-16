@@ -17,6 +17,15 @@ liff.init({
             console.log(user);
             mail = user.email;
             console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
+            h = new Headers({
+                "ngrok-skip-browser-warning": "69420",
+                "authorization": id
+              });
+            hcj = new Headers({
+                "ngrok-skip-browser-warning": "69420",
+                "Content-Type":"application/json",
+                "authorization":id
+              });
             if(js == 0){
                 let page = "pdc";
                 reList(page);
