@@ -36,7 +36,6 @@ function bindT(){
                       <td>${d.nm}</td>
                       <td>${d.phone}</td>
                       <td>${d.addr}</td>
-                      <td>${d.Stock.numberFormat(0,".",",")}</td>
                       <td>
                         <button 
                             type="button" class="btn btn-${ac} agree" data-id="${d.lineid}" data-type="${d.typeid}">
