@@ -6,7 +6,8 @@ $(`#signup`).on(`click`,async function(){
         p.phone = ph;
         p.addr = addr;
         pgD("Login","Insert",p,"type=E",false).then(x=>{
-            alert(msg)
+            alert(msg);
+            reView("pdc")
         }).catch(x=>{alert(x);});
     }else{
         alert("欄位都要輸入");
