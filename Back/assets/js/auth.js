@@ -1,3 +1,12 @@
+getA("Auth","Get",null).then(x=>{
+    if(x){
+        bindT();
+    }else{
+        alert(msg);
+    }
+}).catch(x=>{
+    alert(x);
+});
 $(`#select`).on(`click`,function(){
     getA(
         "Auth",
