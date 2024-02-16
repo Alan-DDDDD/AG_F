@@ -43,9 +43,13 @@ $(`#pageList li`).on(`click`,function(event){
     event.preventDefault();
     let me = $(this);
     let id = me.attr("id");
-    reList(id);
-    reView(id);
-    //reJs(id);
+    if(liff.isLoggedIn()){
+        reList(id);
+        reView(id);
+        //reJs(id);
+    }else{
+        liff.login();
+    }
 })
 
 function reList(page){
