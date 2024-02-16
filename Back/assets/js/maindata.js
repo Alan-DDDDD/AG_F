@@ -164,3 +164,19 @@ function bindDDL(p){
     });
   });
 };
+
+async function Login(p){
+  var r = await fetch(url+"/api/Login/login",{
+    method : "POST",
+    headers : hcj,
+    body : JSON.stringify(p)
+  })
+  var d = await r.json();
+  if(d.Status){
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+
+}
