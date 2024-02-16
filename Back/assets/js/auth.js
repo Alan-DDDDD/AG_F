@@ -24,6 +24,21 @@ $(`#select`).on(`click`,function(){
     });
 });
 
+$(`#authlist`).on(`click`,`.agree`,async function(){
+    let me = $(this)
+    let id = me.data("id");
+    let type = me.data("type");
+    getD("Auth","chgAgree",`id=${id}&type=${type}`,true).then(x=>{
+        if(x){
+            bindT();
+        }else{
+            alert(msg);
+        }
+    }).catch(x=>{
+        alert(x);
+    });
+});
+
 function bindT(){
     let t = $(`#authlist`);
     t.empty();
