@@ -58,6 +58,7 @@ liff.init({
             });
         }).catch((err)=>{
             console.log(err);
+            liff.login();
         });
     }else{
         liff.login();
