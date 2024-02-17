@@ -1,0 +1,100 @@
+              <!-- 標頭 -->
+              <h4 class="fw-bold py-2">
+                <span class="text-muted fw-light">運費設定 /</span> 
+                運費列表
+              </h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" id="select">搜尋</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter" id="nM">新增</button>
+              </div>
+              <div class="card mt-2">
+                <div class="divider text-start px-3 my-1" id="qBar" style="cursor:pointer">
+                  <div class="divider-text">
+                    <h6>條件區</h6>
+                  </div>
+                </div>
+                <div class=" p-3 card-body" id="qArea">
+                  <!-- d-grid d-sm-flex -->
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="q_odprcmin" class="form-label">訂單最小金額</label>
+                      <input
+                      type="number"
+                      id="q_odprcmin"
+                      class="form-control"
+                      />
+                    </div>
+                    <div class="col mb-3">
+                      <label for="q_invaliddt" class="form-label">是否失效</label>
+                      <select class="form-select" id="q_invaliddt" aria-label="Default select example">
+                        <option value="">全部</option>
+                        <option value="Y">已失效</option>
+                        <option value="N">未失效</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 表單 -->
+              <div class="col-lg-4 col-md-6">
+                <div class="mt-1">
+                  <!-- Modal -->
+                  <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalCenterTitle">新增產品</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close" id="MClose"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="mb-3">
+                            <label for="price" class="form-label">運費金額</label>
+                            <input type="number" id="price" class="form-control"/>
+                          </div>
+                          <div class="mb-3">
+                            <label for="odprcmin" class="form-label">最小訂單金額</label>
+                            <input type="number" id="odprcmin" class="form-control"/>
+                          </div>
+                          <div class="row">
+                            <div class="col mb-3">
+                              <label for="invaliddt" class="form-label">失效日期</label>
+                              <input type="date" id="invaliddt" class="form-control"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            關閉
+                          </button>
+                          <button type="button" class="btn btn-primary" id="save">儲存</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- 主畫面 -->
+              <div class="card mt-2">
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>運費金額</th>
+                        <th>最小訂單金額</th>
+                        <th>失效日期</th>
+                        <th>動作</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0" id="farelist">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
