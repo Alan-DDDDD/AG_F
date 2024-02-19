@@ -113,7 +113,7 @@ function cM(){
 $(`#farelist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    getD("Fare","chgAgree",`id=${id}`,true).then(x=>{
+    getD("Fare","chgAgree",`id=${id}`,true,'fare').then(x=>{
         if(x){
             bindT();
         }else{
