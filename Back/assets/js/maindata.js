@@ -60,7 +60,7 @@ async function getA(c,a,p){
   }
 }
 
-async function getD(c,a,p,b){
+async function getD(c,a,p,b,l){
   let u = url + "/api/" + c + "/" + a;
   if(p){
     u = u + "?" + p;
@@ -73,7 +73,7 @@ async function getD(c,a,p,b){
   if(d.Status){
     data = d.Data;
     if(b){
-      cdl();
+      cdl(l);
     }
     return true;
   }else{
@@ -82,7 +82,7 @@ async function getD(c,a,p,b){
   }
 }
 
-async function postD(c,a,p,b){
+async function postD(c,a,p,b,l){
   let u = url + "/api/" + c + "/" + a;
   var r = await fetch(u,{
     method : "Post",
@@ -93,7 +93,7 @@ async function postD(c,a,p,b){
   if(d.Status){
     data = d.Data;
     if(b){
-      cdl();
+      cdl(l);
     }
     return true;
   }else{
@@ -102,7 +102,7 @@ async function postD(c,a,p,b){
   }
 }
 
-async function postFD(c,a,f){
+async function postFD(c,a,f,l){
   let u = url + "/api/" + c + "/" + a;
   var r = await fetch(u,{
     method : "Post",
@@ -114,14 +114,14 @@ async function postFD(c,a,f){
   var d = await r.json();
   if(d.Status){
     data = d.Data;
-    cdl();
+    cdl(l);
     return true;
   }else{
     msg = d.Msg;
     return false;
   }
 }
-async function pgD(c,a,p,g,b){
+async function pgD(c,a,p,g,b,l){
   let u = url + "/api/" + c + "/" + a ;
   if(g){
     u = u + "?" + g;
@@ -135,7 +135,7 @@ async function pgD(c,a,p,g,b){
   if(d.Status){
     data = d.Data;
     if(b){
-      cdl();
+      cdl(l);
     }
     return true;
   }else{
@@ -145,12 +145,22 @@ async function pgD(c,a,p,g,b){
 }
 
 //修改datalist
-function cdl(){
+function cdl(p){
   let c = true;
   $.each(datalist,(i,d)=>{
-    if(d.Pdid == data.Pdid){
-      datalist[i] = data;
-      c = false;
+    switch (p){
+      case 'fare':
+        if(d.fare.Id == data.fare.Id){
+          datalist[i] = data;
+          c = false;
+        }
+        break;
+      default:
+        if(d.Pdid == data.Pdid){
+          datalist[i] = data;
+          c = false;
+        }
+        break;
     }
   });
   if(c){

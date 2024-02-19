@@ -12,7 +12,7 @@ $(`#select`).on(`click`,function(){
     getA(
         "Fare",
         "Get",
-        `odprcmin=${$(`#q_odprcmin`).val().trim() || ""}&invaliddt=${$(`#q_invaliddt option:selected`).val() || ""}`)
+        `odprcmin=${$(`#q_odprcmin`).val().trim() || ""}&invalid=${$(`#q_invaliddt option:selected`).val() || ""}`)
     .then(x=>{
         if(x){
             bindT();
@@ -26,13 +26,14 @@ $(`#select`).on(`click`,function(){
 });
 
 $(`#save`).on('click',function(){
+    console.log($(`#invaliddt`).val())
     let p = {
-        id : "",
-        price : $(`#price`).data(`id`),
+        id : $(`#save`).data("id"),
+        price : $(`#price`).val(),
         odprcmin : $(`#odprcmin`).val(),
-        invaliddt : $(`#invaliddt`).val()
+        invaliddt : $(`#invaliddt`).val() || null
     }
-    let a = p.Pdid ? "Update":"Insert";
+    let a = p.id ? "Update":"Insert";
     postD("Fare",a,p,true).then(x=>{
         if(x){
             bindT();
@@ -50,7 +51,7 @@ $(`#save`).on('click',function(){
 $(`#farelist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    getD("Product","chgAgree",`pdid=${id}`,true).then(x=>{
+    getD("Fare","chgAgree",`pdid=${id}`,true).then(x=>{
         if(x){
             bindT();
         }else{
@@ -77,20 +78,19 @@ $(`.uimg`).on(`change`,function(){
 });
 
 function bindT(){
-    let t = $(`#pdclist`);
+    let t = $(`#farelist`);
     t.empty();
     $.each(datalist,(i,d)=>{
-        let b = d.Agree == "Y";
+        let b = d.INV == "N";
         let ac = b ? "danger":"success";
-        let at = b ? "下架":"上架";
+        let at = b ? "失效":"使用";
         t.append(`<tr>
-                      <td class="ud" data-id="${d.Pdid}" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalCenter">${d.Pdcnm}</td>
-                      <td>${d.Price.numberFormat(0,".",",")}</td>
-                      <td>${ddllist["unit"].filter(x=>x.Dataid == d.Unit)[0].Data}</td>
-                      <td>${d.Stock.numberFormat(0,".",",")}</td>
+                      <td class="ud" data-id="${d.fare.Id}" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalCenter">${d.fare.Price.numberFormat(0,".",",")}</td>
+                      <td>${d.fare.Odprcmin.numberFormat(0,".",",")}</td>
+                      <td>${d.fare.Invaliddt || ""}</td>
                       <td>
                         <button 
-                            type="button" class="btn btn-${ac} agree" data-id="${d.Pdid}">
+                            type="button" class="btn btn-${ac} agree" data-id="${d.fare.Id}">
                             ${at}
                         </button>
                       </td>
