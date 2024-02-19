@@ -51,7 +51,7 @@ $(`#save`).on('click',function(){
 $(`#farelist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    getD("Fare","chgAgree",`pdid=${id}`,true).then(x=>{
+    getD("Fare","chgAgree",`id=${id}`,true,'fare').then(x=>{
         if(x){
             bindT();
         }else{
@@ -110,16 +110,3 @@ function cM(){
     $(`#save`).data('id',0);
 }
 
-$(`#farelist`).on(`click`,`.agree`,async function(){
-    let me = $(this)
-    let id = me.data("id");
-    getD("Fare","chgAgree",`id=${id}`,true,'fare').then(x=>{
-        if(x){
-            bindT();
-        }else{
-            alert(msg);
-        }
-    }).catch(x=>{
-        alert(x);
-    });
-});
