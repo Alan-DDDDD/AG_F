@@ -83,7 +83,7 @@ function bindT(){
         t.append(`<tr>
                       <td class="ud" data-id="${d.fare.Id}" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalCenter">${d.fare.Price.numberFormat(0,".",",")}</td>
                       <td>${d.fare.Odprcmin.numberFormat(0,".",",")}</td>
-                      <td>${d.fare.Invaliddt || ""}</td>
+                      <td>${(d.fare.Invaliddt || "").substring(0,10)}</td>
                       <td>
                         <button 
                             type="button" class="btn btn-${ac} agree" data-id="${d.fare.Id}">
