@@ -109,3 +109,18 @@ function cM(){
     $(`#invaliddt`).val("");
     $(`#save`).data('id',0);
 }
+
+$(`#farelist`).on(`click`,`.agree`,async function(){
+    let me = $(this)
+    let id = me.data("id");
+    let type = me.data("type");
+    getD("Auth","chgAgree",`id=${id}&type=${type}`,true).then(x=>{
+        if(x){
+            bindT();
+        }else{
+            alert(msg);
+        }
+    }).catch(x=>{
+        alert(x);
+    });
+});
