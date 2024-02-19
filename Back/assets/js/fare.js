@@ -113,8 +113,7 @@ function cM(){
 $(`#farelist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    let type = me.data("type");
-    getD("Auth","chgAgree",`id=${id}&type=${type}`,true).then(x=>{
+    getD("Fare","chgAgree",`id=${id}`,true).then(x=>{
         if(x){
             bindT();
         }else{
