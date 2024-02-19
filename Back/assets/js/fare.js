@@ -65,16 +65,12 @@ $(`#farelist`).on(`click`,`.agree`,async function(){
 $(`#farelist`).on(`click`,`.ud`,function(){
     let me = $(this);
     let id = me.data("id");
-    let o = datalist.filter(x=>x.Pdid == id)[0];
+    let o = datalist.filter(x=>x.fare.Id == id)[0];
     bindM(o);
 });
 
 $(`#nM`).on('click',function(){
     cM();
-});
-
-$(`.uimg`).on(`change`,function(){
-    showimg(this);
 });
 
 function bindT(){
@@ -99,42 +95,17 @@ function bindT(){
 }
 
 function bindM(o){
-    $(`#bnd option`).removeAttr("selected").filter(`[value=${o.Brand}]`).attr(`selected`,true);
-    $(`#item option`).removeAttr("selected").filter(`[value=${o.Item}]`).attr(`selected`,true);
-    $(`#unit option`).removeAttr("selected").filter(`[value=${o.Unit}]`).attr(`selected`,true);
-    o.Agree == "Y" ? $(`#agree`).attr("checked",true):$(`#agree`).removeAttr("checked");
-    $(`#pdcnm`).val(o.Pdcnm);
-    $(`#price`).val(o.Price);
-    $(`#stock`).val(o.Stock);
-    $(`#caution`).val(o.Caution);
-    getD("Product","getFile",`pdid=${o.Pdid}`,false).then(x=>{
-        if(x){
-            $.each(data,(i,d)=>{
-                let img = $(`img[name='pic${i+1}']`);
-                if(d != ""){
-                    img.attr("src",d)
-                }else{
-                    img.attr("src","../assets/img/backgrounds/nopic.jpg")
-                }
-            })
-        }else{
-            alert(msg);
-        }
-    }).catch(x=>{
-        alert(x);
-    })
-    $(`#save`).data('id',o.Pdid);
+    $(`#price`).val(o.fare.Price);
+    $(`#odprcmin`).val(o.fare.Odprcmin);
+    let d = new Date(o.fare.Invaliddt);
+    document.getElementById(`invaliddt`).valueAsDate = new Date(d.setDate(d.getDate()+1));
+    // $(`#invaliddt`).val(new Date(o.fare.Invaliddt));
+    $(`#save`).data('id',o.fare.Id);
 }
 
 function cM(){
-    $(`#bnd option`).removeAttr("selected");
-    $(`#item option`).removeAttr("selected");
-    $(`#unit option`).removeAttr("selected");
-    $(`#agree`).removeAttr("checked");
-    $(`#pdcnm`).val('');
-    $(`#price`).val('');
-    $(`#stock`).val('');
-    $(`#caution`).val('');
-    $(`#save`).removeAttr("data-id");
-    $(`.pic`).attr("src","../assets/img/backgrounds/nopic.jpg");
+    $(`#price`).val("");
+    $(`#odprcmin`).val("");
+    $(`#invaliddt`).val("");
+    $(`#save`).data('id',0);
 }
