@@ -34,7 +34,7 @@ $(`#save`).on('click',function(){
         invaliddt : $(`#invaliddt`).val() || null
     }
     let a = p.id ? "Update":"Insert";
-    postD("Fare",a,p,true).then(x=>{
+    postD("Fare",a,p,true,"fare").then(x=>{
         if(x){
             bindT();
             $(`#qArea`).hide(130);

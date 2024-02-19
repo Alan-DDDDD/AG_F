@@ -162,7 +162,7 @@ function cM(){
     $(`#price`).val('');
     $(`#stock`).val('');
     $(`#caution`).val('');
-    $(`#save`).removeAttr("data-id");
+    $(`#save`).data("id",0);
     $(`.pic`).attr("src","../assets/img/backgrounds/nopic.jpg");
 }
 
