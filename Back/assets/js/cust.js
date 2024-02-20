@@ -44,15 +44,15 @@ function bindT(){
     $.each(datalist,(i,d)=>{
         let b = d.Agree == "Y";
         let ac = b ? "danger":"success";
-        let at = b ? "取消":"授權";
+        let at = b ? "黑名單":"授權";
         t.append(`<tr>
-                      <td>${d.type}</td>
-                      <td>${d.nm}</td>
-                      <td>${d.phone}</td>
-                      <td>${d.addr}</td>
+                      <td>${d.cust.Custnm}</td>
+                      <td>${d.count}</td>
+                      <td>${d.amount}</td>
+                      <td>${d.giveup}</td>
                       <td>
                         <button 
-                            type="button" class="btn btn-${ac} agree" data-id="${d.lineid}" data-type="${d.typeid}">
+                            type="button" class="btn btn-${ac} agree" data-id="${d.cust.Custid}">
                             ${at}
                         </button>
                       </td>
