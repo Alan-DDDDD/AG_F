@@ -34,6 +34,8 @@ liff.init({
                     console.log(p);
                     getD("Order","lgeto",p.substring(2),false).then(x=>{
                         alert(msg);
+                    }).catch(x=>{
+                        alert(x);
                     })
                 }else{
                     if(msg == "沒有權限"){
