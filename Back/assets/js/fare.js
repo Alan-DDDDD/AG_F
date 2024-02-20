@@ -97,8 +97,12 @@ function bindT(){
 function bindM(o){
     $(`#price`).val(o.fare.Price);
     $(`#odprcmin`).val(o.fare.Odprcmin);
-    let d = new Date(o.fare.Invaliddt);
-    document.getElementById(`invaliddt`).valueAsDate = new Date(d.setDate(d.getDate()+1));
+    if(o.fare.Invaliddt){
+        let d = new Date(o.fare.Invaliddt);
+        document.getElementById(`invaliddt`).valueAsDate = new Date(d.setDate(d.getDate()+1));
+    }else{
+        $(`#invaliddt`).val("");
+    }
     // $(`#invaliddt`).val(new Date(o.fare.Invaliddt));
     $(`#save`).data('id',o.fare.Id);
 }
