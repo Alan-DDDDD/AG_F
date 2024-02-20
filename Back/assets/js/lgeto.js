@@ -32,7 +32,7 @@ liff.init({
                     console.log(u);
                     let p = location.search;
                     console.log(p);
-                    getD("CaseOrder","lgeto",p,false).then(x=>{
+                    getD("Order","lgeto",p,false).then(x=>{
                         alert(msg);
                     })
                 }else{
