@@ -53,8 +53,7 @@ liff.init({
                         });
                     }else{
                         alert(msg);
-                        window.opener = null;
-                        window.close();
+                        liff.closeWindow();
                     }
                 }
             }).catch(x=>{
