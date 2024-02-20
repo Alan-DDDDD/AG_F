@@ -47,12 +47,14 @@ liff.init({
                                 console.log("xxx");
                             }else{
                                 alert(msg);
-                                window.opener = null;
-                                window.close();
                             }
                         }).catch(x=>{
                             alert(x);
                         });
+                    }else{
+                        alert(msg);
+                        window.opener = null;
+                        window.close();
                     }
                 }
             }).catch(x=>{
