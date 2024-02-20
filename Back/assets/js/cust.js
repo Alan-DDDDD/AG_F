@@ -27,7 +27,7 @@ $(`#select`).on(`click`,function(){
 $(`#custlist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    getD("Cust","chgAgree",`id=${id}`,true).then(x=>{
+    getD("Cust","chgAgree",`id=${id}`,true,'cust').then(x=>{
         if(x){
             bindT();
         }else{

@@ -155,6 +155,12 @@ function cdl(p){
           c = false;
         }
         break;
+      case 'cust':
+        if(d.cust.Custid == data.cust.Custid){
+          datalist[i] = data;
+          c = false;
+        }
+        break;
       default:
         if(d.Pdid == data.Pdid){
           datalist[i] = data;
