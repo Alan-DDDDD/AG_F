@@ -28,28 +28,27 @@ liff.init({
               });
             getD("Login","Login",`LineId=${id}&type=L`,false).then(x=>{
                 if(x){
-                    if(js == 0){
-                        let page = "pdc";
-                        reList(page);
-                        reView(page);
-                        //reJs(page);
-                        i.val("OK");
-                    }
+                    let u = location.href;
+                    console.log(u);
+                    let p = location.search;
+                    console.log(p)
                 }else{
-                    if(msg == "沒有權限"){
-                        if(confirm(msg+",是否申請員工權限?")){
-                            data = {
-                                emplnm:nm,
-                                phone:"",
-                                addr:"",
-                                lineid:id,
-                                linemail:mail
-                            }
-                            reView("signup");   
+                    data = {
+                        emplnm:nm,
+                        phone:"",
+                        addr:"",
+                        lineid:id,
+                        linemail:mail
+                    };
+                    pgD("Login","Insert",data,"type=L",false).then(x=>{
+                        if(x){
+                            console.log("xxx");
+                        }else{
+                            alert(msg);
                         }
-                    }else{
-                        alert(msg);
-                    }
+                    }).catch(x=>{
+                        alert(x);
+                    });
                 }
             }).catch(x=>{
                 alert(x);
