@@ -31,7 +31,10 @@ liff.init({
                     let u = location.href;
                     console.log(u);
                     let p = location.search;
-                    console.log(p)
+                    console.log(p);
+                    getD("CaseOrder","lgeto",p,false).then(x=>{
+                        alert(msg);
+                    })
                 }else{
                     if(msg == "沒有權限"){
 
