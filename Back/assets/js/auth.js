@@ -31,6 +31,7 @@ $(`#authlist`).on(`click`,`.agree`,async function(){
     getD("Auth","chgAgree",`id=${id}&type=${type}`,true).then(x=>{
         if(x){
             bindT();
+            $(`#select`).click();
         }else{
             alert(msg);
         }
