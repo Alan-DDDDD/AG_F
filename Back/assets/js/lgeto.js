@@ -36,7 +36,7 @@ liff.init({
                         liff.sendMessages([
                             {
                               type: 'text',
-                              text: msg
+                              text: data
                             }
                           ])
                             .then(() => {
