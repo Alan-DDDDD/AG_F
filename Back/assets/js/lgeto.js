@@ -34,11 +34,11 @@ liff.init({
                     console.log(p)
                 }else{
                     data = {
-                        emplnm:nm,
+                        lgtnm:nm,
                         phone:"",
                         addr:"",
-                        lineid:id,
-                        linemail:mail
+                        lgtid:id,
+                        mail:mail
                     };
                     pgD("Login","Insert",data,"type=L",false).then(x=>{
                         if(x){
