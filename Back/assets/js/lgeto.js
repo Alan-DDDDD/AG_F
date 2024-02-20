@@ -32,7 +32,7 @@ liff.init({
                     console.log(u);
                     let p = location.search;
                     console.log(p);
-                    getD("Order","lgeto",p.substring(1)+`&lgtid=${id}`,false).then(x=>{
+                    getD("Transportation","lgeto",p.substring(1)+`&lgtid=${id}`,false).then(x=>{
                         liff.sendMessages([
                             {
                               type: 'text',
