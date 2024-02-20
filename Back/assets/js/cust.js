@@ -9,9 +9,9 @@ getA("Cust","Get",null).then(x=>{
 });
 $(`#select`).on(`click`,function(){
     getA(
-        "Auth",
+        "Cust",
         "Get",
-        `nm=${$(`#q_custnm`).val().trim() || ""}&agree=${$(`#q_agree option:selected`).val() || ""}`)
+        `custnm=${$(`#q_custnm`).val().trim() || ""}&agree=${$(`#q_agree option:selected`).val() || ""}`)
     .then(x=>{
         if(x){
             bindT();
@@ -27,7 +27,7 @@ $(`#select`).on(`click`,function(){
 $(`#custlist`).on(`click`,`.agree`,async function(){
     let me = $(this)
     let id = me.data("id");
-    getD("Cust","chgAgree",`id=${id}`,true,'cust').then(x=>{
+    getD("Cust","chgAgree",`custid=${id}`,true,'cust').then(x=>{
         if(x){
             bindT();
         }else{
@@ -42,7 +42,7 @@ function bindT(){
     let t = $(`#custlist`);
     t.empty();
     $.each(datalist,(i,d)=>{
-        let b = d.Agree == "Y";
+        let b = d.cust.Agree == "Y";
         let ac = b ? "danger":"success";
         let at = b ? "黑名單":"授權";
         t.append(`<tr>
