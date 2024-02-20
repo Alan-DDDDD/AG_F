@@ -32,7 +32,7 @@ liff.init({
                     console.log(u);
                     let p = location.search;
                     console.log(p);
-                    getD("Order","lgeto",p.substring(1),false).then(x=>{
+                    getD("Order","lgeto",p.substring(1)+`&lgtid=${id}`,false).then(x=>{
                         alert(msg);
                     }).catch(x=>{
                         alert(x);
