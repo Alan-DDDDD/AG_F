@@ -34,6 +34,7 @@ liff.init({
                     console.log(p);
                     getD("Order","lgeto",p.substring(1)+`&lgtid=${id}`,false).then(x=>{
                         alert(msg);
+                        liff.closeWindow();
                     }).catch(x=>{
                         alert(x);
                     })
