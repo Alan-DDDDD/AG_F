@@ -33,7 +33,18 @@ liff.init({
                     let p = location.search;
                     console.log(p);
                     getD("Order","lgeto",p.substring(1)+`&lgtid=${id}`,false).then(x=>{
-                        alert(msg);
+                        liff.sendMessages([
+                            {
+                              type: 'text',
+                              text: msg
+                            }
+                          ])
+                            .then(() => {
+                              console.log('message sent');
+                            })
+                            .catch((err) => {
+                              console.log('error', err);
+                            });
                         liff.closeWindow();
                     }).catch(x=>{
                         alert(x);
