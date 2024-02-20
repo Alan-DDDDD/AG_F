@@ -33,24 +33,27 @@ liff.init({
                     let p = location.search;
                     console.log(p)
                 }else{
-                    data = {
-                        lgtnm:nm,
-                        phone:"",
-                        addr:"",
-                        lgtid:id,
-                        mail:mail
-                    };
-                    pgD("Login","Insert",data,"type=L",false).then(x=>{
-                        if(x){
-                            console.log("xxx");
-                        }else{
-                            alert(msg);
-                            window.opener = null;
-                            window.close();
-                        }
-                    }).catch(x=>{
-                        alert(x);
-                    });
+                    if(msg == "沒有權限"){
+
+                        data = {
+                            lgtnm:nm,
+                            phone:"",
+                            addr:"",
+                            lgtid:id,
+                            mail:mail
+                        };
+                        pgD("Login","Insert",data,"type=L",false).then(x=>{
+                            if(x){
+                                console.log("xxx");
+                            }else{
+                                alert(msg);
+                                window.opener = null;
+                                window.close();
+                            }
+                        }).catch(x=>{
+                            alert(x);
+                        });
+                    }
                 }
             }).catch(x=>{
                 alert(x);
