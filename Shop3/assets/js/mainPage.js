@@ -69,13 +69,13 @@ console.log(js);
 // }).catch((x)=>{
 //  alert(x);
 // });
-if(js == 0){
-    let page = "pdc";
-    reList(page);
-    reView(page);
-    //reJs(page);
-    i.val("OK");
-}
+// if(js == 0){
+//     let page = "pdc";
+//     reList(page);
+//     reView(page);
+//     //reJs(page);
+//     i.val("OK");
+// }
 
 $(`#pageList li`).on(`click`,function(event){
     event.preventDefault();
