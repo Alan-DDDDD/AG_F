@@ -71,7 +71,7 @@
   overflow-x:auto;
   display: flex;
   opacity: 0;
-  /* transition:opacity 0.3s; */
+  transition:opacity 0.3s;
 }
 
 .mybar>li{
