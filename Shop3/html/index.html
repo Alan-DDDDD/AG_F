@@ -54,7 +54,7 @@
     <!-- datatable -->
     
     <!-- Page CSS -->
-
+    <link rel="stylesheet" href="../assets/vendor/css/cart.css"/>
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
@@ -145,17 +145,9 @@
                 </li> -->
 
                 <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <!-- <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="bx bxs-cart" href="javascript:void(0);" data-bs-toggle="dropdown" style="color:#072D57;font-size: 1.5rem;">
-                    <!-- <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div> -->
                   </a>
-                  <!-- <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a> -->
                   <ul class="dropdown-menu dropdown-menu-end" style="min-width: 350px;">
                     <li>
                       <a class="dropdown-item" href="#">
@@ -192,24 +184,6 @@
                         </div>
                       </div>
                     </li>
-                    <!-- <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-plus me-2"></i>
-                        <span class="align-middle">新增帳戶</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bxs-edit-alt me-2"></i>
-                        <span class="align-middle">編輯帳戶</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-minus me-2"></i>
-                        <span class="align-middle">刪除帳戶</span>
-                      </a>
-                    </li> -->
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
@@ -220,7 +194,7 @@
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> -->
                 <!--/ User -->
               </ul>
             </div>
@@ -236,15 +210,64 @@
             </div>
             <!-- / Content -->
             <!--Cart-->
-            <div class="bx bxs-cart" style="position:fixed;
-            width: 2.5rem;
-            height: 2.5rem;
-            bottom: 5%;
-            right: 30px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 2.5rem;
-            color: #072D57;">
+            <div class="col-lg-4 col-md-6">
+              <div class="mt-1">
+                <!-- Modal -->
+                <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalCenterTitle">購物車</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close" id="MClose"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                          關閉
+                        </button> -->
+                        <button class="cart-buy">
+                          <div class="text">
+                            <span>馬</span>
+                            <span>上</span>
+                            <span>下</span>
+                            <span>單</span>
+                          </div>
+                          <div class="clone">
+                            <span>馬</span>
+                            <span>上</span>
+                            <span>下</span>
+                            <span>單</span>
+                          </div>
+                          <svg
+                            stroke-width="2"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="h-6 w-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20px"
+                          >
+                            <path
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                              stroke-linejoin="round"
+                              stroke-linecap="round"
+                            ></path>
+                          </svg>
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary" id="save">儲存</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bx bxs-cart mycart" data-bs-toggle="modal" data-bs-target="#modalCenter">
               <!-- <li class="bx bxs-cart"></li> -->
             </div>
             <!--/Cart-->
