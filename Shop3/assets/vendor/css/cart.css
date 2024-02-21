@@ -67,14 +67,8 @@
   }
 
 .mybar{
-  display: none;
-  list-style: none;
-}
-.mybarfix{
   list-style: none;
   overflow-x:auto;
-  position: fixed;
-  top: 0;
   display: flex;
 }
 
