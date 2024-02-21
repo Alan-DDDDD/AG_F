@@ -71,8 +71,7 @@
 }
 
 .mybar>li{
-  /* list-style-type: none; */
   padding: 0.25rem 0.5rem;
   cursor: pointer;
-  /* overflow-x:auto; */
+  white-space:nowrap;
 }
