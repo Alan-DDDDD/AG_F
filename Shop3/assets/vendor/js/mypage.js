@@ -1,6 +1,6 @@
 $(function(){
     $(window).scroll(function(){
-        mybar($(`#.mybar`));
+        mybar($(`.mybar`));
     });
 });
 
@@ -9,5 +9,7 @@ function mybar(j){
     var scrollTop = $(window).scrollTop();
     if(scrollTop>jh){
         j.css("display","none");
+        j.css("position","fixed");
+        j.css("top","0");
     }
 }
