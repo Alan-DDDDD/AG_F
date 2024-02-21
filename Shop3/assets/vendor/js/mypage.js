@@ -1,3 +1,4 @@
+var ch = $(`.mysite`).offset().top;
 $(function(){
     $(window).scroll(function(){
         mybar($(`.mysite`));
@@ -7,11 +8,16 @@ $(function(){
 function mybar(j){
     var jh = j.offset().top;
     var scrollTop = $(window).scrollTop();
-    if(scrollTop>jh){
-        j.addClass("mybarfix");
-        j.removeClass("mybar");
-    }else{
-        j.removeClass("mybarfix");
-        j.addClass("mybar");
+    if(jh > 0){
+
+        if(scrollTop>jh){
+            j.css("position","fixed");
+            j.css("top","0");
+            j.css("display","flex");
+        }else{
+            j.css("position","");
+            j.css("top","0");
+            j.css("display","flex");
+        }
     }
 }
