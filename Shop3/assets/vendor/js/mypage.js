@@ -9,9 +9,10 @@ function mybar(j){
         if(scrollTop>=$(`#bi`).height()){
             j.css("position","fixed");
             j.css("top","0");
-            j.removeAttr("hidden");
+            j.css("opacity","1");
         }else{
             j.css("position","");
-            j.attr("hidden",true)
+            j.attr("hidden",true);
+            j.css("opacity","0");
         }
 }
