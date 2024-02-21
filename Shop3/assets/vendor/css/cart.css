@@ -13,7 +13,7 @@
     border: none;
     display: block;
     position: relative;
-    padding: 0.2em 1em;
+    padding: 0.4em 1em;
     font-size: 14px;
     background: transparent;
     cursor: pointer;
@@ -23,6 +23,7 @@
     z-index: 1;
     font-family: inherit;
     font-weight: 500;
+    border-radius: 0.5rem;
   }
   
   .cartbtn span {
@@ -34,6 +35,7 @@
     background: transparent;
     z-index: -1;
     border: 2px solid #072D57;
+    border-radius: 0.5rem;
   }
   
   .cartbtn span::before {
