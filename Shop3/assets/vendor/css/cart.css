@@ -9,6 +9,7 @@
     font-size: 2.5rem;
     color: #baa88b;
 }
+
 .cartbtn {
     border: none;
     display: block;
@@ -68,6 +69,10 @@
 .mybar{
   list-style: none;
   overflow-x:auto;
+}
+.mybarfix{
+  position: fixed;
+  top: 0;
 }
 
 .mybar>li{
