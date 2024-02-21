@@ -9,7 +9,9 @@ function mybar(j){
     var scrollTop = $(window).scrollTop();
     if(scrollTop>jh){
         j.addClass("mybarfix");
+        j.removeClass("mybar");
     }else{
         j.removeClass("mybarfix");
+        j.addClass("mybar");
     }
 }
