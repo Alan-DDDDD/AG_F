@@ -8,13 +8,12 @@ $(function(){
 function mybar(j){
     var jh = j.offset().top;
     var scrollTop = $(window).scrollTop();
-        if(scrollTop>jh){
+        if(scrollTop>=jh){
             j.css("position","fixed");
             j.css("top","0");
             j.removeAttr("hidden");
         }else{
             j.css("position","");
-            j.css("top","0");
             j.attr("hidden",true)
         }
 }
