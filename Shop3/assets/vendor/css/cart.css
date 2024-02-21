@@ -65,13 +65,14 @@
     background: #2751cd;
   }
 
-/* .mybar{
+.mybar{
+  list-style: none;
   overflow-x:auto;
-} */
+}
 
 .mybar>li{
-  list-style-type: none;
+  /* list-style-type: none; */
   padding: 0.25rem 0.5rem;
   cursor: pointer;
-  overflow-x:auto;
+  /* overflow-x:auto; */
 }
