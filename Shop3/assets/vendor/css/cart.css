@@ -65,8 +65,12 @@
     background: #2751cd;
   }
 
-  ul li{
-    list-style-type: none;
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
-  }
+ul{
+  overflow:hidden;
+}
+
+ul li{
+  list-style-type: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
