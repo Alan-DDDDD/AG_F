@@ -68,6 +68,7 @@
 
 .mybar{
   display: none;
+  list-style: none;
 }
 .mybarfix{
   list-style: none;
