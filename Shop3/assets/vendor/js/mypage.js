@@ -17,7 +17,7 @@ function mybar(j){
         }else{
             j.css("position","");
             j.css("top","0");
-            j.css("display","flex");
+            j.css("display","none");
         }
     }
 }
