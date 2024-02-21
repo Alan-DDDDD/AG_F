@@ -1,6 +1,6 @@
 $(function(){
     $(window).scroll(function(){
-        mybar($(`.mybar`));
+        mybar($(`.mysite`));
     });
 });
 
