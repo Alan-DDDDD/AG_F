@@ -12,7 +12,6 @@ function mybar(j){
             j.css("opacity","1");
         }else{
             j.css("position","");
-            j.attr("hidden",true);
             j.css("opacity","0");
         }
 }
