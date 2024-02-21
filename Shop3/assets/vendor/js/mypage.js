@@ -8,7 +8,7 @@ $(function(){
 function mybar(j){
     var jh = j.offset().top;
     var scrollTop = $(window).scrollTop();
-        if(scrollTop>=jh){
+        if(scrollTop>=$(`#bi`).height()){
             j.css("position","fixed");
             j.css("top","0");
             j.removeAttr("hidden");
