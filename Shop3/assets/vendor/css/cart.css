@@ -7,7 +7,7 @@
     border-radius: 50px;
     cursor: pointer;
     font-size: 2.5rem;
-    color: #072D57;
+    color: #baa88b;
 }
 .cartbtn {
     border: none;
@@ -19,7 +19,7 @@
     cursor: pointer;
     user-select: none;
     overflow: hidden;
-    color: #072D57;
+    color: #baa88b;
     z-index: 1;
     font-family: inherit;
     font-weight: 500;
@@ -34,7 +34,7 @@
     height: 100%;
     background: transparent;
     z-index: -1;
-    border: 2px solid #072D57;
+    border: 2px solid #baa88b;
     border-radius: 0.5rem;
   }
   
@@ -54,7 +54,7 @@
   .cartbtn:hover span::before {
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
-    background: #072D57;
+    background: #baa88b;
   }
   
   .cartbtn:hover {
