@@ -1,4 +1,3 @@
-var ch = $(`.mysite`).offset().top;
 $(function(){
     $(window).scroll(function(){
         mybar($(`.mysite`));
@@ -6,7 +5,6 @@ $(function(){
 });
 
 function mybar(j){
-    var jh = j.offset().top;
     var scrollTop = $(window).scrollTop();
         if(scrollTop>=$(`#bi`).height()){
             j.css("position","fixed");
