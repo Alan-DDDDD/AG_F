@@ -88,8 +88,10 @@ $(`#pageList li`).on(`click`,function(event){
     // }else{
     //     liff.login();
     // }
-    reList(id);
-    reView(id);
+    if(id!="cart"){
+        reList(id);
+        reView(id);
+    }
 })
 
 function reList(page){
