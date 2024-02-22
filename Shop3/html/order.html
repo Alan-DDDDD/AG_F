@@ -29,7 +29,7 @@
         <input type="text" id="memo" class="form-control" placeholder="這裡可以標記小費"/>
     </div>
 </div>
-<div class="card mb-2" style="padding: 0.5rem 1.5rem;">
+<div class="card mb-2" style="padding: 0.5rem 1.5rem;" id="addrP">
     <div class="divider text-start px-3 my-1">
         <div class="divider-text" style="padding: 0 0.25rem;">
             <h6>收貨訊息</h6>
@@ -66,15 +66,15 @@
     <div class="mb-2">
         <div class="d-flex" style="justify-content: space-between;">
           <div>小計:</div>
-          <div>$1,000</div>
+          <div style="display: flex;">$<div id="amount">1000</div></div>
         </div>
         <div class="d-flex" style="justify-content: space-between;">
           <div>運費:</div>
-          <div>$1,000</div>
+          <div style="display: flex;">$<div id="addrPrice">0</div></div>
         </div>
         <div class="d-flex" style="justify-content: space-between;">
           <div>總計:</div>
-          <div>$1,000</div>
+          <div style="display: flex;">$<div id="total">1000</div></div>
         </div>
     </div>
     <div class="pdclistbtngp">
