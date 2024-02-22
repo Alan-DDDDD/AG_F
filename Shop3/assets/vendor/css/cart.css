@@ -67,11 +67,14 @@
   }
 
 .mybar{
+  background-color: #292929;
   list-style: none;
-  overflow-x:auto;
   display: flex;
   opacity: 0;
   transition:opacity 0.3s;
+  overflow-x:auto;
+  position: sticky;
+  top:0;
 }
 
 .mybar>li{

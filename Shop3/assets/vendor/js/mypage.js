@@ -7,11 +7,8 @@ $(function(){
 function mybar(j){
     var scrollTop = $(window).scrollTop();
         if(scrollTop>=$(`#bi`).height()){
-            j.css("position","fixed");
-            j.css("top","0");
             j.css("opacity","1");
         }else{
-            j.css("position","");
             j.css("opacity","0");
         }
 }
