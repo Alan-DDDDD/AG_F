@@ -67,7 +67,7 @@
   }
 
 .mybar{
-  background-color: #292929;
+  /* background-color: #292929; */
   list-style: none;
   display: flex;
   opacity: 0;
@@ -75,10 +75,14 @@
   overflow-x:auto;
   position: sticky;
   top:0;
+  margin: 0;
+  padding: 0;
 }
-
 .mybar>li{
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   white-space:nowrap;
+}
+.mybar>li>h6{
+  color: #fff;
 }
