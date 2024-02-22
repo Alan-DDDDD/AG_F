@@ -1,7 +1,9 @@
 $(function(){
-    $(window).scroll(function(){
-        mybar($(`.mysite`));
-    });
+    if($(`#view`).data("page")=="pdc"){
+        $(window).scroll(function(){
+            mybar($(`.mysite`));
+        });
+    }
 });
 
 function mybar(j){

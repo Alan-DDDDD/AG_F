@@ -85,10 +85,10 @@
 
           <ul class="menu-inner py-1" id="pageList">
             <!-- Dashboard -->
-            <li class="menu-item active" id="home">
-              <a href="#" class="menu-link">
+            <li class="menu-item active" id="pdc">
+              <a href="pdc.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-home"></i>
-                <div data-i18n="Analytics">首頁</div>
+                <div data-i18n="Analytics">商品列表</div>
               </a>
             </li>
             <li class="menu-item" id="cart">
@@ -135,6 +135,95 @@
               </div>
             <!-- </div> -->
           </div>
+          
+          
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y" id="view" data-page="pdc" style="height: 3000px;">
+             
+            </div>
+            <!-- / Content -->
+            <!--Cart-->
+            <div class="col-lg-4 col-md-6">
+              <div class="mt-1">
+                <!-- Modal -->
+                <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header" style="padding: 1rem 1.5rem 0.4rem;">
+                        <h5 class="modal-title" id="modalCenterTitle">購物車</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close" id="MClose"
+                        ></button>
+                      </div>
+                      <div class="modal-body" style="padding: 0.5rem 1.5rem;">
+                        <div id="pdcCart" style="max-height: 400px;overflow-y: scroll;">
+                          <div id="cartbody">還沒有選購商品喔</div>
+                        </div>
+                        <!-- <div class="divider text-start px-3 my-1">
+                          <div class="divider-text" style="padding: 0 0.25rem;">
+                            <h6>總計</h6>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="d-flex" style="justify-content: space-between;">
+                            <div>小計:</div>
+                            <div>$1,000</div>
+                          </div>
+                          <div class="d-flex" style="justify-content: space-between;">
+                            <div>運費:</div>
+                            <div>$1,000</div>
+                          </div>
+                          <div class="d-flex" style="justify-content: space-between;">
+                            <div>總計:</div>
+                            <div>$1,000</div>
+                          </div>
+                        </div> -->
+                      </div>
+                      
+                      <div class="modal-footer" style="padding: 0.25rem 1.5rem 1rem;">
+                        <!-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                          關閉
+                        </button> -->
+                        <button class="cartbtn" id="cartC" data-bs-dismiss="modal"> 繼續購物
+                          <span></span>
+                        </button>
+                        <button class="cartbtn" id="cartbuy"> 馬上下單
+                          <span></span>
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary" id="save">儲存</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bx bxs-cart mycart" data-bs-toggle="modal" data-bs-target="#modalCenter">
+              <!-- <li class="bx bxs-cart"></li> -->
+            </div>
+            <!--/Cart-->
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="#" target="_blank" class="footer-link fw-bolder">X-ALAN-D</a>
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+            <input hidden value="0" id="ch"/>
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
           <!-- Navbar -->
           <div style="position: fixed;top: 0;width: 100%;">
             <div class="mynav" style="position: absolute;top: 0;width: 100%;transition: background-color 0.2s;">
@@ -245,94 +334,6 @@
             
           </div>
           <!-- / Navbar -->
-          
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-            <div class="container-xxl flex-grow-1 container-p-y" id="view">
-             
-            </div>
-            <!-- / Content -->
-            <!--Cart-->
-            <div class="col-lg-4 col-md-6">
-              <div class="mt-1">
-                <!-- Modal -->
-                <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header" style="padding: 1rem 1.5rem 0.4rem;">
-                        <h5 class="modal-title" id="modalCenterTitle">購物車</h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close" id="MClose"
-                        ></button>
-                      </div>
-                      <div class="modal-body" style="padding: 0.5rem 1.5rem;">
-                        <div id="pdcCart" style="max-height: 400px;overflow-y: scroll;">
-                          <div id="cartbody">還沒有選購商品喔</div>
-                        </div>
-                        <!-- <div class="divider text-start px-3 my-1">
-                          <div class="divider-text" style="padding: 0 0.25rem;">
-                            <h6>總計</h6>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="d-flex" style="justify-content: space-between;">
-                            <div>小計:</div>
-                            <div>$1,000</div>
-                          </div>
-                          <div class="d-flex" style="justify-content: space-between;">
-                            <div>運費:</div>
-                            <div>$1,000</div>
-                          </div>
-                          <div class="d-flex" style="justify-content: space-between;">
-                            <div>總計:</div>
-                            <div>$1,000</div>
-                          </div>
-                        </div> -->
-                      </div>
-                      
-                      <div class="modal-footer" style="padding: 0.25rem 1.5rem 1rem;">
-                        <!-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                          關閉
-                        </button> -->
-                        <button class="cartbtn" id="cartC" data-bs-dismiss="modal"> 繼續購物
-                          <span></span>
-                        </button>
-                        <button class="cartbtn" id="cartbuy"> 馬上下單
-                          <span></span>
-                        </button>
-                        <!-- <button type="button" class="btn btn-primary" id="save">儲存</button> -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bx bxs-cart mycart" data-bs-toggle="modal" data-bs-target="#modalCenter">
-              <!-- <li class="bx bxs-cart"></li> -->
-            </div>
-            <!--/Cart-->
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="#" target="_blank" class="footer-link fw-bolder">X-ALAN-D</a>
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-            <input hidden value="0" id="ch"/>
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
       </div>
