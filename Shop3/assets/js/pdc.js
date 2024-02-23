@@ -1,19 +1,3 @@
-// const numberInput = document.getElementById('numberInput');
-//     const incrementButton = document.getElementById('increment');
-//     const decrementButton = document.getElementById('decrement');
-
-//     incrementButton.addEventListener('click', () => {
-//         if(parseInt(numberInput.value) < 10){
-//             numberInput.value = parseInt(numberInput.value) + 1;
-//         }
-//     });
-
-//     decrementButton.addEventListener('click', () => {
-//         if(parseInt(numberInput.value) > 1){
-//             numberInput.value = parseInt(numberInput.value) - 1;
-//         }
-//     });
-
 $(`.pdccount`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
@@ -24,3 +8,17 @@ $(`.pdccount`).on('click','.countbtn',function(){
         v.html(+v.html()-1);
     }
 });
+$(`.pdclistbtngp`).on('click','.addcart',function(){
+    let me = $(this);
+    let parent = me.parent();
+    let c = $(parent).find(".pdccountval").html();
+    let p = {
+        pdid : parent.data("id"),
+        count : +c
+    }
+    console.log(p);
+});
+
+function addCartView(){
+    
+}
