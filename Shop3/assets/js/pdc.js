@@ -17,10 +17,10 @@
 $(`.pdccount`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
-    let v = me.parent().find("input");
-    if(a=="plus"&&+v.val()<10){
-        v.val(+v.val()+1);
-    }else if(a=="minus"&&+v.val()>1){
-        v.val(+v.val()-1);
+    let v = me.parent().find(".pdccountval");
+    if(a=="plus"&&+v.html()<10){
+        v.html(+v.html()+1);
+    }else if(a=="minus"&&+v.html()>1){
+        v.html(+v.html()-1);
     }
 });

@@ -110,13 +110,20 @@
   margin: 0 0.2rem;
 }
 
-.pdccount input[type="number"] {
+/* .pdccount input[type="number"] {
   width: 3rem;
   padding: 0.2rem;
   font-size: 16px;
   border: 1px solid #ccc;
   text-align: center;
-  /* border-radius: 4px; */
+  border-radius: 4px;
+} */
+.pdccount .pdccountval{
+  width: 2rem;
+  padding: 0.2rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
 .pdccount button {
