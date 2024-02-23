@@ -1,9 +1,23 @@
 $(function(){
-    if($(`#view`).data("page")=="pdc"){
-        $(window).scroll(function(){
-            mybar($(`.mysite`));
+    $(window).scroll(function(){
+            if($(`#view`).data("page")=="pdc"){
+                mybar($(`.mysite`));
+            }
         });
-    }
+});
+
+$(function(){
+    getddl(["ITEM"]).then(x=>{
+        if(x){
+            let bar = $(`.mybar`);
+            bar.empty();
+            $.each(ddllist["ITEM"],(i,d)=>{
+                bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
+            })
+        }else{
+            console.log(msg);
+        }
+    }).catch(x=>{console.log(x)});
 });
 
 function mybar(j){
@@ -20,6 +34,6 @@ function mybar(j){
 }
 $(`.mybar`).on('click','li',function(){
     if($(this).parent().data("view")=="Y"){
-        alert($(this).html());
+        alert($(this).data("id"));
     }
 });

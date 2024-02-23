@@ -1,6 +1,5 @@
 let i = $(`#ch`);
 let js = i.val();
-console.log(js);
 
 // liff.init({
 //     liffId:liffId
@@ -90,8 +89,15 @@ $(`#pageList li`).on(`click`,function(event){
     // }
     if(id!="cart"){
         reList(id);
-        reView(id);
+        reView(id).then(x=>{
+            $(`#view`).data("page",id);
+            let j = $(`.mysite`);
+            j.css("opacity","0");
+            $(`.mynav`).css("background-color","");
+            j.data("view","N");
+        });
     }
+    $(`#menuclose`).click();
 })
 
 function reList(page){
