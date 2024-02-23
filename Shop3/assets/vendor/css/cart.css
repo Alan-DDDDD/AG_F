@@ -138,3 +138,9 @@
 .input-container button:hover {
   background-color: #baa88b;
 }
+
+.pdcprice{
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
