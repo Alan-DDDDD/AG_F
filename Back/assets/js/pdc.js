@@ -41,9 +41,9 @@ $(`#save`).on('click',function(){
         Brand : $(`#bnd option:selected`).val(),
         Pdcnm : $(`#pdcnm`).val(),
         Item : $(`#item option:selected`).val(),
-        Price : $(`#price`).val(),
+        Price : $(`#price`).val() || 0,
         Unit : $(`#unit option:selected`).val(),
-        Stock : $(`#stock`).val(),
+        Stock : $(`#stock`).val() || 0,
         Caution : $(`#caution`).val(),
         Agree : $(`#agree`).is(":checked")?"Y":"N"
     }
