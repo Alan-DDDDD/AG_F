@@ -159,7 +159,7 @@ function cM(){
     $(`#unit option`).removeAttr("selected");
     $(`#agree`).removeAttr("checked");
     $(`#pdcnm`).val('');
-    $(`#price`).val('');
+    $(`#price`).val(0);
     $(`#stock`).val('');
     $(`#caution`).val('');
     $(`#save`).data("id",0);
