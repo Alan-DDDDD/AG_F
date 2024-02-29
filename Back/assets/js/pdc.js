@@ -34,7 +34,7 @@ $(`#select`).on(`click`,function(){
         alert(x);
     });
 });
-
+// 
 $(`#save`).on('click',function(){
     let p = {
         Pdid : $(`#save`).data(`id`),
@@ -110,6 +110,11 @@ function bindT(){
         let b = d.Agree == "Y";
         let ac = b ? "danger":"success";
         let at = b ? "下架":"上架";
+        let v = ddllist["unit"].filter(x=>x.Dataid == d.Unit)[0];
+        let vv = ""
+        if(v){
+            vv = v.Data
+        }
         t.append(`<tr>
                       <td class="ud" data-id="${d.Pdid}" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalCenter">${d.Pdcnm}</td>
                       <td>${d.Price.numberFormat(0,".",",")}</td>
