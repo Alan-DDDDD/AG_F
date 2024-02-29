@@ -47,31 +47,35 @@ $(`#save`).on('click',function(){
         Caution : $(`#caution`).val(),
         Agree : $(`#agree`).is(":checked")?"Y":"N"
     }
-    var form = new FormData();
-    let f = [
-        document.getElementById('pic1').files[0],
-        document.getElementById('pic2').files[0],
-        document.getElementById('pic3').files[0]
-    ]
-    for(let i = 0;i<f.length;i++){
-        if(f[i]){
-            form.append(`files`,f[i],'Pic'+(i+1))
+    if(p.Brand =="" || p.Item == "" || p.Unit == ""){
+        alert("請將資料填寫齊全");
+    }else{
+        var form = new FormData();
+        let f = [
+            document.getElementById('pic1').files[0],
+            document.getElementById('pic2').files[0],
+            document.getElementById('pic3').files[0]
+        ]
+        for(let i = 0;i<f.length;i++){
+            if(f[i]){
+                form.append(`files`,f[i],'Pic'+(i+1))
+            }
         }
+        form.append(`json`,JSON.stringify(p));
+        let a = p.Pdid ? "Update":"Insert";
+        postFD("Product",a,form).then(x=>{
+            if(x){
+                bindT();
+                $(`#qArea`).hide(130);
+            }else{
+                alert(msg);
+            }
+        }).catch(x=>{
+            alert(x);
+        }).finally(x=>{
+            $(`#MClose`).click();
+        });
     }
-    form.append(`json`,JSON.stringify(p));
-    let a = p.Pdid ? "Update":"Insert";
-    postFD("Product",a,form).then(x=>{
-        if(x){
-            bindT();
-            $(`#qArea`).hide(130);
-        }else{
-            alert(msg);
-        }
-    }).catch(x=>{
-        alert(x);
-    }).finally(x=>{
-        $(`#MClose`).click();
-    });
 });
 
 $(`#pdclist`).on(`click`,`.agree`,async function(){
