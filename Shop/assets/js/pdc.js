@@ -1,7 +1,10 @@
 $(function(){
     bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
 });
-$(`.pdccount`).on('click','.countbtn',function(){
+$(`.view`).on('click',function(){
+    alert('cc');
+});
+$(`#view`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
     let v = me.parent().find(".pdccountval");
@@ -11,7 +14,7 @@ $(`.pdccount`).on('click','.countbtn',function(){
         v.html(+v.html()-1);
     }
 });
-$(`.pdclistbtngp`).on('click','.addcart',function(){
+$(`#view`).on('click','.addcart',function(){
     let me = $(this);
     let parent = me.parent();
     let c = $(parent).find(".pdccountval").html();
@@ -43,16 +46,16 @@ function bindPdclist(item){
                                     <div class="card-body" style="padding: 1rem 1.5rem;">
                                         <div class="row">
                                             <div class="col-4" style="padding: 0;">
-                                                <img src="../assets/img/elements/17.jpg" style="width: 100%;"/>
+                                                <img src="../assets/img/backgrounds/nopic.jpg" style="width: 100%;"/>
                                             </div>
                                             <div class="col-8">
                                                 <h5 class="card-title mb-2">${d.Pdcnm}</h5>
-                                                <div class="card-subtitle text-muted mb-3">瓶</div>
+                                                <div class="card-subtitle text-muted mb-3">${d.Unit}</div>
                                                 <p class="card-text">
                                                     備註
                                                 </p>
                                                 <div class="pdclistbtngp" data-id="1">
-                                                    <div class="pdcprice">$159</div>
+                                                    <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
                                                     <div class="pdccount">
                                                         <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
                                                         <div class="pdccountval">1</div>
