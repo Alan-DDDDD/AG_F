@@ -36,11 +36,7 @@ $(`#pdclist`).on('click','.addcart',function(){
         alert(x);
     })
 });
-$(`.mybar`).on('click','li',function(){
-    if($(this).parent().data("view")=="Y"){
-        bindPdclist($(this).data("id"));
-    }
-});
+
 
 function bindPdclist(item){
     let list = $(`#pdclist`);
@@ -50,11 +46,13 @@ function bindPdclist(item){
             if(x){
                 list.empty();
                 $.each(datalist,(i,d)=>{
-                    list.append(`<div class="card mb-2">
+                    getD("Product","getFile",`pdid=${d.Pdid}`).then(x=>{
+                        if(x){
+                            list.append(`<div class="card mb-2">
                                     <div class="card-body" style="padding: 1rem 1.5rem;">
                                         <div class="row">
                                             <div class="col-4" style="padding: 0;">
-                                                <img src="../assets/img/backgrounds/nopic.jpg" style="width: 100%;"/>
+                                                <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" style="width: 100%;"/>
                                             </div>
                                             <div class="col-8">
                                                 <h5 class="card-title mb-2">${d.Pdcnm}</h5>
@@ -62,7 +60,7 @@ function bindPdclist(item){
                                                 <p class="card-text">
                                                     備註
                                                 </p>
-                                                <div class="pdclistbtngp" data-id="1">
+                                                <div class="pdclistbtngp" data-id="${d.Pdid}">
                                                     <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
                                                     <div class="pdccount">
                                                         <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
@@ -78,6 +76,10 @@ function bindPdclist(item){
                                         </div>
                                     </div>
                                 </div>`);
+                        }else{
+                            console.log(msg);
+                        }
+                    }).catch(x=>console.log(x));
                 });
             }else{
                 console.log(msg);

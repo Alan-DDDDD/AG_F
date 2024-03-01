@@ -168,18 +168,19 @@ async function pgD(c,a,p,g,b,l){
 function cdl(p){
   let c = true;
   if(p == "cart"){
+    console.log(cart.length)
     if(cart.length == 0){
       cart.push(data);
     }
     $.each(cart,(i,d)=>{
-      if(d.Pdid == data.Pdid){
+      if(d.car.Pdid == data.car.Pdid){
         cart[i] = data;
         c = false;
       }
-      if(c){
-        cart.push(data);
-      }
     })
+    if(c){
+      cart.push(data);
+    }
   }else{
     $.each(datalist,(i,d)=>{
       switch (p){

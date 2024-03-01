@@ -96,6 +96,10 @@
   color:#292929
 }
 
+.card-title{
+  color:#292929
+}
+
 .pdclistbtngp{
   display: flex;
   justify-content: flex-end;
@@ -146,7 +150,7 @@
   background-color: #baa88b;
 }
 
-.pdcprice{
+.pdcprice,.pdcunit{
   width: 100%;
   text-align: center;
   align-self: center;

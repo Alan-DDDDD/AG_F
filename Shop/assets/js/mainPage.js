@@ -87,6 +87,21 @@ $(`#pageList li`).on(`click`,function(event){
     // }else{
     //     liff.login();
     // }
+    changePage(id);
+    // if(id!="cart"){
+    //     reList(id);
+    //     reView(id).then(x=>{
+    //         $(`#view`).data("page",id);
+    //         let j = $(`.mysite`);
+    //         j.css("opacity","0");
+    //         $(`.mynav`).css("background-color","");
+    //         j.data("view","N");
+    //     });
+    // }
+    $(`#menuclose`).click();
+})
+
+function changePage(id){
     if(id!="cart"){
         reList(id);
         reView(id).then(x=>{
@@ -97,8 +112,7 @@ $(`#pageList li`).on(`click`,function(event){
             j.data("view","N");
         });
     }
-    $(`#menuclose`).click();
-})
+}
 
 function reList(page){
     let lis = $(`#pageList li`);
