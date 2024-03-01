@@ -1,10 +1,13 @@
 $(function(){
-    bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
-});
-$(`.view`).on('click',function(){
-    alert('cc');
-});
-$(`#view`).on('click','.countbtn',function(){
+    getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
+        if(x){
+            bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
+        }else{
+            console.log(msg);
+        }
+    }).catch(x=>{console.log(x)});
+})
+$(`#pdclist`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
     let v = me.parent().find(".pdccountval");
@@ -14,7 +17,7 @@ $(`#view`).on('click','.countbtn',function(){
         v.html(+v.html()-1);
     }
 });
-$(`#view`).on('click','.addcart',function(){
+$(`#pdclist`).on('click','.addcart',function(){
     let me = $(this);
     let parent = me.parent();
     let c = $(parent).find(".pdccountval").html();
@@ -23,7 +26,7 @@ $(`#view`).on('click','.addcart',function(){
         count : +c
     }
     console.log(p);
-    postD("Car","addCart",p,false,"cart").then(x=>{
+    postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
             bindCart();
         }else{
@@ -32,6 +35,11 @@ $(`#view`).on('click','.addcart',function(){
     }).catch(x=>{
         alert(x);
     })
+});
+$(`.mybar`).on('click','li',function(){
+    if($(this).parent().data("view")=="Y"){
+        bindPdclist($(this).data("id"));
+    }
 });
 
 function bindPdclist(item){
@@ -50,7 +58,7 @@ function bindPdclist(item){
                                             </div>
                                             <div class="col-8">
                                                 <h5 class="card-title mb-2">${d.Pdcnm}</h5>
-                                                <div class="card-subtitle text-muted mb-3">${d.Unit}</div>
+                                                <div class="card-subtitle text-muted mb-3">${ddllist["UNIT"].filter(x=>x.Dataid == d.Unit)[0].Data}</div>
                                                 <p class="card-text">
                                                     備註
                                                 </p>
@@ -78,8 +86,3 @@ function bindPdclist(item){
             console.log(x);
         })
 }
-
-function bindCart(){
-
-}
-

@@ -1,13 +1,5 @@
 $(function(){
-    $(window).scroll(function(){
-            if($(`#view`).data("page")=="pdc"){
-                mybar($(`.mysite`));
-            }
-        });
-});
-
-$(function(){
-    getddl(["ITEM"]).then(x=>{
+    getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
         if(x){
             let bar = $(`.mybar`);
             bar.empty();
@@ -18,11 +10,25 @@ $(function(){
             console.log(msg);
         }
     }).catch(x=>{console.log(x)});
+    getCart("Car","GetCart").then(x=>{
+        if(x){
+            let x;
+        }else{
+            console.log(msg);
+        }
+    }).catch(x=>{console.log(x)})
+})
+$(function(){
+    $(window).scroll(function(){
+            if($(`#view`).data("page")=="pdc"){
+                mybar($(`.mysite`));
+            }
+        });
 });
 
 function mybar(j){
     var scrollTop = $(window).scrollTop();
-        if(scrollTop>=$(`#bi`).height()){
+        if(scrollTop>=120 || +($(`#view`).css('height').substring(0,4))<700){
             j.css("opacity","1");
             $(`.mynav`).css("background-color","#baa88b");
             j.data("view","Y");
@@ -32,8 +38,19 @@ function mybar(j){
             j.data("view","N");
         }
 }
-$(`.mybar`).on('click','li',function(){
-    if($(this).parent().data("view")=="Y"){
-        alert($(this).data("id"));
+// ($(`#bi`).height())
+
+function bindCart(){
+    let car = $(`#cartbody`);
+}
+
+$(`#cartbody`).on('click','.countbtn',function(){
+    let me = $(this);
+    let a = me.data('action');
+    let v = me.parent().find(".pdccountval");
+    if(a=="plus"&&+v.html()<10){
+        v.html(+v.html()+1);
+    }else if(a=="minus"&&+v.html()>1){
+        v.html(+v.html()-1);
     }
 });

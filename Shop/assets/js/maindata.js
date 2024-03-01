@@ -1,5 +1,5 @@
-var url = "https://76fe-61-230-139-61.ngrok-free.app";
-//var url = "https://localhost:5001";
+//var url = "https://76fe-61-230-139-61.ngrok-free.app";
+var url = "https://localhost:5001";
 var fronturl = "https://alan-ddddd.github.io/AG_F/Back/html";
 var datalist;
 var ddllist;
@@ -8,6 +8,7 @@ var curruntid;
 var curruntlevel;
 var ddlp;
 var data;
+var cart = [];
 var msg;
 var liffId = "2003018925-03bR6Jo3";
 var h = new Headers({
@@ -53,6 +54,25 @@ async function getA(c,a,p){
   var d = await r.json();
   if(d.Status){
     datalist = d.Data;
+    return true;
+  }else{
+    msg = d.Msg;
+    return false;
+  }
+}
+
+async function getCart(c,a,p){
+  let u = url + "/api/" + c + "/" + a;
+  if(p){
+    u = u + "?" + p;
+  }
+  var r = await fetch(u,{
+    method :"GET",
+    headers : h
+  });
+  var d = await r.json();
+  if(d.Status){
+    cart = d.Data;
     return true;
   }else{
     msg = d.Msg;
@@ -147,30 +167,39 @@ async function pgD(c,a,p,g,b,l){
 //修改datalist
 function cdl(p){
   let c = true;
-  $.each(datalist,(i,d)=>{
-    switch (p){
-      case 'fare':
-        if(d.fare.Id == data.fare.Id){
-          datalist[i] = data;
-          c = false;
-        }
-        break;
-      case 'cust':
-        if(d.cust.Custid == data.cust.Custid){
-          datalist[i] = data;
-          c = false;
-        }
-        break;
-      default:
-        if(d.Pdid == data.Pdid){
-          datalist[i] = data;
-          c = false;
-        }
-        break;
+  if(p == "cart"){
+    if(cart.length == 0){
+      cart.push(data);
     }
-  });
-  if(c){
-    datalist.push(data);
+    $.each(cart,(i,d)=>{
+      if(d.Pdid == data.Pdid){
+        cart[i] = data;
+        c = false;
+      }
+      if(c){
+        cart.push(data);
+      }
+    })
+  }else{
+    $.each(datalist,(i,d)=>{
+      switch (p){
+        case 'fare':
+          if(d.fare.Id == data.fare.Id){
+            datalist[i] = data;
+            c = false;
+          }
+          break;
+          default:
+            if(d.Pdid == data.Pdid){
+              datalist[i] = data;
+              c = false;
+            }
+            break;
+      }
+    });
+    if(c){
+      datalist.push(data);
+    }
   }
 }
 

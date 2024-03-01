@@ -1,5 +1,5 @@
-var url = "https://668a-218-35-179-173.ngrok-free.app";
-//var url = "https://localhost:5001";
+//var url = "https://668a-218-35-179-173.ngrok-free.app";
+var url = "https://localhost:5001";
 var fronturl = "https://alan-ddddd.github.io/AG_F/Back/html";
 var datalist;
 var ddllist;
