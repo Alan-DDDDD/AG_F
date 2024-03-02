@@ -1,35 +1,162 @@
-              <!-- 標頭 -->
-              <h4 class="fw-bold py-2">
-                <span class="text-muted fw-light">訂單頁面</span>
-              </h4>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary" id="signup">申請</button>
+<!-- 標頭 -->
+<h4 class="fw-bold py-2">
+  <span class="text-muted fw-light">訂單頁面</span>
+</h4>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary" id="signup">申請</button>
+</div>
+<div class="card mt-2">
+  <div class=" p-3 card-body">
+    <div class="row">
+      <div class="col mb-3">
+        <label for="phone" class="form-label">電話</label>
+        <input
+        type="text"
+        id="phone"
+        class="form-control"
+        placeholder=""
+        />
+      </div>
+      <div class="col mb-3">
+        <label for="addr" class="form-label">地址</label>
+        <input
+        type="text"
+        id="addr"
+        class="form-control"
+        placeholder=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mt-2">
+  <div class="table-responsive text-nowrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>訂單編號</th>
+          <th>金額</th>
+          <th>取貨方式</th>
+          <th>動作</th>
+          <th>狀態</th>
+        </tr>
+      </thead>
+      <tbody class="table-border-bottom-0" id="orderlist">
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- 表單 -->
+<div class="col-lg-4 col-md-6">
+  <div class="mt-1">
+    <!-- Modal -->
+    <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCenterTitle">訂單細節</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close" id="MClose"
+            ></button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="mb-3">
+              <label for="bnd" class="form-label">品牌</label>
+              <select class="form-select ddlbnd" id="bnd" aria-label="Default select example">
+                <option value="1">愛之味</option>
+                <option value="2">味丹</option>
+                <option value="3">味全</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="item" class="form-label">分類</label>
+              <select class="form-select ddlitem" id="item" aria-label="Default select example">
+                <option value="1">飲料</option>
+                <option value="2">罐頭</option>
+                <option value="3">味全</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="pdcnm" class="form-label">產品名稱</label>
+              <input
+                type="text"
+                id="pdcnm"
+                class="form-control"
+                />
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col">
+                <label for="price" class="form-label">單價</label>
+                <input
+                type="number"
+                id="price"
+                class="form-control"
+                />
               </div>
-              <div class="card mt-2">
-                <div class=" p-3 card-body">
-                  <!-- d-grid d-sm-flex -->
-                  <div class="row">
-                    <div class="col mb-3">
-                      <label for="phone" class="form-label">電話</label>
-                      <input
-                      type="text"
-                      id="phone"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                    <div class="col mb-3">
-                      <label for="addr" class="form-label">地址</label>
-                      <input
-                      type="text"
-                      id="addr"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                  </div>
+              <div class="col">
+                <label for="unit" class="form-label">單位</label>
+                <select class="form-select ddlunit" id="unit" aria-label="Default select example">
+                  <option value="0">個</option>
+                  <option value="1">包</option>
+                  <option value="2">斤</option>
+                  <option value="3">公斤</option>
+                  <option value="4">兩</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="stock" class="form-label">庫存量</label>
+              <input type="number" id="stock" class="form-control"/>
+            </div>
+            <div class="row">
+              <div class="col mb-3">
+                <label for="caution" class="form-label">注意事項</label>
+                <input
+                type="text"
+                id="caution"
+                class="form-control"
+                placeholder=""
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8">
+                <label for="pdcpic" class="form-label">產品圖片</label>
+                <div class="input-group">
+                  <label class="input-group-text btn btn-primary" for="pic1" style="padding: 0.2rem 1rem;">圖1</label>
+                  <input hidden type="file" class="form-control uimg" id="pic1"/>
+                  <label class="input-group-text btn btn-primary" for="pic2" style="padding: 0.2rem 1rem;">圖2</label>
+                  <input hidden type="file" class="form-control uimg" id="pic2"/>
+                  <input hidden type="file" class="form-control uimg" id="pic3"/>
+                  <label class="input-group-text btn btn-primary" for="pic3" style="padding: 0.2rem 1rem;">圖3</label>
                 </div>
               </div>
-              <div class="card mt-2">
-                <div></div>
+              <div class="col-4" style="align-self: center;">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="agree" />
+                  <label class="form-check-label" for="agree"> 上架 </label>
+                </div>
               </div>
+            </div>
+            <div class="row mt-2">
+              <img src="../assets/img/backgrounds/nopic.jpg" class="pic" name="pic1" style="width:30% ;">
+              <img src="../assets/img/backgrounds/nopic.jpg" class="pic" name="pic2" style="width:30% ;">
+              <img src="../assets/img/backgrounds/nopic.jpg" class="pic" name="pic3" style="width:30% ;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              關閉
+            </button>
+            <button type="button" class="btn btn-primary" id="save">儲存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
