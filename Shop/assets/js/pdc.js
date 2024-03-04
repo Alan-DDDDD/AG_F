@@ -11,7 +11,7 @@ $(`#pdclist`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
     let v = me.parent().find(".pdccountval");
-    if(a=="plus"&&+v.html()<10){
+    if(a=="plus"){
         v.html(+v.html()+1);
     }else if(a=="minus"&&+v.html()>1){
         v.html(+v.html()-1);

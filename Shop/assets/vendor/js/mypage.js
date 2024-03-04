@@ -76,10 +76,23 @@ $(`#cartbody`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
     let v = me.parent().find(".pdccountval");
-    if(a=="plus"&&+v.html()<10){
+    if(a=="plus"){
         v.html(+v.html()+1);
     }else if(a=="minus"&&+v.html()>1){
         v.html(+v.html()-1);
+    }else if(a=="minus"&&+v.html()==1){
+        if(confirm("確定要移除這個商品嗎?")){
+            me.parents('.card').remove();
+        }
+    }
+    if(a=="minus"){
+        if(+v.html()==1){
+            me.find(`i`).removeClass("bx-minus");
+            me.find(`i`).addClass("bx-trash");
+        }
+    }else{
+        me.prev().prev().find(`i`).removeClass("bx-trash");
+        me.prev().prev().find(`i`).addClass("bx-minus");
     }
 });
 
@@ -92,3 +105,10 @@ $(`#cartC`).on('click',function(){
         changePage("pdc");
     }
 });
+
+$(`#modalCenter`).on('click',function(e){
+    let id = $(e.target).attr('id');
+    if(id == 'cartC' || id == 'modalCenter' || id == 'MClose' || id == 'cartbuy'){
+        console.log("重新更新carTable")
+    }
+})
