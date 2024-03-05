@@ -41,20 +41,28 @@
           <option value="Y">0977888777 王小明</option>
           <option value="N">0932334562 張小美</option>
         </select>
-        <p style="color: brown;" id="preaddr">台北市內湖區瑞光路605號</p>
+        <p style="color: brown;" id="preaddr"></p>
     </div>
-    <div class="col mb-2">
-        <label for="name" class="form-label">收件人</label>
-        <input type="text" id="name" class="form-control" placeholder=""/>
+    <div class="divider text-start px-3 my-1 addaddr">
+        <div class="divider-text" style="padding: 0 0.25rem;">
+            <h6>新增收貨資訊</h6>
+        </div>
     </div>
-    <div class="col mb-2">
-        <label for="phone" class="form-label">收件人連絡電話</label>
-        <input type="text" id="phone" class="form-control" placeholder=""/>
-    </div>
-    <div class="col mb-2">
-        <label for="addr" class="form-label">收件地址</label>
-        <input type="text" id="addr" class="form-control" placeholder=""/>
-        <p style="color: brown;">太遠外送員會不想送喔</p>
+    <div id="addaddr">
+        <div class="col mb-2">
+            <label for="name" class="form-label">收件人</label>
+            <input type="text" id="name" class="form-control" placeholder=""/>
+        </div>
+        <div class="col mb-2">
+            <label for="phone" class="form-label">收件人連絡電話</label>
+            <input type="text" id="phone" class="form-control" placeholder=""/>
+        </div>
+        <div class="col mb-2">
+            <label for="addr" class="form-label">收件地址</label>
+            <input type="text" id="addr" class="form-control" placeholder=""/>
+            <p style="color: brown;">太遠外送員會不想送喔</p>
+        </div>
+        <button type="button" id="sendaddr" class="btn btn-primary">新增</button>
     </div>
 </div>
 <div class="card mb-2" style="padding: 0.5rem 1.5rem;">

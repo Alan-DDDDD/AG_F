@@ -4199,8 +4199,8 @@ textarea.form-control-lg {
 
 .badge {
   display: inline-block;
-  padding: 0.52em 0.593em;
-  font-size: 0.8125em;
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1;
   color: #fff;

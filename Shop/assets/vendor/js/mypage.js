@@ -53,7 +53,7 @@ function bindCart(){
                                   <div class="pdclistbtngp" data-id="${d.product.Pdid}">
                                     <div class="pdcprice">$${d.product.Price.numberFormat(0,".",",")}</div>
                                     <div class="pdccount">
-                                          <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
+                                          <button class="countbtn countleft" data-action="minus"><i class='bx bx-${d.car.Count == 1 ? "trash":"minus"}'></i></button>
                                           <div class="pdccountval" style="min-width: 2rem;">${d.car.Count}</div>
                                           <button class="countbtn countright" data-action="plus"><i class='bx bx-plus'></i></button>
                                           <div class="card-text pdcunit"  style="margin: 0 0.5rem;">${ddllist["UNIT"].filter(x=>x.Dataid == d.product.Unit)[0].Data || ""}</div>
@@ -76,13 +76,18 @@ $(`#cartbody`).on('click','.countbtn',function(){
     let me = $(this);
     let a = me.data('action');
     let v = me.parent().find(".pdccountval");
+    let id = me.parents('.pdclistbtngp').data('id');
+    let pdc = cart.filter(x=>x.product.Pdid == id)[0];
     if(a=="plus"){
         v.html(+v.html()+1);
+        pdc.car.Count += 1; 
     }else if(a=="minus"&&+v.html()>1){
         v.html(+v.html()-1);
+        pdc.car.Count -= 1; 
     }else if(a=="minus"&&+v.html()==1){
         if(confirm("確定要移除這個商品嗎?")){
             me.parents('.card').remove();
+            cart.splice(cart.indexOf(pdc),1);
         }
     }
     if(a=="minus"){
@@ -97,6 +102,16 @@ $(`#cartbody`).on('click','.countbtn',function(){
 });
 
 $(`#cartbuy`).on('click',function(){
+    postD("Order","InsertOrder",cart).then(x=>{
+        if(x){
+            console.log(data);
+            order = data;
+        }else{
+            console.log(msg);
+        }
+    }).catch(x=>{
+        console.log(x);
+    })
     changePage("order");
 });
 
@@ -110,5 +125,12 @@ $(`#modalCenter`).on('click',function(e){
     let id = $(e.target).attr('id');
     if(id == 'cartC' || id == 'modalCenter' || id == 'MClose' || id == 'cartbuy'){
         console.log("重新更新carTable")
+        postD("Car","UpdateCart",cart).then(x=>{
+            if(x){
+                order = data;
+            }else{
+                console.log(msg)
+            }
+        }).catch(x=>{console(x)})
     }
 })

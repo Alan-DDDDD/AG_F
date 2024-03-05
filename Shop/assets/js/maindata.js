@@ -9,6 +9,9 @@ var curruntlevel;
 var ddlp;
 var data;
 var cart = [];
+var orderdetail = [];
+var addr = [];
+var order;
 var msg;
 var liffId = "2003018925-03bR6Jo3";
 var h = new Headers({
