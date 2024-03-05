@@ -85,7 +85,7 @@ $(`#caddr`).on('change',function(){
 })
 
 $(`#pay`).on('click',function(){
-    order.Addr1 = $(`#caddr option:selected`).val();
+    order.Addrid = $(`#caddr option:selected`).val();
     order.Method = $(`#mtd option:selected`).val();
     order.Total = order.Price + order.Fare;
     let p = {
