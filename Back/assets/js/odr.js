@@ -6,7 +6,10 @@ if(caseid){
         $(`#d`).click();
     })
 }
-
+{/* <div style="display: flex;margin:0 0.25rem">
+  <div class="text-start col-6">送貨狀態:</div>
+  <div class="text-end col-6">${data.lgtStatus}</div>
+</div> */}
 function bindM(){
     let title = $(`#modalCenterTitle`).find('span');
     title.html(caseid);
@@ -21,10 +24,7 @@ function bindM(){
                          <div class="text-start col-6">送貨:</div>
                          <div class="text-end col-6">${data.lgtnm}</div>
                        </div>
-                       <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">送貨狀態:</div>
-                         <div class="text-end col-6">${data.lgtStatus}</div>
-                       </div>
+                       
                      </div>
                      <div class="col-6" style="padding: 0 0.25rem;">
                        <div style="display: flex;margin:0 0.25rem">
