@@ -58,5 +58,11 @@ function bindM(){
 }
 
 $(`#giveup`).on('click',function(){
-    
+    getD("Order","giveup","caseid="+caseid).then(x=>{
+        if(x){
+            alert(msg);
+        }else{
+            alert(msg);
+        }
+    }).catch(x=>{alert(x)})
 });
