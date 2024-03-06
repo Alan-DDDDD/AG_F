@@ -16,11 +16,11 @@ function bindM(){
     </div>
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">送貨:</div>
-      <div class="text-end col-6">小張</div>
+      <div class="text-end col-6">${data.methodNm}</div>
     </div>
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">送貨狀態:</div>
-      <div class="text-end col-6">${data.methodNm}</div>
+      <div class="text-end col-6">未取貨</div>
     </div>
   </div>
   <div class="col-6" style="padding: 0 0.25rem;">
