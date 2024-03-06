@@ -75,3 +75,12 @@ $(`#assign`).on('click',function(){
         }
     }).catch(x=>{alert(x)})
 });
+$(`#keep`).on('click',function(){
+    getD("Order","keep","caseid="+caseid).then(x=>{
+        if(x){
+            alert(msg);
+        }else{
+            alert(msg);
+        }
+    }).catch(x=>{alert(x)})
+});
