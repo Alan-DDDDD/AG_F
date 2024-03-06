@@ -111,6 +111,8 @@ function changePage(id){
             $(`.mynav`).css("background-color","");
             j.data("view","N");
         });
+    }else if($(`#view`).data('page')!="order"){
+        $(`#mycart`).click()
     }
 }
 

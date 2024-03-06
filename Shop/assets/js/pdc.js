@@ -30,7 +30,7 @@ $(`#pdclist`).on('click','.addcart',function(){
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
             bindCart();
-            $(`#cartred`).html(+me.html()+1);
+            //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())
         }else{
             alert(msg);

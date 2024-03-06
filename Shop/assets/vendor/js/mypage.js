@@ -43,7 +43,9 @@ function mybar(j){
 function bindCart(){
     let car = $(`#cartbody`);
     car.empty();
+    let cartred = $(`#cartred`);
     $.each(cart,(i,d)=>{
+        cartred.html(i+1)
         car.append(`
                     <div class="card mb-2 cart">
                       <div class="card-body" style="padding: 1rem 1.5rem;">
@@ -88,6 +90,7 @@ $(`#cartbody`).on('click','.countbtn',function(){
         if(confirm("確定要移除這個商品嗎?")){
             me.parents('.card').remove();
             cart.splice(cart.indexOf(pdc),1);
+            bindCart();
         }
     }
     if(a=="minus"){
@@ -106,6 +109,7 @@ $(`#cartbuy`).on('click',function(){
         if(x){
             console.log(data);
             order = data;
+            bindView()
         }else{
             console.log(msg);
         }

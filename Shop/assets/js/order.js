@@ -5,12 +5,10 @@ $(`.mycart`).hide();
 $(function(){
     let lst = $(`#mtd`);
     lst.empty();
-    lst.append(`<option value="">請選擇</option>`)
     $.each(ddllist["LST"],(i,d)=>{
-        lst.append(`<option value="${d.Dataid==1? "Y":"N"}">${d.Data}</option>`)
+        lst.append(`<option value="${d.Dataid}">${d.Data}</option>`)
     });
 })
-
 function getaddr(){
     getD("Addr","GetAddr").then(x=>{
         if(x){
@@ -36,12 +34,16 @@ $(`#mtd`).on(`change`,function(){
             $(`#addrP`).show(300);
             $(`#addaddr`).hide();
             order.Fare = 70;
-            //addrprice.html('70');
             break;
-        case 'Y':
+        case '1':
             $(`#addrP`).hide(300);
             order.Fare = 0;
             //addrprice.html('0');
+            break;
+        default:
+            $(`#addrP`).show(300);
+            $(`#addaddr`).hide();
+            order.Fare = 70;
             break;
     };
     bindView();
@@ -89,10 +91,18 @@ $(`#pay`).on('click',function(){
     order.Method = $(`#mtd option:selected`).val();
     order.Total = order.Price + order.Fare;
     let p = {
-        cart : cart,
+        carts : cart,
         order:order
     };
     console.log(p)
+    postD("Order","UpdateOrder",p).then(x=>{
+        if(x){
+            console.log(data);
+        }else{
+            alert("訂購成功");
+            changePage("pdc");
+        }
+    }).catch(x=>{console.log(x)})
 });
 
 function bindOrder(){
@@ -141,9 +151,9 @@ $(`#orderbody`).on('click','.countbtn',function(){
         order.Price -= pdc.product.Price;
     }else if(a=="minus"&&+v.html()==1){
         if(confirm("確定要移除這個商品嗎?")){
-            me.parents('.card').remove();
             cart.splice(cart.indexOf(pdc),1);
             order.Price -= pdc.product.Price;
+            bindOrder();
         }
     }
     if(a=="minus"){
