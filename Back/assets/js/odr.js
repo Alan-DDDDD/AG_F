@@ -2,6 +2,7 @@ if(caseid){
     getD("Order","Get","caseid="+caseid).then(x=>{
         console.log(data);
         alert(caseid);
+        bindM();
         $(`#d`).click();
     })
 }
@@ -26,19 +27,19 @@ function bindM(){
   <div class="col-6" style="padding: 0 0.25rem;">
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">總計:</div>
-      <div class="text-end col-6">$577</div>
+      <div class="text-end col-6">$${data.caseorder.Price}</div>
     </div>
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">取貨方式:</div>
-      <div class="text-end col-6">外送</div>
+      <div class="text-end col-6">${data.methodNm}</div>
     </div>
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">運費:</div>
-      <div class="text-end col-6">$70</div>
+      <div class="text-end col-6">$${data.caseorder.Fare}</div>
     </div>
     <div style="display: flex;margin:0 0.25rem">
       <div class="text-start col-6">合計:</div>
-      <div class="text-end col-6">$647</div>
+      <div class="text-end col-6">$${data.caseorder.Total}</div>
     </div>
   </div>`)
 }
