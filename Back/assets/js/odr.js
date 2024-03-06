@@ -55,6 +55,7 @@ function bindM(){
             <td>$${d.Odetail.Amount}</td>
         </tr>`)
     });
+    bindbtn();
 }
 
 function bindbtn(){
