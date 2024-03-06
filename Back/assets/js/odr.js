@@ -15,15 +15,15 @@ function bindM(){
     datapage.append(`<div class="col-6 border-end" style="padding: 0 0.25rem;">
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-6">訂單狀態:</div>
-                         <div class="text-end col-6">未接單</div>
+                         <div class="text-end col-6">${data.caseStatus}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-6">送貨:</div>
-                         <div class="text-end col-6">${data.methodNm}</div>
+                         <div class="text-end col-6">${data.lgtnm}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-6">送貨狀態:</div>
-                         <div class="text-end col-6">未取貨</div>
+                         <div class="text-end col-6">${data.lgtStatus}</div>
                        </div>
                      </div>
                      <div class="col-6" style="padding: 0 0.25rem;">
