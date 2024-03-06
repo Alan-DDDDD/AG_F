@@ -57,6 +57,12 @@ function bindM(){
     });
 }
 
+function bindbtn(){
+    if(data.caseStatus == "棄單" || data.caseStatus == "完成"){
+        $(`.modal-footer button`).attr('enable',true)
+    }
+}
+
 $(`#giveup`).on('click',function(){
     getD("Order","giveup","caseid="+caseid).then(x=>{
         if(x){
