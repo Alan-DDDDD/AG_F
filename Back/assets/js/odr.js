@@ -1,0 +1,3 @@
+if(caseid){
+    alert(caseid);
+}
