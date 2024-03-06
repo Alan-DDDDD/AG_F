@@ -66,3 +66,12 @@ $(`#giveup`).on('click',function(){
         }
     }).catch(x=>{alert(x)})
 });
+$(`#assign`).on('click',function(){
+    getD("Order","LGS","caseid="+caseid).then(x=>{
+        if(x){
+            alert(msg);
+        }else{
+            alert(msg);
+        }
+    }).catch(x=>{alert(x)})
+});
