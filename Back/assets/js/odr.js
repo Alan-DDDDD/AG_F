@@ -56,3 +56,7 @@ function bindM(){
         </tr>`)
     });
 }
+
+$(`#giveup`).on('click',function(){
+    
+});
