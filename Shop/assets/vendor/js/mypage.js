@@ -28,7 +28,7 @@ $(function(){
 
 function mybar(j){
     var scrollTop = $(window).scrollTop();
-        if(scrollTop>=120 || +($(`#view`).css('height').substring(0,4))<700){
+        if(scrollTop>=120 || +($(`#view`).css('height').substring(0,4))<500){
             j.css("opacity","1");
             $(`.mynav`).css("background-color","#baa88b");
             j.data("view","Y");
