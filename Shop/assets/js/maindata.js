@@ -1,5 +1,5 @@
-//var url = "https://76fe-61-230-139-61.ngrok-free.app";
-var url = "https://localhost:5001";
+var url = "https://12cd-1-162-45-233.ngrok-free.app";
+//var url = "https://localhost:5001";
 var fronturl = "https://alan-ddddd.github.io/AG_F/Back/html";
 var datalist;
 var ddllist;
@@ -13,7 +13,7 @@ var orderdetail = [];
 var addr = [];
 var order;
 var msg;
-var liffId = "2003018925-03bR6Jo3";
+var liffId = "2003018925-3RglVyA5";
 var h = new Headers({
   "ngrok-skip-browser-warning": "69420",
   //"authorization":""

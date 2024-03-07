@@ -1,93 +1,91 @@
 let i = $(`#ch`);
 let js = i.val();
 
-// liff.init({
-//     liffId:liffId
-// }).then(function(){
-//     if(liff.isLoggedIn()){
-//         let nm;
-//         let id;
-//         let mail;
-//         liff.getProfile().then((profile) => {
-//             console.log(profile);
-//             nm = profile.displayName;
-//             id = profile.userId;
-//             let user = liff.getDecodedIDToken();
-//             console.log(user);
-//             mail = user.email;
-//             console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
-//             h = new Headers({
-//                 "ngrok-skip-browser-warning": "69420",
-//                 "authorization": id,
-//                 "type":"C"
-//               });
-//             hcj = new Headers({
-//                 "ngrok-skip-browser-warning": "69420",
-//                 "Content-Type":"application/json",
-//                 "authorization":id,
-//                 "type":"C"
-//               });
-//             getD("Login","Login",`LineId=${id}&type=E`,false).then(x=>{
-//                 if(x){
-//                     if(js == 0){
-//                         let page = "pdc";
-//                         reList(page);
-//                         reView(page);
-//                         //reJs(page);
-//                         i.val("OK");
-//                     }
-//                 }else{
-//                     if(msg == "沒有權限"){
-//                         if(confirm(msg+",是否申請員工權限?")){
-//                             data = {
-//                                 emplnm:nm,
-//                                 phone:"",
-//                                 addr:"",
-//                                 lineid:id,
-//                                 linemail:mail
-//                             }
-//                             reView("signup");   
-//                         }
-//                     }else{
-//                         alert(msg);
-//                     }
-//                 }
-//             }).catch(x=>{
-//                 alert(x);
-//             });
-//         }).catch((err)=>{
-//             console.log(err);
-//             window.localStorage.clear();
-//             window.sessionStorage.clear();
+liff.init({
+    liffId:liffId
+}).then(function(){
+    if(liff.isLoggedIn()){
+        let nm;
+        let id;
+        let mail;
+        liff.getProfile().then((profile) => {
+            console.log(profile);
+            nm = profile.displayName;
+            id = profile.userId;
+            let user = liff.getDecodedIDToken();
+            console.log(user);
+            mail = user.email;
+            console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
+            h = new Headers({
+                "ngrok-skip-browser-warning": "69420",
+                "authorization": id,
+                "type":"C"
+              });
+            hcj = new Headers({
+                "ngrok-skip-browser-warning": "69420",
+                "Content-Type":"application/json",
+                "authorization":id,
+                "type":"C"
+              });
+            getD("Login","Login",`LineId=${id}&type=C`,false).then(x=>{
+                if(x){
+                    if(js == 0){
+                        let page = "pdc";
+                        reList(page);
+                        reView(page);
+                        //reJs(page);
+                        i.val("OK");
+                    }
+                }else{
+                    if(msg == "沒有權限"){
+                        if(confirm(msg+",是否申請員工權限?")){
+                            data = {
+                                emplnm:nm,
+                                phone:"",
+                                addr:"",
+                                lineid:id,
+                                linemail:mail
+                            }
+                            reView("signup");   
+                        }
+                    }else{
+                        alert(msg);
+                    }
+                }
+            }).catch(x=>{
+                alert(x);
+            });
+        }).catch((err)=>{
+            console.log(err);
+            window.localStorage.clear();
+            window.sessionStorage.clear();
             
-//             liff.login();
-//         });
-//     }else{
-//         liff.login();
-//     }
-// }).catch((x)=>{
-//  alert(x);
-// });
-if(js == 0){
-    let page = "pdc";
-    reList(page);
-    reView(page);
-    //reJs(page);
-    i.val("OK");
-}
+            liff.login();
+        });
+    }else{
+        liff.login();
+    }
+}).catch((x)=>{
+ alert(x);
+});
+// if(js == 0){
+//     let page = "pdc";
+//     reList(page);
+//     reView(page);
+//     //reJs(page);
+//     i.val("OK");
+// }
 
 $(`#pageList li`).on(`click`,function(event){
     event.preventDefault();
     let me = $(this);
     let id = me.attr("id");
-    // if(liff.isLoggedIn()){
-    //     reList(id);
-    //     reView(id);
-    //     //reJs(id);
-    // }else{
-    //     liff.login();
-    // }
-    changePage(id);
+    if(liff.isLoggedIn()){
+        changePage(id);
+    }else{
+        liff.login();
+    }
+    
     // if(id!="cart"){
     //     reList(id);
     //     reView(id).then(x=>{
