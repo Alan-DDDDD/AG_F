@@ -37,7 +37,7 @@ liff.init({
                     }
                 }else{
                     if(msg == "沒有權限"){
-                            data = {
+                            p = {
                                 custnm:nm,
                                 phone:"",
                                 level:"1",
