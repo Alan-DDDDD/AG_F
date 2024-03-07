@@ -19,13 +19,13 @@ let js = i.val();
 //             h = new Headers({
 //                 "ngrok-skip-browser-warning": "69420",
 //                 "authorization": id,
-//                 "type":"E"
+//                 "type":"C"
 //               });
 //             hcj = new Headers({
 //                 "ngrok-skip-browser-warning": "69420",
 //                 "Content-Type":"application/json",
 //                 "authorization":id,
-//                 "type":"E"
+//                 "type":"C"
 //               });
 //             getD("Login","Login",`LineId=${id}&type=E`,false).then(x=>{
 //                 if(x){
