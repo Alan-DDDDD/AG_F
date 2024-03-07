@@ -29,7 +29,6 @@ liff.init({
               });
             getD("Login","Login",`LineId=${id}&type=C`,false).then(x=>{
                 if(x){
-                    $(function(){
                         getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
                             if(x){
                                 let bar = $(`.mybar`);
@@ -48,7 +47,6 @@ liff.init({
                                 console.log(msg);
                             }
                         }).catch(x=>{console.log(x)});
-                    })
                     if(js == 0){
                         let page = "pdc";
                         reList(page);
