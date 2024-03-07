@@ -181,7 +181,7 @@ $(`#ordercul`).on('click',function(){
     let n = ["1"]
     if(n.indexOf(mtd.val())>-1){
         $(`#pay`).removeAttr('hidden');
-        $(`#ordercul`).attr('hidden');
+        $(`#ordercul`).attr('hidden',true);
         return;
     }else{
         let addr = $(`#caddr option:selected`).val();
@@ -195,7 +195,7 @@ $(`#ordercul`).on('click',function(){
             order.Fare = data;
             bindView();
             $(`#pay`).removeAttr('hidden');
-            $(`#ordercul`).attr('hidden');
+            $(`#ordercul`).attr('hidden',true);
         }else{
             console.log(msg);
         }
