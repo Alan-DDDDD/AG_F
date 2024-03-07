@@ -29,6 +29,8 @@ culTotal();
 $(`#mtd`).on(`change`,function(){
     let v = $(`#mtd option:selected`).val();
     let addrprice = $(`#addrPrice`);
+    $(`#ordercul`).removeAttr('hidden');
+    $(`#pay`).attr('hidden',true);
     switch(v){
         case 'N':
             $(`#addrP`).show(300);
