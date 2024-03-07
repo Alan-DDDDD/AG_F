@@ -180,6 +180,8 @@ $(`#ordercul`).on('click',function(){
     let mtd = $(`#mtd option:selected`);
     let n = ["1"]
     if(n.indexOf(mtd.val())>-1){
+        $(`#pay`).removeAttr('hidden');
+        $(`#ordercul`).attr('hidden');
         return;
     }else{
         let addr = $(`#caddr option:selected`).val();
