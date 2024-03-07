@@ -48,6 +48,11 @@ function bindPdclist(item){
         .then(x=>{
             if(x){
                 list.empty();
+                if(datalist.length<4){
+                    $(`.mysite`).css("opacity","1");
+                    $(`.mynav`).css("background-color","#baa88b");
+                    $(`.mysite`).data("view","Y");
+                }
                 $.each(datalist,(i,d)=>{
                     getD("Product","getFile",`pdid=${d.Pdid}`).then(x=>{
                         if(x){
