@@ -59,11 +59,22 @@ function bindM(){
 }
 
 function bindbtn(){
-    if(data.caseStatus == "棄單" || data.caseStatus == "完成"){
-        $(`.modal-footer button`).attr('disabled',true)
-    }else{
-
+    let s = data.caseStatus;
+    mbtno();
+    switch(s){
+        case "棄單":
+        case "完成":
+        case "送貨中":
+        case "自取":
+            $(`.modal-footer button`).attr('disabled',true);
+            break;
+        case "等待派件":
+        case "保留自送":
+            break;
     }
+}
+function mbtno(){
+    $(`.modal-footer button`).removeAttr('disabled');
 }
 
 $(`#giveup`).on('click',function(){
