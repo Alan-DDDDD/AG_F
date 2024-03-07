@@ -104,3 +104,14 @@ $(`#keep`).on('click',function(){
         }
     }).catch(x=>{alert(x)})
 });
+$(`#custgiveup`).on('click',function(){
+    if(confirm("是否為客戶惡意棄單?")){
+        getD("Order","custgivewup","caseid="+caseid).then(x=>{
+            if(x){
+                alert(msg);
+            }else{
+                alert(msg);
+            }
+        }).catch(x=>{alert(x)})
+    }
+});
