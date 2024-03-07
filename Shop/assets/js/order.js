@@ -178,7 +178,13 @@ function bindView(){
 $(`#ordercul`).on('click',function(){
     let amount = $(`#amount`).html();
     getD("Fare","GetFare","amount="+amount).then(x=>{
-        order.Fare = data;
-        bindView();
+        if(x){
+            order.Fare = data;
+            bindView();
+            $(`#pay`).removeAttr('hidden');
+            $(`#ordercul`).attr('hidden');
+        }else{
+            console.log(msg);
+        }
     }).catch(x=>{console.log(x)})
 })
