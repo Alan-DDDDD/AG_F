@@ -20,8 +20,6 @@
     </div>
     <div class="col mb-2">
         <select class="form-select" id="mtd" aria-label="Default select example">
-          <option value="Y">自取</option>
-          <option value="N">外送到府</option>
         </select>
     </div>
     <div class="col mb-2">
@@ -38,8 +36,6 @@
     <div class="col mb-2">
         <label for="caddr" class="form-label">取貨人</label>
         <select class="form-select" id="caddr" aria-label="Default select example">
-          <option value="Y">0977888777 王小明</option>
-          <option value="N">0932334562 張小美</option>
         </select>
         <p style="color: brown;" id="preaddr"></p>
     </div>
@@ -74,7 +70,7 @@
     <div class="mb-2">
         <div class="d-flex" style="justify-content: space-between;">
           <div>小計:</div>
-          <div style="display: flex;">$<div id="amount">1000</div></div>
+          <div style="display: flex;">$<div id="amount">0</div></div>
         </div>
         <div class="d-flex" style="justify-content: space-between;">
           <div>運費:</div>
@@ -82,11 +78,12 @@
         </div>
         <div class="d-flex" style="justify-content: space-between;">
           <div>總計:</div>
-          <div style="display: flex;">$<div id="total">1000</div></div>
+          <div style="display: flex;">$<div id="total">0</div></div>
         </div>
     </div>
     <div class="pdclistbtngp">
-        <button type="button" class="btn btn-primary" id="pay">
+        <button type="button" class="btn btn-primary" id="ordercul">下單</button>
+        <button type="button" class="btn btn-primary" id="pay" hidden>
             <i class='bx bxs-cart-download'></i>
             <p style="white-space:nowrap;margin: 0;">結帳</p>
         </button>

@@ -174,3 +174,11 @@ function bindView(){
     $(`#addrPrice`).html(order.Fare || 0);
     $(`#total`).html(order.Price+order.Fare || 0);
 }
+
+$(`#ordercul`).on('click',function(){
+    let amount = $(`#amount`).html();
+    getD("Fare","GetFare","amount="+amount).then(x=>{
+        order.Fare = data;
+        bindView();
+    }).catch(x=>{console.log(x)})
+})
