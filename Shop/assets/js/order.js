@@ -184,7 +184,7 @@ $(`#ordercul`).on('click',function(){
     }else{
         let addr = $(`#caddr option:selected`).val();
         if(!addr){
-            alert("選擇"+mtd.html()+"需要選擇取貨人");
+            alert("選擇 ["+mtd.html()+"] 需要選擇取貨人");
             return;
         }
     }
