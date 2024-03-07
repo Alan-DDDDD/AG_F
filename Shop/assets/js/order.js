@@ -177,6 +177,17 @@ function bindView(){
 
 $(`#ordercul`).on('click',function(){
     let amount = $(`#amount`).html();
+    let mtd = $(`#mtd option:selected`);
+    let n = ["1"]
+    if(n.indexOf(mtd.val())>-1){
+        return;
+    }else{
+        let addr = $(`#caddr option:selected`).val();
+        if(!addr){
+            alert("選擇"+mtd.html()+"需要選擇取貨人");
+            return;
+        }
+    }
     getD("Fare","GetFare","amount="+amount).then(x=>{
         if(x){
             order.Fare = data;
