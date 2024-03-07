@@ -33,21 +33,23 @@ liff.init({
                         let page = "pdc";
                         reList(page);
                         reView(page);
-                        //reJs(page);
                         i.val("OK");
                     }
                 }else{
                     if(msg == "沒有權限"){
-                        if(confirm(msg+",是否申請員工權限?")){
                             data = {
-                                emplnm:nm,
+                                custnm:nm,
                                 phone:"",
-                                addr:"",
-                                lineid:id,
-                                linemail:mail
+                                level:"1",
+                                custid:id,
+                                mail:mail
                             }
-                            reView("signup");   
-                        }
+                            pgD("Login","Insert",p,"type=C",false).then(x=>{
+                                let page = "pdc";
+                                reList(page);
+                                reView(page);
+                                i.val("OK");
+                            }).catch(x=>{alert(x);});
                     }else{
                         alert(msg);
                     }
