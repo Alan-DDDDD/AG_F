@@ -29,6 +29,26 @@ liff.init({
               });
             getD("Login","Login",`LineId=${id}&type=C`,false).then(x=>{
                 if(x){
+                    $(function(){
+                        getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
+                            if(x){
+                                let bar = $(`.mybar`);
+                                bar.empty();
+                                $.each(ddllist["ITEM"],(i,d)=>{
+                                    bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
+                                })
+                                getCart("Car","GetCart").then(x=>{
+                                    if(x){
+                                        bindCart()
+                                    }else{
+                                        console.log(msg);
+                                    }
+                                }).catch(x=>{console.log(x)})
+                            }else{
+                                console.log(msg);
+                            }
+                        }).catch(x=>{console.log(x)});
+                    })
                     if(js == 0){
                         let page = "pdc";
                         reList(page);

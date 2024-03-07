@@ -1,23 +1,23 @@
-$(function(){
-    getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
-        if(x){
-            let bar = $(`.mybar`);
-            bar.empty();
-            $.each(ddllist["ITEM"],(i,d)=>{
-                bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
-            })
-            getCart("Car","GetCart").then(x=>{
-                if(x){
-                    bindCart()
-                }else{
-                    console.log(msg);
-                }
-            }).catch(x=>{console.log(x)})
-        }else{
-            console.log(msg);
-        }
-    }).catch(x=>{console.log(x)});
-})
+// $(function(){
+//     getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
+//         if(x){
+//             let bar = $(`.mybar`);
+//             bar.empty();
+//             $.each(ddllist["ITEM"],(i,d)=>{
+//                 bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
+//             })
+//             getCart("Car","GetCart").then(x=>{
+//                 if(x){
+//                     bindCart()
+//                 }else{
+//                     console.log(msg);
+//                 }
+//             }).catch(x=>{console.log(x)})
+//         }else{
+//             console.log(msg);
+//         }
+//     }).catch(x=>{console.log(x)});
+// })
 $(function(){
     $(window).scroll(function(){
             if($(`#view`).data("page")=="pdc"){
