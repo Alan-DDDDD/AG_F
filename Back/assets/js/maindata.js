@@ -161,6 +161,12 @@ function cdl(p){
           c = false;
         }
         break;
+      case 'order':
+        if(d.caseorder.Csid == data.caseorder.Csid){
+          datalist[i] = data;
+          c = false;
+        }
+        break;
       default:
         if(d.Pdid == data.Pdid){
           datalist[i] = data;

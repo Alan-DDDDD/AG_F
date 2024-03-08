@@ -47,9 +47,9 @@ function bindT(){
         let at = b ? "黑名單":"授權";
         t.append(`<tr>
                       <td>${d.cust.Custnm}</td>
-                      <td>${d.count}</td>
-                      <td>${d.amount}</td>
-                      <td>${d.giveup}</td>
+                      <td>${d.count.numberFormat(0,".",",")}</td>
+                      <td>${d.amount.numberFormat(0,".",",")}</td>
+                      <td>${d.giveup.numberFormat(0,".",",")}</td>
                       <td>
                         <button 
                             type="button" class="btn btn-${ac} agree" data-id="${d.cust.Custid}">

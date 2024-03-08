@@ -91,6 +91,7 @@ $(`#pageList li`).on(`click`,function(event){
     //     reList(id);
     //     reView(id);
     //     //reJs(id);
+    caseid = null;
     // }else{
     //     liff.login();
     // }

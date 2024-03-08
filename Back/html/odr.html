@@ -2,8 +2,9 @@
 <h4 class="fw-bold py-2">
   <span class="text-muted fw-light">訂單頁面</span>
 </h4>
+<button type="button" class="btn btn-primary" id="d"  data-bs-toggle="modal" data-bs-target="#modalCenter" hidden>申請</button>
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-primary" id="d"  data-bs-toggle="modal" data-bs-target="#modalCenter" >申請</button>
+  <button type="button" class="btn btn-primary" id="ordersearch">搜尋</button>
 </div>
 <div class="card mt-2">
   <div class="divider text-start px-3 my-1" id="qBar" style="cursor:pointer">
@@ -14,22 +15,29 @@
   <div class=" p-3 card-body"  id="qArea">
     <div class="row">
       <div class="col mb-3">
-        <label for="phone" class="form-label">電話</label>
-        <input
-        type="text"
-        id="phone"
-        class="form-control"
-        placeholder=""
-        />
+        <label for="qcasestatus" class="form-label">訂單狀態</label>
+        <select class="form-select" id="qcasestatus">
+          <option value="">全部</option>
+          <option value="ING">進行中</option>
+          <option value="D">已完成</option>
+          <option value="G">棄單</option>
+        </select>
       </div>
       <div class="col mb-3">
-        <label for="addr" class="form-label">地址</label>
+        <label for="qcaseid" class="form-label">案件編號</label>
         <input
         type="text"
-        id="addr"
+        id="qcaseid"
         class="form-control"
-        placeholder=""
+        placeholder="C20240101001"
         />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label for="qcust" class="form-label">客戶</label>
+        <select class="form-select" id="qcust">
+        </select>
       </div>
     </div>
   </div>
