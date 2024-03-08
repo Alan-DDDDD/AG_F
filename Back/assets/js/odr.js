@@ -115,3 +115,14 @@ $(`#custgiveup`).on('click',function(){
         }).catch(x=>{alert(x)})
     }
 });
+$(`#done`).on('click',function(){
+    if(confirm("請確認收取金額與案件編號正確?")){
+        getD("Order","done","caseid="+caseid).then(x=>{
+            if(x){
+                alert(msg);
+            }else{
+                alert(msg);
+            }
+        }).catch(x=>{alert(x)})
+    }
+});
