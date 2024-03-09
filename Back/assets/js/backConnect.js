@@ -38,6 +38,7 @@ $(`#notifyBody`).on('click','.alertcase',function(){
     event.preventDefault();
     let me = $(this);
     caseid = me.html();
+    me.parent().prev().find('button').click();
     reList('odr');
     reView('odr');
     $('#notifyclose').click();
