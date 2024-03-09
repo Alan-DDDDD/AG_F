@@ -14,6 +14,19 @@ connect.on("IntoCase",function(o){
     console.log(o);
     let page = $(`#pageList`).find('.active').attr('id');
     let notify = $(`#notifyicon`);
+    let body = $(`#notifyBody`);
+    body.append(`
+    <div class="bs-toast toast fade show bg-dark mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bx bx-star bx-tada me-2"></i>
+        <div class="me-auto fw-semibold">新進案件</div>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        ${o.caseorder.Csid}
+      </div>
+    </div>
+    `);
     notify.addClass('bx-tada');
     setTimeout(x=>{
         notify.removeClass('tada');
