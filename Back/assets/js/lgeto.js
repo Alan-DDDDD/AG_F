@@ -33,12 +33,27 @@ liff.init({
                     let p = location.search;
                     console.log(p);
                     getD("Transportation","lgeto",p.substring(1),false).then(x=>{
-                        liff.sendMessages([
+                        liff.sendMessages(
                             {
-                              type: 'text',
-                              text: data
+                                type: "bubble",
+                                body: {
+                                  type: "box",
+                                  layout: "vertical",
+                                  contents: [
+                                    {
+                                      type: "text",
+                                      text: "系統訊息",
+                                      weight: "bold",
+                                      size: "xl"
+                                    },
+                                    {
+                                      type: "text",
+                                      text: data
+                                    }
+                                  ]
+                                }
                             }
-                          ])
+                        )
                             .then(() => {
                               console.log('message sent');
                             })
