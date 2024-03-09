@@ -13,6 +13,11 @@ connect.on("IntoCase",function(o){
     //alert(msg);
     console.log(o);
     let page = $(`#pageList`).find('.active').attr('id');
+    let notify = $(`#notifyicon`);
+    notify.addClass('bx-tada');
+    setTimeout(x=>{
+        notify.removeClass('tada');
+    },5000);
     console.log(page);
     if(page === "odr"){
         let notify = $(`#notifyicon`)
