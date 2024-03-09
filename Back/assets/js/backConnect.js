@@ -23,7 +23,7 @@ connect.on("IntoCase",function(o){
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body">
-        訂單編號 : <a href="#" class="alert-link alertcase">${o.caseorder.csid}</a>
+        訂單編號 : <a href="#" class="alert-link alertcase" style="color:white">${o.caseorder.csid}</a>
       </div>
     </div>
     `);
@@ -40,4 +40,5 @@ $(`#notifyBody`).on('click','.alertcase',function(){
     caseid = me.html();
     reList('odr');
     reView('odr');
+    $('#notifyclose').click();
 })
