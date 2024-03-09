@@ -9,24 +9,27 @@ $(function(){
             })
         }
     })
-})
-
-if(caseid){
-    getD("Order","Get","caseid="+caseid).then(x=>{
-        console.log(data);
-        //alert(caseid);
-        bindM();
-        $(`#d`).click();
-    })
-}else{
     getA("Order","GetList").then(x=>{
         if(x){
             bintT();
+            if(caseid){
+                // getD("Order","Get","caseid="+caseid).then(x=>{
+                //     console.log(data);
+                //     //alert(caseid);
+                // })
+                data = datalist.filter(x=>x.caseorder.Csid == caseid);
+                bindM();
+                $(`#d`).click();
+            }
         }else{
             alert(msg)
         }
     }).catch(x=>{alert(x)});
-}
+})
+
+
+
+    
 {/* <div style="display: flex;margin:0 0.25rem">
   <div class="text-start col-6">送貨狀態:</div>
   <div class="text-end col-6">${data.lgtStatus}</div>
