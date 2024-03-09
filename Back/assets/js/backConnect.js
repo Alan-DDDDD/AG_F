@@ -23,13 +23,13 @@ connect.on("IntoCase",function(o){
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body">
-        ${o.caseorder.Csid}
+        ${o.caseorder.csid}
       </div>
     </div>
     `);
     notify.addClass('bx-tada');
     setTimeout(x=>{
-        notify.removeClass('tada');
+        notify.removeClass('bx-tada');
     },5000);
     console.log(page);
     if(page === "odr"){
