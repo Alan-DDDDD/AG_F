@@ -17,7 +17,7 @@ $(function(){
                 //     console.log(data);
                 //     //alert(caseid);
                 // })
-                data = datalist.filter(x=>x.caseorder.Csid == caseid);
+                data = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
                 bindM();
                 $(`#d`).click();
             }
