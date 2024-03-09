@@ -162,7 +162,7 @@ $(`#keep`).on('click',function(){
 });
 $(`#custgiveup`).on('click',function(){
     if(confirm("是否為客戶惡意棄單?")){
-        getD("Order","custgivewup","caseid="+caseid,true,"order").then(x=>{
+        getD("Order","custgiveup","caseid="+caseid,true,"order").then(x=>{
             if(x){
                 bintT();
                 bindM();
