@@ -33,7 +33,7 @@ liff.init({
                     let p = location.search;
                     console.log(p);
                     getD("Transportation","lgeto",p.substring(1),false).then(x=>{
-                        liff.sendMessages({
+                        liff.sendMessages([{
                             type:"flex",
                             altText:"lgeto",
                             message:{
@@ -55,7 +55,7 @@ liff.init({
                                   ]
                                 }
                             }
-                        })
+                        }])
                             .then(() => {
                               console.log('message sent');
                             })
