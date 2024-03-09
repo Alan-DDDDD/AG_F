@@ -12,4 +12,9 @@ connect.on("Notify",function(msg){
 connect.on("IntoCase",function(o){
     //alert(msg);
     console.log(o);
+    let page = $(`#pageList`).find('.active').attr('id');
+    console.log(page);
+    if(page === "odr"){
+        
+    }
 });
