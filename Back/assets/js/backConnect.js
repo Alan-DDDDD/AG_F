@@ -32,11 +32,4 @@ connect.on("IntoCase",function(o){
         notify.removeClass('bx-tada');
     },5000);
     console.log(page);
-    if(page === "odr"){
-        let notify = $(`#notifyicon`)
-        notify.addClass('bx-tada')
-        setTimeout(x=>{
-            notify.removeClass('tada');
-        },5000);
-    }
 });
