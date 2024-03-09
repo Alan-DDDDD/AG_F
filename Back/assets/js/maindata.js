@@ -1,4 +1,4 @@
-var url = "https://7848-114-36-179-70.ngrok-free.app";
+var url = "https://1e4c-114-36-179-70.ngrok-free.app";
 //var url = "https://localhost:5001";
 var datalist;
 var ddllist;
