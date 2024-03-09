@@ -8,3 +8,8 @@ connect.start().then(()=>{
 connect.on("Notify",function(msg){
     //alert(msg);
 });
+
+connect.on("IntoCase",function(o){
+    //alert(msg);
+    console.log(o);
+});

@@ -130,3 +130,4 @@ function reJs(page){
 $(`#view`).on(`click`,`#qBar`,function(){
     $(`#qArea`).toggle(130);
 });
+
