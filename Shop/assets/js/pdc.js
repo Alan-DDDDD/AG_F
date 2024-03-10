@@ -31,6 +31,7 @@ $(`#pdclist`).on('click','.addcart',function(){
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
             let img = imgdiv.find('img');
+            console.log(img);
             imgdiv.append(img)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
