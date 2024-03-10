@@ -32,7 +32,7 @@ $(`#pdclist`).on('click','.addcart',function(){
         if(x){
             let img = imgdiv.find('img')[0];
             imgdiv.append(`<img src="${$(img).attr('src')}" style="width: 100%;position:absolute;"/>`);
-            img.css({
+            $(img).css({
                 "z-index":"9999",
                 "top":"100",
                 "left":"500",
