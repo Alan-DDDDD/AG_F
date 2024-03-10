@@ -105,16 +105,18 @@ $(`#pay`).on('click',function(){
         carts : cart,
         order:order
     };
+    if(cart.length == 0){
+        alert("趕快加入商品吧");
+        cart = [];
+        bindCart();
+        return;
+    }
     console.log(p)
     postD("Order","UpdateOrder",p).then(x=>{
         if(x){
             console.log(data);
         }else{
-            if(msg =="沒有資料"){
-                alert("趕快加入商品吧");
-            }else{
-                alert("訂購成功");
-            }
+            alert("訂購成功");
             cart = [];
             bindCart();
             changePage("pdc");
