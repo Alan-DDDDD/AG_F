@@ -55,7 +55,7 @@ $(`#pdclist`).on('click','.addcart',function(){
             //$(img).addClass(`imgimg`);
             setTimeout(()=>{
                 $(img).remove();
-            },5000)
+            },320)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())

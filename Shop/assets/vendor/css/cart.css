@@ -159,7 +159,7 @@
 .pdcimg{
   width: 100%;
   position:absolute;
-  transition:all 5s;
+  transition:all 0.3s;
 }
 .imgaction{
   position:fixed;
