@@ -112,6 +112,7 @@ $(`#pay`).on('click',function(){
         }else{
             alert("訂購成功");
             cart = [];
+            bindCart();
             changePage("pdc");
         }
     }).catch(x=>{console.log(x)})
