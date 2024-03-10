@@ -44,7 +44,13 @@ $(`#pdclist`).on('click','.addcart',function(){
                 "width":`120px`,
                 "opacity": `1`,
               });
-            $(img).addClass(`imgimg`);
+            $(img).css({
+                "top":"40px",
+                "left":"360px",
+                "width":"0px",
+                "opacity":"0"
+            })
+            //$(img).addClass(`imgimg`);
             setTimeout(()=>{
                 $(img).remove();
             },5000)
