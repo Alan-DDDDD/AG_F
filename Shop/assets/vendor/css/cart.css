@@ -156,6 +156,12 @@
   align-self: center;
 }
 
-.iconincart{
-  transition: 2s;
+.pdcimg{
+  width: 100%;
+  position:absolute;
+  transition:all 0.5s;
+}
+.imgaction{
+  top:100;
+  left:100;
 }
