@@ -82,7 +82,7 @@ function bindM(){
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-4">取貨方式:</div>
-                         <div class="text-end col-6">${data.methodNm}</div>
+                         <div class="text-end col-8">${data.methodNm}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-4">運費:</div>
