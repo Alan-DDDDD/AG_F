@@ -31,7 +31,7 @@ $(`#pdclist`).on('click','.addcart',function(){
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
             let img = imgdiv.find('img')[0];
-            imgdiv.append(`<img src="${$(img).attr('src')}" class="pdcimg"/>`);
+            imgdiv.append(`<img src="${$(img).attr('src')}" class="pdcimg" style="width${$(imgdiv).width()}px"/>`);
             console.log($(imgdiv).width());
             $(img).addClass('imgaction');
             setTimeout(()=>{
