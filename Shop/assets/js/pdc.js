@@ -35,9 +35,18 @@ $(`#pdclist`).on('click','.addcart',function(){
             imgdiv.append(`<img src="${$(img).attr('src')}"
                                 class="pdcimg" 
                                 style="width${$(imgdiv).width()}px;"/>`);
-            $(img).next().addClass('imgaction');
+            //$(img).next().addClass('imgaction');
+            $(img).css({
+                "position":"fixed",
+                "z-index": "9999999",
+                "top": `${site.top}px`,
+                "left":`${site.left}px`,
+                "width":`120px`,
+                "opacity": `0`,
+              });
+            $(img).addClass(`imgimg`);
             setTimeout(()=>{
-                $(img).next().remove();
+                $(img).remove();
             },5000)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
