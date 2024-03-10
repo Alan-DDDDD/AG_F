@@ -36,7 +36,7 @@ liff.init({
                         liff.sendMessages([{
                             type:"flex",
                             altText:"lgeto",
-                            message:{
+                            contents:{
                                 type: "bubble",
                                 body: {
                                   type: "box",
