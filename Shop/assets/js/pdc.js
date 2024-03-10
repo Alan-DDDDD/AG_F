@@ -38,7 +38,7 @@ $(`#pdclist`).on('click','.addcart',function(){
             $(img).next().addClass('imgaction');
             setTimeout(()=>{
                 $(img).next().remove();
-            },300)
+            },5000)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())
