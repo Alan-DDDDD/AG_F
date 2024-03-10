@@ -155,3 +155,7 @@
   text-align: center;
   align-self: center;
 }
+
+.iconincart{
+  transition: 2s;
+}
