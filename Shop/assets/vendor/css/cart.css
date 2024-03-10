@@ -159,10 +159,9 @@
 .pdcimg{
   width: 100%;
   position:absolute;
-  transition:all 0.5s;
+  transition:all 5s;
 }
 .imgaction{
   z-index: 9999999;
-  top:100;
-  left:100;
+  width:0%;
 }
