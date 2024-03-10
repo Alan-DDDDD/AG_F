@@ -42,7 +42,7 @@ $(`#pdclist`).on('click','.addcart',function(){
                 "top": `${site.top}px`,
                 "left":`${site.left}px`,
                 "width":`120px`,
-                "opacity": `0`,
+                "opacity": `1`,
               });
             $(img).addClass(`imgimg`);
             setTimeout(()=>{
