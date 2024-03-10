@@ -74,7 +74,7 @@ $(`#sendaddr`).on('click',function(){
         alert("電話號碼不能高過10碼");
         return;
     }
-    if(p.Addr1 || p.Name || p.Phone){
+    if(!p.Addr1 || !p.Name || !p.Phone){
         alert("取貨人,地址與電話不能空白");
         return;
     }
