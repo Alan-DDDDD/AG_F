@@ -43,7 +43,6 @@ function bintT(){
             <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
             <td>${d.methodNm}</td>
             <td>${d.caseStatus}</td>
-            <td></td>
             </tr>`)
     });
 }
