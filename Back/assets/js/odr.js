@@ -54,43 +54,43 @@ function bindM(){
     datapage.empty();
     datapage.append(`<div class="col-6 border-end" style="padding: 0 0.25rem;">
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">訂單狀態:</div>
-                         <div class="text-end col-6">${data.caseStatus}</div>
+                         <div class="text-start col-4">訂單狀態:</div>
+                         <div class="text-end col-8">${data.caseStatus}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">送貨:</div>
-                         <div class="text-end col-6">${data.lgtnm}</div>
+                         <div class="text-start col-4">送貨:</div>
+                         <div class="text-end col-8">${data.lgtnm}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">取貨人:</div>
-                         <div class="text-end col-6">${data.addr.Name}</div>
+                         <div class="text-start col-4">取貨人:</div>
+                         <div class="text-end col-8">${data.addr.Name}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">電話:</div>
-                         <div class="text-end col-6">${data.addr.Phone}</div>
+                         <div class="text-start col-4">電話:</div>
+                         <div class="text-end col-8">${data.addr.Phone}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">地址:</div>
-                         <div class="text-end col-6">${data.addr.Addr1}</div>
+                         <div class="text-start col-4">地址:</div>
+                         <div class="text-end col-8">${data.addr.Addr1}</div>
                        </div>
                        
                      </div>
                      <div class="col-6" style="padding: 0 0.25rem;">
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">總計:</div>
-                         <div class="text-end col-6">$${data.caseorder.Price.numberFormat(0,".",",")}</div>
+                         <div class="text-start col-4">總計:</div>
+                         <div class="text-end col-8">$${data.caseorder.Price.numberFormat(0,".",",")}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">取貨方式:</div>
+                         <div class="text-start col-4">取貨方式:</div>
                          <div class="text-end col-6">${data.methodNm}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">運費:</div>
-                         <div class="text-end col-6">$${data.caseorder.Fare.numberFormat(0,".",",")}</div>
+                         <div class="text-start col-4">運費:</div>
+                         <div class="text-end col-8">$${data.caseorder.Fare.numberFormat(0,".",",")}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
-                         <div class="text-start col-6">合計:</div>
-                         <div class="text-end col-6">$${data.caseorder.Total.numberFormat(0,".",",")}</div>
+                         <div class="text-start col-4">合計:</div>
+                         <div class="text-end col-8">$${data.caseorder.Total.numberFormat(0,".",",")}</div>
                        </div>
                      </div>`);
     let t = $(`#ordertbody`);
