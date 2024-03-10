@@ -35,7 +35,7 @@ liff.init({
                     getD("Transportation","lgeto",p.substring(1),false).then(x=>{
                         liff.sendMessages([{
                             type:"flex",
-                            altText:"lgeto",
+                            altText:"接案系統回報",
                             contents:{
                                 type: "bubble",
                                 body: {
