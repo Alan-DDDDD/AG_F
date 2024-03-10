@@ -75,7 +75,8 @@ $(`#sendaddr`).on('click',function(){
         return;
     }
     if(p.Addr1 || p.Name || p.Phone){
-        alert("取貨人,地址與電話不能空白")
+        alert("取貨人,地址與電話不能空白");
+        return;
     }
     postD("Addr","Insert",p).then(x=>{
         if(x){
