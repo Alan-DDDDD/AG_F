@@ -58,19 +58,19 @@ function bindM(){
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-4">送貨:</div>
-                         <div class="text-end col-8">${data.lgtnm}</div>
+                         <div class="text-end col-8">${data.lgtnm || ""}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-4">取貨人:</div>
-                         <div class="text-end col-8">${data.addr.Name}</div>
+                         <div class="text-end col-8">${data.addr.Name || ""}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-4">電話:</div>
-                         <div class="text-end col-8">${data.addr.Phone}</div>
+                         <div class="text-end col-8">${data.addr.Phone || ""}</div>
                        </div>
                        <div style="display: flex;margin:0 0.25rem">
                          <div class="text-start col-2">地址:</div>
-                         <div class="text-end col-10"><a href="https://www.google.com/maps/place/${data.addr.Addr1}" target="_blank">${data.addr.Addr1}</a></div>
+                         <div class="text-end col-10"><a href="https://www.google.com/maps/place/${data.addr.Addr1 || ""}" target="_blank">${data.addr.Addr1 || ""}</a></div>
                        </div>
                        
                      </div>
