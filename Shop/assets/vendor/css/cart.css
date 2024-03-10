@@ -162,6 +162,7 @@
   transition:all 0.5s;
 }
 .imgaction{
+  z-index: 9999999;
   top:100;
   left:100;
 }
