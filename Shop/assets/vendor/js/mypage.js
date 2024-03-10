@@ -67,6 +67,9 @@ function bindCart(){
                     </div>
                    `);
     });
+    if(cart.length == 0){
+        cartred.html("");
+    }
 }
 $(`.mybar`).on('click','li',function(){
     if($(this).parent().data("view")=="Y"){
