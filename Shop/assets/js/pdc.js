@@ -31,7 +31,13 @@ $(`#pdclist`).on('click','.addcart',function(){
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
             let img = imgdiv.find('img')[0];
-            imgdiv.append(`<img src="${$(img).attr('src')}" style="width: 100%;position:absolute;"/>`)
+            imgdiv.append(`<img src="${$(img).attr('src')}" style="width: 100%;position:absolute;"/>`);
+            img.css({
+                "z-index":"9999",
+                "top":"100",
+                "left":"500",
+                "transition":"all 0.5s"
+            })
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())
