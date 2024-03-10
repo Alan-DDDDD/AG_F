@@ -162,6 +162,7 @@
   transition:all 5s;
 }
 .imgaction{
+  position:fixed;
   z-index: 9999999;
-  top:100;
+  bottom:100%;
 }
