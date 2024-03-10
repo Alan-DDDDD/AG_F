@@ -32,7 +32,7 @@ $(`#pdclist`).on('click','.addcart',function(){
         if(x){
             let img = imgdiv.find('img')[0];
             console.log(img.attr('src'));
-            imgdiv.append(`<img src="${img.attr('src')}" style="width: 100%;"/>`)
+            imgdiv.append(`<img src="${img.attr('src')}" style="width: 100%;position:absolute;"/>`)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())
@@ -59,7 +59,7 @@ function bindPdclist(item){
                                     <div class="card-body" style="padding: 1rem 1.5rem;">
                                         <div class="row">
                                             <div class="col-4" style="padding: 0;">
-                                                <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" style="width: 100%;"/>
+                                                <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" style="width: 100%;position:absolute;"/>
                                             </div>
                                             <div class="col-8">
                                                 <h5 class="card-title mb-2">${d.Pdcnm}</h5>
