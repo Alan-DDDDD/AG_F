@@ -61,6 +61,18 @@ function bindM(){
                          <div class="text-start col-6">送貨:</div>
                          <div class="text-end col-6">${data.lgtnm}</div>
                        </div>
+                       <div style="display: flex;margin:0 0.25rem">
+                         <div class="text-start col-6">取貨人:</div>
+                         <div class="text-end col-6">${data.addr.Name}</div>
+                       </div>
+                       <div style="display: flex;margin:0 0.25rem">
+                         <div class="text-start col-6">電話:</div>
+                         <div class="text-end col-6">${data.addr.Phone}</div>
+                       </div>
+                       <div style="display: flex;margin:0 0.25rem">
+                         <div class="text-start col-6">地址:</div>
+                         <div class="text-end col-6">${data.addr.Addr1}</div>
+                       </div>
                        
                      </div>
                      <div class="col-6" style="padding: 0 0.25rem;">
