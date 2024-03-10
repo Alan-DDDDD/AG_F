@@ -110,7 +110,11 @@ $(`#pay`).on('click',function(){
         if(x){
             console.log(data);
         }else{
-            alert("訂購成功");
+            if(msg =="沒有資料"){
+                alert("趕快加入商品吧");
+            }else{
+                alert("訂購成功");
+            }
             cart = [];
             bindCart();
             changePage("pdc");
