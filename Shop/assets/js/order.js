@@ -70,6 +70,13 @@ $(`#sendaddr`).on('click',function(){
         Name : $(`#name`).val(),
         Phone : $(`#phone`).val(),
     };
+    if(p.Phone.length > 10){
+        alert("電話號碼不能高過10碼");
+        return;
+    }
+    if(p.Addr1 || p.Name || p.Phone){
+        alert("取貨人,地址與電話不能空白")
+    }
     postD("Addr","Insert",p).then(x=>{
         if(x){
             $(`#addaddr`).hide();
