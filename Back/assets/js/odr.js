@@ -9,7 +9,7 @@ $(function(){
             })
         }
     })
-    getA("Order","GetList").then(x=>{
+    getA("Order","GetList","s=ING").then(x=>{
         if(x){
             bintT();
             if(caseid){
