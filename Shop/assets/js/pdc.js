@@ -30,7 +30,7 @@ $(`#pdclist`).on('click','.addcart',function(){
     //console.log(p);
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
-            let img = imgdiv.find('img');
+            let img = imgdiv.find('img')[0];
             console.log(img);
             imgdiv.append(img)
             bindCart();
