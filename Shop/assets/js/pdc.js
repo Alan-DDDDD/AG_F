@@ -3,6 +3,7 @@ $(function(){
     getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
         if(x){
             bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
+            bindCart();
         }else{
             console.log(msg);
         }
