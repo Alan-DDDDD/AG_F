@@ -163,5 +163,5 @@
 }
 .imgaction{
   z-index: 9999999;
-  width:0%;
+  top:100;
 }
