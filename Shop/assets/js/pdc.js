@@ -32,6 +32,7 @@ $(`#pdclist`).on('click','.addcart',function(){
         if(x){
             let img = imgdiv.find('img')[0];
             imgdiv.append(`<img src="${$(img).attr('src')}" class="pdcimg"/>`);
+            console.log($(imgdiv).width());
             $(img).addClass('imgaction');
             setTimeout(()=>{
                 $(img).remove();
