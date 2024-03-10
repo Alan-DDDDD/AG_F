@@ -35,7 +35,6 @@ $(`#pdclist`).on('click','.addcart',function(){
             imgdiv.append(`<img src="${$(img).attr('src')}"
                                 class="pdcimg" 
                                 style="width${$(imgdiv).width()}px;top:${site.top};left:${site.left}"/>`);
-            console.log($(imgdiv).width());
             $(img).next().addClass('imgaction');
             setTimeout(()=>{
                 $(img).next().remove();
