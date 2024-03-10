@@ -58,7 +58,7 @@ function bindPdclist(item){
                             list.append(`<div class="card mb-2">
                                     <div class="card-body" style="padding: 1rem 1.5rem;">
                                         <div class="row">
-                                            <div class="col-4" style="padding: 0;">
+                                            <div class="col-4" style="padding: 0;position:relative;">
                                                 <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" style="width: 100%;position:absolute;"/>
                                             </div>
                                             <div class="col-8">
