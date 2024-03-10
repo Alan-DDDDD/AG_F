@@ -22,7 +22,7 @@ $(`#pdclist`).on('click','.addcart',function(){
     let me = $(this);
     let parent = me.parent();
     let c = $(parent).find(".pdccountval").html();
-    let i = me.find('.iconincart')[1]
+    let imgdiv = me.parent().parent().prev();
     let p = {
         pdid : parent.data("id"),
         count : +c
@@ -30,10 +30,11 @@ $(`#pdclist`).on('click','.addcart',function(){
     //console.log(p);
     postD("Car","addCart",p,true,"cart").then(x=>{
         if(x){
+            let img = imgdiv.find('img');
+            imgdiv.append(img)
             bindCart();
             //$(`#cartred`).html(+me.html()+1);
             console.log($(`#cartred`).html())
-
         }else{
             alert(msg);
         }
@@ -75,7 +76,6 @@ function bindPdclist(item){
                                                     <!-- <i class='bx bxs-trash'></i> -->
                                                     <button type="button" class="btn btn-primary addcart">
                                                         <i class='bx bxs-cart-download'></i>
-                                                        <i class='bx bxs-cart-download iconincart'></i>
                                                     </button>
                                                 </div>
                                             </div>
