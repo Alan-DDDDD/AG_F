@@ -7,7 +7,7 @@ $(function(){
             let list = $(`#codrlist`);
             list.empty();
             $.each(datalist,(i,d)=>{
-                list,append(`
+                list.append(`
                     <div class="card mb-2">
                         <h5 class="card-header" id="codrcaseid">${d.cseorder.Csid}</h5>
                         <div class="card-body">
