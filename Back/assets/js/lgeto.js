@@ -12,9 +12,9 @@ liff.init({
             nm = profile.displayName;
             id = profile.userId;
             let user = liff.getDecodedIDToken();
-            console.log(user);
+            //console.log(user);
             mail = user.email;
-            console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
+            //console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
             h = new Headers({
                 "ngrok-skip-browser-warning": "69420",
                 "authorization": id,
