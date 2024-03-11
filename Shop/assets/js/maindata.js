@@ -14,6 +14,7 @@ var order;
 var msg;
 var liffId = "2003018925-3RglVyA5";
 var uid;
+var caseid;
 var h = new Headers({
   "ngrok-skip-browser-warning": "69420",
   //"authorization":""
