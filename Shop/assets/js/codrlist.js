@@ -9,7 +9,7 @@ $(function(){
             $.each(datalist,(i,d)=>{
                 list.append(`
                     <div class="card mb-2">
-                        <h5 class="card-header" id="codrcaseid">${d.cseorder.Csid}</h5>
+                        <h5 class="card-header" id="codrcaseid">${d.caseorder.Csid}</h5>
                         <div class="card-body">
                             <div style="display: flex;margin:0 0.25rem">
                                 <div class="text-start col-4">案件狀態:</div>
