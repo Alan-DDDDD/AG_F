@@ -51,4 +51,20 @@ $(function(){
 $(`.codrbtn`).on('click',function(){
     let caseid = $(this).data("id");
     console.log(caseid);
+    bindM(caseid);
 });
+
+function bindM(caseid){
+    let t = $(`#odetailbody`);
+    let o = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
+    console.log(o);
+    t.empty();
+    $.each(o.odetails,(i,d)=>{
+        t.append(`<tr>
+                    <td>${d.Product.Pdcnm}</td>
+                    <td>${d.Odetail.Count}</td>
+                    <td>${d.Odetail.Price}</td>
+                    <td>${d.Odetail.Amount}</td>
+                  </tr>`);
+    });
+}
