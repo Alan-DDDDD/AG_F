@@ -1,3 +1,4 @@
+alert("xxx");
 alert(localStorage.getItem(`LIFF_STORE:2003018925-3RglVyA5:context`));
 $(function(){
     getA("Order"
