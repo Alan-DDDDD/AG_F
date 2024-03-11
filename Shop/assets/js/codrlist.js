@@ -1,9 +1,8 @@
-alert("xxx");
-alert(localStorage.getItem(`LIFF_STORE:2003018925-3RglVyA5:context`));
+
 $(function(){
     getA("Order"
         ,"GetList"
-        ,"s=ING&u="+JSON.parse(localStorage.getItem(`LIFF_STORE:2003018925-3RglVyA5:context`)).userId)
+        ,"s=ING&u="+uid)
     .then(x=>{
         if(x){
             let codrdatalist = $(`#codrdatalist`);

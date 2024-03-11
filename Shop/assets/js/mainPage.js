@@ -15,6 +15,7 @@ liff.init({
             let user = liff.getDecodedIDToken();
             //console.log(user);
             mail = user.email;
+            uid = id;
             //console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
             h = new Headers({
                 "ngrok-skip-browser-warning": "69420",
