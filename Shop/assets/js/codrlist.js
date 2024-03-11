@@ -45,7 +45,7 @@ $(function(){
         }else{
             alert(msg);
         }
-    }).catch(x=>{console.log(x)})
+    }).catch(x=>{alert(x)})
 })
 
 $(`.codrbtn`).on('click',function(){
