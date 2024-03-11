@@ -35,6 +35,7 @@ $(function(){
                                 <div class="text-start col-4">總金額:</div>
                                 <div class="text-end col-8">$${d.caseorder.Total}</div>
                             </div>
+                            <button type="button" data-id="${d.cseorder.Csid}">訂單細節</button>
                         </div>
                     </div>
                 `);
