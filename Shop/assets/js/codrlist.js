@@ -43,6 +43,10 @@ $(function(){
                     </div>
                 `);
             });
+            if(caseid){
+                bindM(caseid);
+                $(`#autoclick`).click();
+            }
         }else{
             alert(msg);
         }
