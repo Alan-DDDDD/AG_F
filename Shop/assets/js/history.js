@@ -2,7 +2,7 @@
 $(function(){
     getA("Order"
         ,"GetList"
-        ,"s=ING&u="+uid)
+        ,"s=D&u="+uid)
     .then(x=>{
         if(x){
             let codrdatalist = $(`#codrdatalist`);
@@ -46,6 +46,7 @@ $(function(){
             if(caseid){
                 bindM(caseid);
                 $(`#autoclick`).click();
+                caseid = null
             }
         }else{
             alert(msg);
