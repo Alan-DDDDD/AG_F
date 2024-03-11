@@ -5,7 +5,7 @@ $(function(){
     .then(x=>{
         if(x){
             let codrdatalist = $(`#codrdatalist`);
-            codrdatalist.empty();
+            codrdatalist.empty(); 
             $.each(datalist,(i,d)=>{
                 codrdatalist.append(`
                     <div class="card mb-2">
