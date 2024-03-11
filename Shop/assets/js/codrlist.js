@@ -48,7 +48,7 @@ $(function(){
     }).catch(x=>{alert(x)})
 })
 
-$(`.codrbtn`).on('click',function(){
+$(`.codrdatalist`).on('click','.codrbtn',function(){
     let caseid = $(this).data("id");
     console.log(caseid);
     bindM(caseid);
