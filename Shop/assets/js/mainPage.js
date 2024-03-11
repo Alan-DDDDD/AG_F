@@ -30,26 +30,32 @@ liff.init({
               });
             getD("Login","Login",`LineId=${id}&type=C`,false).then(x=>{
                 if(x){
-                        getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
-                            if(x){
-                                let bar = $(`.mybar`);
-                                bar.empty();
-                                $.each(ddllist["ITEM"],(i,d)=>{
-                                    bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
-                                })
-                                getCart("Car","GetCart").then(x=>{
-                                    if(x){
-                                        bindCart()
-                                    }else{
-                                        console.log(msg);
-                                    }
-                                }).catch(x=>{console.log(x)})
-                            }else{
-                                console.log(msg);
-                            }
-                        }).catch(x=>{console.log(x)});
+                    getddl(["ITEM","UNIT","BND","LST"]).then(x=>{
+                        if(x){
+                            let bar = $(`.mybar`);
+                            bar.empty();
+                            $.each(ddllist["ITEM"],(i,d)=>{
+                                bar.append(`<li data-id="${d.Dataid}"><h6>${d.Data}</h6></li>`);
+                            })
+                            getCart("Car","GetCart").then(x=>{
+                                if(x){
+                                    bindCart()
+                                }else{
+                                    console.log(msg);
+                                }
+                            }).catch(x=>{console.log(x)})
+                        }else{
+                            console.log(msg);
+                        }
+                    }).catch(x=>{console.log(x)});
                     if(js == 0){
+                        let url = new URL(location.href);
+                        let p = url.searchParams.get('page');
                         let page = "pdc";
+                        if(p == 'codrlist'){
+                            caseid = url.searchParams.get('caseid');
+                            page = p;
+                        }
                         reList(page);
                         reView(page);
                         i.val("OK");
