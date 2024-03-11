@@ -36,7 +36,7 @@ $(function(){
                                 <div class="text-end col-8">$${d.caseorder.Total}</div>
                             </div>
                             <div style="display: flex;justify-content: flex-end;margin:0 0.25rem">
-                                <button type="button" class="btn btn-primary" data-id="${d.caseorder.Csid}" data-bs-toggle="modal" data-bs-target="#modalCenter">訂單細節</button>
+                                <button type="button" class="btn btn-primary" data-id="${d.caseorder.Csid}" data-bs-toggle="modal" data-bs-target="#ordermodal">訂單細節</button>
                             </div>
                         </div>
                     </div>
