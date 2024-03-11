@@ -67,4 +67,5 @@ function bindM(caseid){
                     <td>${d.Odetail.Amount}</td>
                   </tr>`);
     });
+    $(`#ordermodalTitle`).find('span').html(caseid)
 }
