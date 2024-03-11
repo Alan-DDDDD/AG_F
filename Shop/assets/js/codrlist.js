@@ -4,7 +4,7 @@ $(function(){
         ,"s=ING&u="+JSON.parse(localStorage.getItem(`LIFF_STORE:2003018925-3RglVyA5:context`)).userId)
     .then(x=>{
         if(x){
-            let list = $(`#codrlist`);
+            let list = $(`#codrdatalist`);
             list.empty();
             $.each(datalist,(i,d)=>{
                 list.append(`
