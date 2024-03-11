@@ -13,7 +13,7 @@ $(function(){
                         <h5 class="card-header" id="codrcaseid">${d.caseorder.Csid}</h5>
                         <div class="card-body">
                             <div style="display: flex;margin:0 0.25rem">
-                                <div class="text-start col-4">案件狀態:</div>
+                                <div class="text-start col-4">訂單狀態:</div>
                                 <div class="text-end col-8">${d.caseStatus}</div>
                             </div>
                             <div style="display: flex;margin:0 0.25rem">
