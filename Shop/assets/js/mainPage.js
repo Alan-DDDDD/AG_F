@@ -56,6 +56,9 @@ liff.init({
                             caseid = url.searchParams.get('caseid');
                             page = p;
                         }
+                        if(p == 'history'){
+                            page = p;
+                        }
                         reList(page);
                         reView(page);
                         i.val("OK");
