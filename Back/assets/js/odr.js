@@ -118,6 +118,8 @@ function bindbtn(){
         case "自取":
         $(`.modal-footer button`).attr('disabled',true);
         $(`#done`).removeAttr('disabled');
+        $(`#custgiveup`).removeAttr('disabled');
+        $(`#giveup`).removeAttr('disabled');
             break;
         case "等待派件":
         case "保留自送":
