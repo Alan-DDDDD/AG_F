@@ -131,3 +131,6 @@ $(`#view`).on(`click`,`#qBar`,function(){
     $(`#qArea`).toggle(130);
 });
 
+$(`#notifyicon`).on('click',function(){
+    $(this).removeClass('bx-tada');
+})

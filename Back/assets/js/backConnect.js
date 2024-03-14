@@ -28,9 +28,9 @@ connect.on("IntoCase",function(o){
     </div>
     `);
     notify.addClass('bx-tada');
-    setTimeout(x=>{
-        notify.removeClass('bx-tada');
-    },5000);
+    // setTimeout(x=>{
+    //     notify.removeClass('bx-tada');
+    // },5000);
     console.log(page);
 });
 
