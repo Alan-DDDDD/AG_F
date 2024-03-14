@@ -62,6 +62,10 @@ $(`#codrdatalist`).on('click','.codrbtn',function(){
 function bindM(caseid){
     let t = $(`#odetailbody`);
     let o = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
+    if(!o){
+        alert("沒有此筆訂單或訂單已經完成請至歷史訂單查詢");
+        return;
+    }
     console.log(o);
     t.empty();
     $.each(o.odetails,(i,d)=>{
