@@ -66,7 +66,6 @@ function bindM(caseid){
         alert("沒有此筆訂單或訂單已經完成請至歷史訂單查詢");
         return;
     }
-    console.log(o);
     t.empty();
     $.each(o.odetails,(i,d)=>{
         t.append(`<tr>
