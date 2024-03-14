@@ -8,7 +8,7 @@ liff.init({
         let id;
         let mail;
         liff.getProfile().then((profile) => {
-            console.log(profile);
+            //console.log(profile);
             nm = profile.displayName;
             id = profile.userId;
             let user = liff.getDecodedIDToken();
