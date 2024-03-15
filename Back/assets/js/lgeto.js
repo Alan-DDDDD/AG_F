@@ -33,35 +33,81 @@ liff.init({
                     let p = location.search;
                     console.log(p);
                     getD("Transportation","lgeto",p.substring(1),false).then(x=>{
-                        liff.sendMessages([{
-                            type:"flex",
-                            altText:"接案系統回報",
-                            contents:{
-                                type: "bubble",
-                                body: {
-                                  type: "box",
-                                  layout: "vertical",
-                                  contents: [
-                                    {
-                                      type: "text",
-                                      text: "系統訊息",
-                                      weight: "bold",
-                                      size: "xl"
-                                    },
-                                    {
-                                      type: "text",
-                                      text: data
+                        if(data == "此訂單取消或是動作慢了一點"){
+                            liff.sendMessages([{
+                                type:"flex",
+                                altText:"系統回報",
+                                contents:{
+                                    type: "bubble",
+                                    body: {
+                                      type: "box",
+                                      layout: "vertical",
+                                      contents: [
+                                        {
+                                          type: "text",
+                                          text: "系統訊息",
+                                          weight: "bold",
+                                          size: "xl"
+                                        },
+                                        {
+                                          type: "text",
+                                          text: data
+                                        }
+                                      ]
                                     }
-                                  ]
                                 }
-                            }
-                        }])
-                            .then(() => {
-                              console.log('message sent');
-                            })
-                            .catch((err) => {
-                              console.log('error', err);
-                            });
+                            }]).then(() => {
+                                  console.log('message sent');
+                                }).catch((err) => {
+                                  console.log('error', err);
+                                });
+                        }else{
+                            liff.sendMessages([{
+                                type:"flex",
+                                altText:"系統回報",
+                                contents:{
+                                    type: "bubble",
+                                    body: {
+                                      type: "box",
+                                      layout: "vertical",
+                                      contents: [
+                                        {
+                                          type: "text",
+                                          text: "系統訊息",
+                                          weight: "bold",
+                                          size: "xl"
+                                        },
+                                        {
+                                          type: "text",
+                                          text: data
+                                        }
+                                      ]
+                                    },
+                                    footer: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                          {
+                                            type: "button",
+                                            style: "primary",
+                                            height: "sm",
+                                            action: {
+                                              type: "uri",
+                                              label: "案件回報",
+                                              uri: "https://liff.line.me/2003018925-Z2qY8m6R"
+                                            }
+                                          }
+                                        ],
+                                        flex: 0
+                                      }
+                                }
+                            }]).then(() => {
+                                  console.log('message sent');
+                                }).catch((err) => {
+                                  console.log('error', err);
+                                });
+                        }
                         liff.closeWindow();
                     }).catch(x=>{
                         alert(x);
