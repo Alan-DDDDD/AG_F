@@ -37,9 +37,11 @@ liff.init({
                                 alert(msg);
                             }
                           }).catch(x=>{alert(x)});
+
                         }).catch((error) => {
                           console.log("error", error);
                         });
+                        liff.closeWindow();
                 }else{
                     if(msg == "沒有權限"){
 
