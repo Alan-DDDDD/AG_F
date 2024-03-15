@@ -30,7 +30,14 @@ liff.init({
                 if(x){
                     liff.scanCodeV2().then((result) => {
                           // result = { value: "" }
-                          alert(result.value)
+                          alert(result.value);
+                          getD("Transportation","getodr",result.value).then(x=>{
+                            if(x){
+                                alert(data);
+                            }else{
+                                alert(msg);
+                            }
+                          }).catch(x=>{alert(x)});
                         }).catch((error) => {
                           console.log("error", error);
                         });
