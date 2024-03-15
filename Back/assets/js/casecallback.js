@@ -36,12 +36,12 @@ liff.init({
                             }else{
                                 alert(msg);
                             }
+                            liff.closeWindow();
                           }).catch(x=>{alert(x)});
 
                         }).catch((error) => {
                           console.log("error", error);
                         });
-                        liff.closeWindow();
                 }else{
                     if(msg == "沒有權限"){
 
