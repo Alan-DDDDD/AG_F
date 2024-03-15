@@ -94,7 +94,7 @@ liff.init({
                                             height: "sm",
                                             action: {
                                               type: "uri",
-                                              label: "案件回報",
+                                              label: "訂單回報",
                                               uri: "https://liff.line.me/2003018925-Z2qY8m6R"
                                             }
                                           }
