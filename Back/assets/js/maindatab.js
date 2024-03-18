@@ -1,4 +1,4 @@
-var url = "https://78fb-218-35-179-173.ngrok-free.app";
+var url = "https://exact-united-guinea.ngrok-free.app";
 //var url = "https://localhost:7109";
 var fronturl = "https://alan-ddddd.github.io/AG_F/Back/html";
 var datalist;
