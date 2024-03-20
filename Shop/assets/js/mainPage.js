@@ -158,6 +158,7 @@ async function reView(page){
     var r = await fetch("../html/"+page+".html");
     var t = await r.text();
     view.html(t);
+    view.data('page',page);
     reJs(page);
 }
 
