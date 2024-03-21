@@ -10,6 +10,7 @@ var data;
 var msg;
 var caseid;
 var liffId = "2003018925-03bR6Jo3";
+var pfdid;
 var h = new Headers({
   "ngrok-skip-browser-warning": "69420",
   //"authorization":""
@@ -106,7 +107,11 @@ async function postFD(c,a,f,l){
   let u = url + "/api/" + c + "/" + a;
   var r = await fetch(u,{
     method : "Post",
-    headers : h,
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+      "authorization": pfdid,
+      "type":"E"
+    }),
     body : f
   });
   var d = await r.json();

@@ -28,6 +28,7 @@ liff.init({
                 "authorization":id,
                 "type":"E"
               });
+            pfdid = id;
             getD("Login","Login",`LineId=${id}&type=E`,false).then(x=>{
                 if(x){
                     if(js == 0){
