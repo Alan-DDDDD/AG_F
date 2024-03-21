@@ -106,9 +106,7 @@ async function postFD(c,a,f,l){
   let u = url + "/api/" + c + "/" + a;
   var r = await fetch(u,{
     method : "Post",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    }),
+    headers : h,
     body : f
   });
   var d = await r.json();
