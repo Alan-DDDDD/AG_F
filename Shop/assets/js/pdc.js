@@ -112,7 +112,7 @@ function bindPdclist(item){
                     }).catch(x=>console.log(x));
                 });
             }else{
-                console.log(msg);
+                alert(msg+',請聯繫客服人員!!');
             }
         }).catch(x=>{
             console.log(x);

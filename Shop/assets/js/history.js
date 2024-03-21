@@ -49,7 +49,7 @@ $(function(){
                 caseid = null
             }
         }else{
-            alert(msg);
+            alert(msg+',請聯繫客服人員!!');
         }
     }).catch(x=>{alert(x)})
 })
