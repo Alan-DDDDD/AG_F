@@ -133,6 +133,7 @@ $(`#ordersearch`).on('click',function(){
     getA('Order','GetList',`s=${$(`#qcasestatus option:selected`).val()}&c=${$(`#qcaseid`).val()}&u=${$(`#qcust option:selected`).val()}`).then(x=>{
         if(x){
             bintT();
+            $(`#qArea`).hide(130);
         }else{
             alert(msg);
         }
