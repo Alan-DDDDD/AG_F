@@ -112,9 +112,9 @@ function bindbtn(){
     switch(s){
         case "棄單":
         case "完成":
-        case "送貨中":
             $(`.modal-footer button`).attr('disabled',true);
             break;
+        case "送貨中":
         case "自取":
         $(`.modal-footer button`).attr('disabled',true);
         $(`#done`).removeAttr('disabled');
