@@ -1,4 +1,4 @@
-var url = "https://chow-free-terrier.ngrok-free.app";
+var url = "https://exact-united-guinea.ngrok-free.app";
 //var url = "https://localhost:5001";
 var datalist;
 var ddllist;
