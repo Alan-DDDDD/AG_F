@@ -34,7 +34,51 @@ $(`#select`).on(`click`,function(){
         alert(x);
     });
 });
-// 
+//
+// $(`#save`).on('click',function(){
+//     let p = {
+//         Pdid : $(`#save`).data(`id`),
+//         Brand : $(`#bnd option:selected`).val(),
+//         Pdcnm : $(`#pdcnm`).val(),
+//         Item : $(`#item option:selected`).val(),
+//         Price : $(`#price`).val() || 0,
+//         Unit : $(`#unit option:selected`).val(),
+//         Stock : $(`#stock`).val() || 0,
+//         Caution : $(`#caution`).val(),
+//         Agree : $(`#agree`).is(":checked")?"Y":"N"
+//     }
+//     if(p.Brand =="" || p.Item == "" || p.Unit == ""){
+//         alert("請將資料填寫齊全");
+//     }else{
+
+//         var form = new FormData();
+//         let f = [
+//             document.getElementById('pic1').files[0],
+//             document.getElementById('pic2').files[0],
+//             document.getElementById('pic3').files[0]
+//         ]
+//         for(let i = 0;i<f.length;i++){
+//             if(f[i]){
+//                 form.append(`files`,f[i],'Pic'+(i+1))
+//             }
+//         }
+//         form.append(`json`,JSON.stringify(p));
+//         let a = p.Pdid ? "Update":"Insert";
+//         postFD("Product",a,form).then(x=>{
+//             if(x){
+//                 bindT();
+//                 $(`#qArea`).hide(130);
+//             }else{
+//                 alert(msg);
+//             }
+//         }).catch(x=>{
+//             alert(x);
+//         }).finally(x=>{
+//             $(`#MClose`).click();
+//         });
+//     }
+// });
+
 $(`#save`).on('click',function(){
     let p = {
         Pdid : $(`#save`).data(`id`),
@@ -50,6 +94,7 @@ $(`#save`).on('click',function(){
     if(p.Brand =="" || p.Item == "" || p.Unit == ""){
         alert("請將資料填寫齊全");
     }else{
+
         var form = new FormData();
         let f = [
             document.getElementById('pic1').files[0],
@@ -120,7 +165,7 @@ function bindT(){
                       <td>${ddllist["unit"].filter(x=>x.Dataid == d.Unit)[0].Data}</td>
                       <td>${d.Stock.numberFormat(0,".",",")}</td>
                       <td>
-                        <button 
+                        <button
                             type="button" class="btn btn-${ac} agree" data-id="${d.Pdid}">
                             ${at}
                         </button>
