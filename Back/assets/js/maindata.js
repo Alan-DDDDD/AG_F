@@ -1,5 +1,5 @@
 //var url = "https://exact-united-guinea.ngrok-free.app";
-var url = "https://fresh-concrete-flounder.ngrok-free.app";
+var url = "https://narwhal-wired-platypus.ngrok-free.app";
 //var url = "https://localhost:5001";
 var datalist;
 var ddllist;
