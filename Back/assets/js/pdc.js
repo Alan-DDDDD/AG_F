@@ -143,7 +143,6 @@ $(`#save`).on('click',async function(){
 });
 
 function compressImage(file, callback) {
-
     new Compressor(file, {
         quality: 0.6,
         success(result) {
