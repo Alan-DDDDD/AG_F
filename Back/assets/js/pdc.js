@@ -102,6 +102,11 @@ $(`#save`).on('click',async function(){
             document.getElementById('pic2').files[0],
             document.getElementById('pic3').files[0]
         ]
+        $.each(f,(i,d)=>{
+            if(!d){
+                f.splice(i,1);
+            }
+        });
         const compressedFiles = [];
         let filesProcessed = 0;
         $.each(f,(i,d)=>{
