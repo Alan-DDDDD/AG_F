@@ -48,6 +48,11 @@ $(`#mtd`).on(`change`,function(){
             order.Fare = 70;
             break;
     };
+    if($(`#mtd option:selected`).val()=='1'){
+        $(`#memo`).attr('placeholder',"註明自取時間")
+    }else{
+        $(`#memo`).attr('placeholder',"這裡可以標記小費")
+    }
     bindView();
     //culTotal();
 });
