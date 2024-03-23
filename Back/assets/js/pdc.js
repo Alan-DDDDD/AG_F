@@ -79,7 +79,7 @@ $(`#select`).on(`click`,function(){
 //     }
 // });
 
-$(`#save`).on('click',function(){
+$(`#save`).on('click',async function(){
     let p = {
         Pdid : $(`#save`).data(`id`),
         Brand : $(`#bnd option:selected`).val(),
@@ -96,32 +96,58 @@ $(`#save`).on('click',function(){
     }else{
 
         var form = new FormData();
+        form.append(`json`,JSON.stringify(p));
         let f = [
             document.getElementById('pic1').files[0],
             document.getElementById('pic2').files[0],
             document.getElementById('pic3').files[0]
         ]
-        for(let i = 0;i<f.length;i++){
-            if(f[i]){
-                form.append(`files`,f[i],'Pic'+(i+1))
-            }
-        }
-        form.append(`json`,JSON.stringify(p));
-        let a = p.Pdid ? "Update":"Insert";
-        postFD("Product",a,form).then(x=>{
-            if(x){
-                bindT();
-                $(`#qArea`).hide(130);
-            }else{
-                alert(msg);
-            }
-        }).catch(x=>{
-            alert(x);
-        }).finally(x=>{
-            $(`#MClose`).click();
+        const compressedFiles = [];
+        let filesProcessed = 0;
+        $.each(f,(i,d)=>{
+            compressImage(d,async function(compressedImage) {
+                compressedFiles.push(compressedImage);
+                
+                // 检查是否所有文件都已经处理完毕
+                filesProcessed++;
+                if (filesProcessed === f.length) {
+                    // 所有文件都已处理完毕
+                    
+                    // 打包其他数据
+                    $.each(compressedFiles,(ii,dd)=>{
+                        form.append('files',dd,`file${ii}`);
+                    })
+                    
+                    let a = p.Pdid ? "Update":"Insert";
+                    postFD("Product",a,form).then(x=>{
+                        if(x){
+                            bindT();
+                            $(`#qArea`).hide(130);
+                        }else{
+                            alert(msg);
+                        }
+                    }).catch(x=>{
+                        alert(x);
+                    }).finally(x=>{
+                        $(`#MClose`).click();
+                    });
+                }
+            });
         });
     }
 });
+
+function compressImage(file, callback) {
+
+    new Compressor(file, {
+        quality: 0.6,
+        success(result) {
+            callback(result);
+        },
+        error(error) {
+        },
+    });
+}
 
 $(`#pdclist`).on(`click`,`.agree`,async function(){
     let me = $(this)
