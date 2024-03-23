@@ -117,7 +117,7 @@ $(`#save`).on('click',async function(){
                     
                     // 打包其他数据
                     $.each(compressedFiles,(ii,dd)=>{
-                        form.append('files',dd,`file${ii}`);
+                        form.append('files',dd,`Pic${ii+1}`);
                     })
                     
                     let a = p.Pdid ? "Update":"Insert";
