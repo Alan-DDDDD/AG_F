@@ -1,4 +1,5 @@
-var url = "https://exact-united-guinea.ngrok-free.app";
+//var url = "https://exact-united-guinea.ngrok-free.app";
+var url = "https://fresh-concrete-flounder.ngrok-free.app";
 //var url = "https://localhost:7109";
 var fronturl = "https://alan-ddddd.github.io/AG_F/Back/html";
 var datalist;
