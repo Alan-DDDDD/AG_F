@@ -88,7 +88,7 @@ function bindPdclist(item){
                                                 <h5 class="card-title mb-2">${d.Pdcnm}</h5>
                                                 <div class="card-subtitle text-muted mb-3">${ddllist["UNIT"].filter(x=>x.Dataid == d.Unit)[0].Data}</div>
                                                 <p class="card-text">
-                                                    備註
+                                                    ${d.Caution}
                                                 </p>
                                                 <div class="pdclistbtngp" data-id="${d.Pdid}">
                                                     <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
