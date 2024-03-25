@@ -76,40 +76,71 @@ function bindPdclist(item){
             if(x){
                 list.empty();
                 $.each(datalist,(i,d)=>{
-                    getD("Product","getFile",`pdid=${d.Pdid}`).then(x=>{
-                        if(x){
-                            list.append(`<div class="card mb-2">
-                                    <div class="card-body" style="padding: 1rem 1.5rem;">
-                                        <div class="row">
-                                            <div class="col-4" style="padding: 0;position:relative;">
-                                                <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" class="pdcimg"/>
-                                            </div>
-                                            <div class="col-8">
-                                                <h5 class="card-title mb-2">${d.Pdcnm}</h5>
-                                                <div class="card-subtitle text-muted mb-3">${ddllist["UNIT"].filter(x=>x.Dataid == d.Unit)[0].Data}</div>
-                                                <p class="card-text">
-                                                    ${d.Caution ||"無"}
-                                                </p>
-                                                <div class="pdclistbtngp" data-id="${d.Pdid}">
-                                                    <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
-                                                    <div class="pdccount">
-                                                        <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
-                                                        <div class="pdccountval">1</div>
-                                                        <button class="countbtn countright" data-action="plus"><i class='bx bx-plus'></i></button>
+                    if(!d.Pic1 || d.Pic1.length == 0){
+                        list.append(`<div class="card mb-2">
+                                        <div class="card-body" style="padding: 1rem 1.5rem;">
+                                            <div class="row">
+                                                <div class="col-4" style="padding: 0;position:relative;">
+                                                    <img src="../assets/img/backgrounds/nopic.jpg" class="pdcimg"/>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h5 class="card-title mb-2">${d.Pdcnm}</h5>
+                                                    <div class="card-subtitle text-muted mb-3">${ddllist["UNIT"].filter(x=>x.Dataid == d.Unit)[0].Data}</div>
+                                                    <p class="card-text">
+                                                        ${d.Caution ||"無"}
+                                                    </p>
+                                                    <div class="pdclistbtngp" data-id="${d.Pdid}">
+                                                        <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
+                                                        <div class="pdccount">
+                                                            <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
+                                                            <div class="pdccountval">1</div>
+                                                            <button class="countbtn countright" data-action="plus"><i class='bx bx-plus'></i></button>
+                                                        </div>
+                                                        <!-- <i class='bx bxs-trash'></i> -->
+                                                        <button type="button" class="btn btn-primary addcart">
+                                                            <i class='bx bxs-cart-download'></i>
+                                                        </button>
                                                     </div>
-                                                    <!-- <i class='bx bxs-trash'></i> -->
-                                                    <button type="button" class="btn btn-primary addcart">
-                                                        <i class='bx bxs-cart-download'></i>
-                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>`);
-                        }else{
-                            console.log(msg);
-                        }
-                    }).catch(x=>console.log(x));
+                                    </div>`);
+                    }else{
+                        getD("Product","getFile",`pdid=${d.Pdid}`).then(x=>{
+                            if(x){
+                                list.append(`<div class="card mb-2">
+                                        <div class="card-body" style="padding: 1rem 1.5rem;">
+                                            <div class="row">
+                                                <div class="col-4" style="padding: 0;position:relative;">
+                                                    <img src="${data[0] || '../assets/img/backgrounds/nopic.jpg'}" class="pdcimg"/>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h5 class="card-title mb-2">${d.Pdcnm}</h5>
+                                                    <div class="card-subtitle text-muted mb-3">${ddllist["UNIT"].filter(x=>x.Dataid == d.Unit)[0].Data}</div>
+                                                    <p class="card-text">
+                                                        ${d.Caution ||"無"}
+                                                    </p>
+                                                    <div class="pdclistbtngp" data-id="${d.Pdid}">
+                                                        <div class="pdcprice">$${d.Price.numberFormat(0,".",",")}</div>
+                                                        <div class="pdccount">
+                                                            <button class="countbtn countleft" data-action="minus"><i class='bx bx-minus'></i></button>
+                                                            <div class="pdccountval">1</div>
+                                                            <button class="countbtn countright" data-action="plus"><i class='bx bx-plus'></i></button>
+                                                        </div>
+                                                        <!-- <i class='bx bxs-trash'></i> -->
+                                                        <button type="button" class="btn btn-primary addcart">
+                                                            <i class='bx bxs-cart-download'></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`);
+                            }else{
+                                console.log(msg);
+                            }
+                        }).catch(x=>console.log(x));
+                    }
                 });
             }else{
                 alert(msg+',請聯繫客服人員!!');
