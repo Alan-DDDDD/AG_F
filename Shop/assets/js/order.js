@@ -189,7 +189,9 @@ $(`#orderbody`).on('click','.countbtn',function(){
         me.prev().prev().find(`i`).removeClass("bx-trash");
         me.prev().prev().find(`i`).addClass("bx-minus");
     }
-    bindView()
+    $(`#ordercul`).removeAttr('hidden');
+    $(`#pay`).attr('hidden',true);
+    bindView();
 });
 
 function bindView(){
