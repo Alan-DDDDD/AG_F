@@ -136,6 +136,21 @@ $(`#save`).on('click',async function(){
                 }
             });
         });
+        if(f.length == 0){
+            let a = p.Pdid ? "Update":"Insert";
+            postFD("Product",a,form).then(x=>{
+                if(x){
+                    bindT();
+                    $(`#qArea`).hide(130);
+                }else{
+                    alert(msg);
+                }
+            }).catch(x=>{
+                alert(x);
+            }).finally(x=>{
+                $(`#MClose`).click();
+            });
+        }
     }
 });
 
