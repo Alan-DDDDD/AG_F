@@ -76,7 +76,7 @@ $(`.mybar`).on('click','li',function(){
         bindPdclist($(this).data("id"));
     }
     $(`.mybar h6`).css("color","white");
-    $(this).css("color","gray");
+    $(this).find("h6").css("color","gray");
 });
 
 $(`#cartbody`).on('click','.countbtn',function(){
