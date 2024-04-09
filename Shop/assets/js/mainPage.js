@@ -35,7 +35,7 @@ liff.init({
                             let bar = $(`.mybar`);
                             bar.empty();
                             $.each(ddllist["ITEM"],(i,d)=>{
-                                bar.append(`<li data-id="${d.Dataid}" style="min-width:2rem"><h6>${d.Data}</h6></li>`);
+                                bar.append(`<li data-id="${d.Dataid}" style="min-width:3rem"><h6 style="display:flex;justify-content:center;">${d.Data}</h6></li>`);
                             })
                             getCart("Car","GetCart").then(x=>{
                                 if(x){
