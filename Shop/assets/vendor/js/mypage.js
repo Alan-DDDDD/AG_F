@@ -75,6 +75,8 @@ $(`.mybar`).on('click','li',function(){
     if($(this).parent().data("view")=="Y"){
         bindPdclist($(this).data("id"));
     }
+    $(`.mybar h6`).css("color","white");
+    $(this).css("color","gray");
 });
 
 $(`#cartbody`).on('click','.countbtn',function(){
