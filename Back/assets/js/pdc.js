@@ -99,12 +99,12 @@ $(`#save`).on('click',async function(){
         var form = new FormData();
         form.append(`json`,JSON.stringify(p));
         let f = [];
-        for(let i=1 ;i<=3;i++){
-            let pic = document.getElementById(`pic${i}`).files[0];
-            if(pic){
-                f.push(pic);
-            }
-        }
+        // for(let i=1 ;i<=3;i++){
+        //     let pic = document.getElementById(`pic${i}`).files[0];
+        //     if(pic){
+        //         f.push(pic);
+        //     }
+        // }
         const compressedFiles = [];
         let filesProcessed = 0;
         $.each(f,(i,d)=>{
