@@ -89,7 +89,8 @@ $(`#save`).on('click',async function(){
         Unit : $(`#unit option:selected`).val(),
         Stock : $(`#stock`).val() || 0,
         Caution : $(`#caution`).val(),
-        Agree : $(`#agree`).is(":checked")?"Y":"N"
+        Agree : $(`#agree`).is(":checked")?"Y":"N",
+        Pic1 : $(`#pic1`).val()
     }
     if(p.Brand =="" || p.Item == "" || p.Unit == ""){
         alert("請將資料填寫齊全");
