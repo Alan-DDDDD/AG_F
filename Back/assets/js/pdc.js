@@ -226,22 +226,23 @@ function bindM(o){
     $(`#price`).val(o.Price);
     $(`#stock`).val(o.Stock);
     $(`#caution`).val(o.Caution);
-    getD("Product","getFile",`pdid=${o.Pdid}`,false).then(x=>{
-        if(x){
-            $.each(data,(i,d)=>{
-                let img = $(`img[name='pic${i+1}']`);
-                if(d != ""){
-                    img.attr("src",d)
-                }else{
-                    img.attr("src","../assets/img/backgrounds/nopic.jpg")
-                }
-            })
-        }else{
-            alert(msg);
-        }
-    }).catch(x=>{
-        alert(x);
-    })
+    $(`#pic1`).val(o.Pic1);
+    // getD("Product","getFile",`pdid=${o.Pdid}`,false).then(x=>{
+    //     if(x){
+    //         $.each(data,(i,d)=>{
+    //             let img = $(`img[name='pic${i+1}']`);
+    //             if(d != ""){
+    //                 img.attr("src",d)
+    //             }else{
+    //                 img.attr("src","../assets/img/backgrounds/nopic.jpg")
+    //             }
+    //         })
+    //     }else{
+    //         alert(msg);
+    //     }
+    // }).catch(x=>{
+    //     alert(x);
+    // })
     $(`#save`).data('id',o.Pdid);
 }
 
