@@ -145,6 +145,8 @@ function bindPdclist(item){
             }else{
                 alert(msg+',請聯繫客服人員!!');
             }
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }).catch(x=>{
             console.log(x);
         })
