@@ -14,4 +14,9 @@ $('#summernote').summernote({
 $(`#save`).on('click',function(){
     let data = $('#summernote').summernote('code');
     console.log(data)
+    postD("Ad","Ad",{ad:data}).then(x=>{
+        if(!x){
+            alert(msg);
+        }
+    });
 })
