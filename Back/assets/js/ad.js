@@ -1,6 +1,6 @@
 $('#summernote').summernote({
     tabsize: 2,
-    height: 200,
+    height: 400,
     toolbar: [
       ['style', ['style']],
       ['font', ['bold', 'underline', 'clear']],
