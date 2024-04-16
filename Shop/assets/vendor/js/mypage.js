@@ -25,6 +25,15 @@ $(function(){
             }
         });
 });
+$(function(){
+    getD("AD","Get").then(x=>{
+        if(x){
+            $(`#AD`).html(data);
+        }
+    }).catch(x=>{
+        console.log(x)
+    })
+})
 
 function mybar(j){
     var scrollTop = $(window).scrollTop();
