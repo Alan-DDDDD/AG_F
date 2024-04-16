@@ -11,6 +11,15 @@ $('#summernote').summernote({
       ['view', ['fullscreen', 'codeview', 'help']]
     ]
   });
+$(function(){
+    getD("Ad","Get").then(x=>{
+        if(x){
+            $('#summernote').summernote('code', data);
+        }
+    }).catch(x=>{
+        console.log(x)
+    })
+})
 $(`#save`).on('click',function(){
     let data = $('#summernote').summernote('code');
     console.log(data)
