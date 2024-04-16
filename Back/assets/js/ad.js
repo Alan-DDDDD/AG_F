@@ -5,7 +5,7 @@ $('#summernote').summernote({
     toolbar: [
       ['style', ['style']],
       ['font', ['bold', 'underline', 'clear']],
-      ['color', ['color']],
+      ['color', ['color','forecolor','backcolor']],
       ['para', ['ul', 'ol', 'paragraph']],
       ['table', ['table']],
       ['insert', ['link', 'picture']],
