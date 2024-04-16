@@ -26,7 +26,7 @@ $(function(){
         });
 });
 $(function(){
-    getD("AD","Get").then(x=>{
+    getD("Ad","Get").then(x=>{
         if(x){
             $(`#AD`).html(data);
         }
