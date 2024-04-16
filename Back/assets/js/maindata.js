@@ -1,7 +1,7 @@
 //var url = "https://exact-united-guinea.ngrok-free.app";
 //var url = "https://fresh-concrete-flounder.ngrok-free.app";
-//var url = "https://patient-kangaroo-newly.ngrok-free.app";
-var url = "https://localhost:5001";
+var url = "https://patient-kangaroo-newly.ngrok-free.app";
+//var url = "https://localhost:5001";
 var datalist;
 var ddllist;
 var curruntuser;
