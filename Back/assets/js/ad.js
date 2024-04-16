@@ -9,7 +9,7 @@ $('#summernote').summernote({
       ['para', ['ul', 'ol', 'paragraph']],
       ['table', ['table']],
       ['insert', ['link', 'picture']],
-      ['view', ['fullscreen', 'codeview', 'help']]
+      ['view', ['codeview', 'help']]
     ]
   });
 $(function(){
