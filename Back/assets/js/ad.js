@@ -1,5 +1,4 @@
 $('#summernote').summernote({
-    lang:"zh-tw",
     tabsize: 2,
     height: 400,
     toolbar: [
@@ -10,7 +9,8 @@ $('#summernote').summernote({
       ['table', ['table']],
       ['insert', ['link', 'picture']],
       ['view', ['codeview', 'help']]
-    ]
+    ],
+    lang:"zh-tw"
   });
 $(function(){
     getD("Ad","Get").then(x=>{
