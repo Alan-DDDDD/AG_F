@@ -4,7 +4,7 @@ $(function(){
         if(x){
             bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
         }else{
-            console.log(msg);
+            alert(msg);
         }
     }).catch(x=>{console.log(x)});
 })
