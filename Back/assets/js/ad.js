@@ -1,5 +1,5 @@
 $('#summernote').summernote({
-    lang:"zh-TW",
+    lang:"zh-tw",
     tabsize: 2,
     height: 400,
     toolbar: [
