@@ -13,10 +13,6 @@ $(function(){
         if(x){
             bintT();
             if(caseid){
-                // getD("Order","Get","caseid="+caseid).then(x=>{
-                //     console.log(data);
-                //     //alert(caseid);
-                // })
                 data = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
                 bindM();
                 $(`#d`).click();
@@ -27,13 +23,6 @@ $(function(){
     }).catch(x=>{alert(x)});
 })
 
-
-
-    
-{/* <div style="display: flex;margin:0 0.25rem">
-  <div class="text-start col-6">送貨狀態:</div>
-  <div class="text-end col-6">${data.lgtStatus}</div>
-</div> */}
 function bintT(){
     let t = $(`#orderlist`);
     t.empty();

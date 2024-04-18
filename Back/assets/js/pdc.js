@@ -34,50 +34,6 @@ $(`#select`).on(`click`,function(){
         alert(x);
     });
 });
-//
-// $(`#save`).on('click',function(){
-//     let p = {
-//         Pdid : $(`#save`).data(`id`),
-//         Brand : $(`#bnd option:selected`).val(),
-//         Pdcnm : $(`#pdcnm`).val(),
-//         Item : $(`#item option:selected`).val(),
-//         Price : $(`#price`).val() || 0,
-//         Unit : $(`#unit option:selected`).val(),
-//         Stock : $(`#stock`).val() || 0,
-//         Caution : $(`#caution`).val(),
-//         Agree : $(`#agree`).is(":checked")?"Y":"N"
-//     }
-//     if(p.Brand =="" || p.Item == "" || p.Unit == ""){
-//         alert("請將資料填寫齊全");
-//     }else{
-
-//         var form = new FormData();
-//         let f = [
-//             document.getElementById('pic1').files[0],
-//             document.getElementById('pic2').files[0],
-//             document.getElementById('pic3').files[0]
-//         ]
-//         for(let i = 0;i<f.length;i++){
-//             if(f[i]){
-//                 form.append(`files`,f[i],'Pic'+(i+1))
-//             }
-//         }
-//         form.append(`json`,JSON.stringify(p));
-//         let a = p.Pdid ? "Update":"Insert";
-//         postFD("Product",a,form).then(x=>{
-//             if(x){
-//                 bindT();
-//                 $(`#qArea`).hide(130);
-//             }else{
-//                 alert(msg);
-//             }
-//         }).catch(x=>{
-//             alert(x);
-//         }).finally(x=>{
-//             $(`#MClose`).click();
-//         });
-//     }
-// });
 
 $(`#save`).on('click',async function(){
     let p = {
@@ -227,22 +183,6 @@ function bindM(o){
     $(`#stock`).val(o.Stock);
     $(`#caution`).val(o.Caution);
     $(`#pic1`).val(o.Pic1);
-    // getD("Product","getFile",`pdid=${o.Pdid}`,false).then(x=>{
-    //     if(x){
-    //         $.each(data,(i,d)=>{
-    //             let img = $(`img[name='pic${i+1}']`);
-    //             if(d != ""){
-    //                 img.attr("src",d)
-    //             }else{
-    //                 img.attr("src","../assets/img/backgrounds/nopic.jpg")
-    //             }
-    //         })
-    //     }else{
-    //         alert(msg);
-    //     }
-    // }).catch(x=>{
-    //     alert(x);
-    // })
     $(`#save`).data('id',o.Pdid);
 }
 
@@ -270,24 +210,5 @@ async function showimg(input){
       };
       reader.readAsDataURL(input.files[0]);
     }else if($(input).data("path")){
-    //   let path = $(input).data("path");
-    //   var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"&user="+curruntid,{
-    //     method : "Get",
-    //     headers : new Headers({
-    //       "ngrok-skip-browser-warning": "69420",
-    //     }),
-    //   })
-    //   var file = await response.json();
-    //   console.log(file)
-    //   if(file.Status){
-    //     view.attr("src",file.Data);
-    //     view.css("max-heigth","100%");
-    //     view.css("max-width","100%");
-    //     view.css("object-fit","contain");
-    //     $(`#imgmainwait`).remove();
-    //     view.css("display","");
-    //   }else{
-    //     $(`#imgmainwait`).remove();
-    //   }
     }
   }

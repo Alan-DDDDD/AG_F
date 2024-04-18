@@ -10,13 +10,13 @@ liff.init({
         let id;
         let mail;
         liff.getProfile().then((profile) => {
-            console.log(profile);
+            //console.log(profile);
             nm = profile.displayName;
             id = profile.userId;
             let user = liff.getDecodedIDToken();
-            console.log(user);
+            //console.log(user);
             mail = user.email;
-            console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
+            //console.log(window.localStorage.getItem(`LIFF_STORE:${liffId}:context`));
             h = new Headers({
                 "ngrok-skip-browser-warning": "69420",
                 "authorization": id,
@@ -41,7 +41,6 @@ liff.init({
                         }
                         reList(page);
                         reView(page);
-                        //reJs(page);
                         i.val("OK");
                     }
                 }else{
@@ -91,13 +90,10 @@ $(`#pageList li`).on(`click`,function(event){
     if(liff.isLoggedIn()){
         reList(id);
         reView(id);
-        //reJs(id);
         caseid = null;
     }else{
         liff.login();
     }
-    // reList(id);
-    //     reView(id);
 })
 
 function reList(page){
@@ -110,7 +106,6 @@ function reList(page){
 
 async function reView(page){
     let view = $(`#view`);
-    //var r = await fetch("https://alan-ddddd.github.io/AG_F/html/"+page+".html");
     var r = await fetch("../html/"+page+".html");
     var t = await r.text();
     view.html(t);

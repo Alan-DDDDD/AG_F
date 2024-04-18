@@ -116,16 +116,6 @@ $(`#pageList li`).on(`click`,function(event){
         liff.login();
     }
     
-    // if(id!="cart"){
-    //     reList(id);
-    //     reView(id).then(x=>{
-    //         $(`#view`).data("page",id);
-    //         let j = $(`.mysite`);
-    //         j.css("opacity","0");
-    //         $(`.mynav`).css("background-color","");
-    //         j.data("view","N");
-    //     });
-    // }
     $(`#menuclose`).click();
 })
 
@@ -154,7 +144,6 @@ function reList(page){
 
 async function reView(page){
     let view = $(`#view`);
-    //var r = await fetch("https://alan-ddddd.github.io/AG_F/html/"+page+".html");
     var r = await fetch("../html/"+page+".html");
     var t = await r.text();
     view.html(t);

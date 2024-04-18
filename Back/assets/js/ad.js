@@ -18,12 +18,12 @@ $(function(){
             $('#summernote').summernote('code', data);
         }
     }).catch(x=>{
-        console.log(x)
+        alert(x)
     })
 })
 $(`#save`).on('click',function(){
     let data = $('#summernote').summernote('code');
-    console.log(data)
+    //console.log(data)
     postD("Ad","Ad",{ad:data}).then(x=>{
         if(!x){
             alert(msg);
