@@ -4,7 +4,7 @@ $(function(){
         if(x){
             bindPdclist($($(`.mybar`).find('li')[0]).data("id"));
         }else{
-            alert(msg);
+            alert(msg+',請聯繫客服人員!!');
         }
     }).catch(x=>{console.log(x)});
 })
