@@ -36,7 +36,7 @@ liff.init({
                           bintT();
                           if(caseid){
                               data = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
-                              if(data.lgtnm == "無" && d.caseStatus !="外送員正在取貨路上"){
+                              if(data.lgtnm == "無" && data.caseStatus !="外送員正在取貨路上"){
                                 bindM();
                                 $(`#d`).click();
                               }else{
