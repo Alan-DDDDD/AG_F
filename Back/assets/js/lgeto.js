@@ -36,8 +36,10 @@ liff.init({
                           bintT();
                           if(caseid){
                               data = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
-                              bindM();
-                              $(`#d`).click();
+                              if(data.lgtnm == ""){
+                                bindM();
+                                $(`#d`).click();
+                              }
                           }
                       }else{
                           alert(msg)
