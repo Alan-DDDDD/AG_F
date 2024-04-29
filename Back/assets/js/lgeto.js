@@ -162,6 +162,7 @@ function lgeto(){
               console.log('error', err);
             });
     }
+    alert(data);
     //liff.closeWindow();
   }).catch(x=>{
       alert(x);
