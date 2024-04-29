@@ -85,6 +85,7 @@ liff.init({
 });
 
 function lgeto(){
+  console.log("caseid="+caseid);
   getD("Transportation","lgeto","caseid="+caseid,false).then(x=>{
     if(data == "此訂單取消或是動作慢了一點"){
         liff.sendMessages([{
