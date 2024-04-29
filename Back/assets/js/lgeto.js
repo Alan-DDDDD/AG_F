@@ -28,10 +28,9 @@ liff.init({
               });
             getD("Login","Login",`LineId=${id}&type=L`,false).then(x=>{
                 if(x){
-                    let u = location.href;
-                    console.log(u);
-                    let p = location.search;
-                    console.log(p);
+                    let url = new URL(location.href);
+                    let p = url.searchParams.get('page');
+                    caseid = url.searchParams.get('caseid');
                     getA("Order","GetList","s=ING").then(x=>{
                       if(x){
                           bintT();
