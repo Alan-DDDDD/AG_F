@@ -239,4 +239,4 @@ $(`#orderlist`).on('click',"tr",function(){
   bindM();
 });
 
-$(`#lgeto`).on('click',lgeto());
+$(`#lgeto`).on('click',()=>{lgeto();});
