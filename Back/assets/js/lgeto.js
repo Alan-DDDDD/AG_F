@@ -113,7 +113,7 @@ function lgeto(){
         }]).then(() => {
               console.log('message sent');
             }).catch((err) => {
-              console.log('error', err);
+              alert('error', err);
             });
     }else{
         liff.sendMessages([{
@@ -159,7 +159,7 @@ function lgeto(){
         }]).then(() => {
               console.log('message sent');
             }).catch((err) => {
-              console.log('error', err);
+              alert('error', err);
             });
     }
     //liff.closeWindow();
