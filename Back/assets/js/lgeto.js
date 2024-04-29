@@ -172,7 +172,7 @@ function bintT(){
   let t = $(`#orderlist`);
   t.empty();
   $.each(datalist,(i,d)=>{
-    if(lgtnm == ""){
+    if(d.lgtnm == ""){
       t.append(`<tr data-bs-toggle="modal" data-bs-target="#modalCenter">
       <td>${d.caseorder.Csid}</td>
       <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
