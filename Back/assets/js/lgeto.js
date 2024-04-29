@@ -175,7 +175,7 @@ function bintT(){
   let t = $(`#orderlist`);
   t.empty();
   $.each(datalist,(i,d)=>{
-    if(d.lgtnm == "無" && d.methodNm!="自取"){
+    if(d.lgtnm == "無" && d.methodNm!="自取" && d.caseStatus !="外送員正在取貨路上"){
       t.append(`<tr data-bs-toggle="modal" data-bs-target="#modalCenter">
       <td>${d.caseorder.Csid}</td>
       <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
