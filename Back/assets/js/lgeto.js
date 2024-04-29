@@ -39,6 +39,8 @@ liff.init({
                               if(data.lgtnm == ""){
                                 bindM();
                                 $(`#d`).click();
+                              }else{
+                                alert("沒有資料")
                               }
                           }
                       }else{
