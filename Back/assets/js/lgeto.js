@@ -239,3 +239,10 @@ function bindM(){
   });
   bindbtn();
 }
+$(`#orderlist`).on('click',"tr",function(){
+  let me = $(this);
+  caseid = me.find('td').html();
+  console.log(caseid)
+  data = datalist.filter(x=>x.caseorder.Csid==caseid)[0];
+  bindM();
+});
