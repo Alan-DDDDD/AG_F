@@ -237,3 +237,5 @@ $(`#orderlist`).on('click',"tr",function(){
   data = datalist.filter(x=>x.caseorder.Csid==caseid)[0];
   bindM();
 });
+
+$(`#lgeto`).on('click',lgeto());
