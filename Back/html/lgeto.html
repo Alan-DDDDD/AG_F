@@ -82,7 +82,60 @@
 				</tbody>
 			  </table>
 			</div>
-		  </div>
+		</div>
+		<!-- 表單 -->
+		<div class="col-lg-4 col-md-6">
+			<div class="mt-1">
+			  <!-- Modal -->
+			  <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" style="margin: 0.5rem auto;" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="modalCenterTitle">訂單細節 <span> 編號:C20240302001</span></h5>
+					  <button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close" id="MClose"
+					  ></button>
+					</div>
+					<div class="modal-body" style="padding: 0.25rem 1rem;">
+					  <div class="row" style="max-height: 400px;overflow-y: scroll;">
+						<table class="table" id="ddatetable">
+						  <thead style="position: sticky;top: 0;z-index: 1;background-color: white;">
+							<tr>
+							  <th></th>
+							  <th>產品</th>
+							  <th>數量</th>
+							  <th>單價</th>
+							  <th>小計</th>
+							</tr>
+						  </thead>
+						  <tbody id="ordertbody">
+
+						  </tbody>
+						</table>
+					  </div>
+					  <div class="row mt-1 border-top" id="datapage">
+
+					  </div>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-success" id="done">完成</button>
+					  <div class="btn-group">
+						<button type="button" class="btn btn-primary" id="keep">保留</button>
+						<button type="button" class="btn btn-primary" id="assign">外派</button>
+					  </div>
+					  <div class="btn-group">
+						<button type="button" class="btn btn-danger" id="giveup">棄單</button>
+						<button type="button" class="btn btn-danger" id="custgiveup">客戶棄單</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
 	</div>
     
     <script
