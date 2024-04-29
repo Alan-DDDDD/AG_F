@@ -172,12 +172,14 @@ function bintT(){
   let t = $(`#orderlist`);
   t.empty();
   $.each(datalist,(i,d)=>{
+    if(lgtnm == ""){
       t.append(`<tr data-bs-toggle="modal" data-bs-target="#modalCenter">
-          <td>${d.caseorder.Csid}</td>
-          <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
-          <td>${d.methodNm}</td>
-          <td>${d.caseStatus}</td>
-          </tr>`)
+      <td>${d.caseorder.Csid}</td>
+      <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
+      <td>${d.methodNm}</td>
+      <td>${d.caseStatus}</td>
+      </tr>`)
+    }
   });
 }
 
