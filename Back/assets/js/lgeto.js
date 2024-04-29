@@ -36,7 +36,7 @@ liff.init({
                           bintT();
                           if(caseid){
                               data = datalist.filter(x=>x.caseorder.Csid == caseid)[0];
-                              if(data.lgtnm == ""){
+                              if(data.lgtnm == "無"){
                                 bindM();
                                 $(`#d`).click();
                               }else{
@@ -176,7 +176,7 @@ function bintT(){
   let t = $(`#orderlist`);
   t.empty();
   $.each(datalist,(i,d)=>{
-    if(d.lgtnm == ""){
+    if(d.lgtnm == "無"){
       t.append(`<tr data-bs-toggle="modal" data-bs-target="#modalCenter">
       <td>${d.caseorder.Csid}</td>
       <td>${d.caseorder.Total.numberFormat(0,".",",")}</td>
