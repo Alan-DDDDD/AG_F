@@ -167,7 +167,7 @@ $(`#ddatetable tbody`).on('click','.datadel',function(){
 $(`#ddatetable tbody`).on('click','.dataedit',function(){
   let thistd = $(this).parent();
   $(`#dataid`).val(thistd.prev().prev().html());
-  $(`#dataid`).attr("disabled","disable");
+  //$(`#dataid`).attr("disabled","disable");
   $(`#data`).val(thistd.prev().html());
   thistd.parent().remove();
 });
